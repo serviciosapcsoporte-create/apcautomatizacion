@@ -1,0 +1,4 @@
+_preview-imagenes.html
+*.pyc
+node_modules/
+Thumbs.db

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://apcautomatizacion.site/sitemap.xml
