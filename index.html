@@ -1,69 +1,607 @@
 ﻿<!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APC Vision AI - Soluciones de Visión Computacional</title>
-    <meta name="description" content="APC Vision AI ofrece soluciones de visión computacional para mejorar la eficiencia operativa y tomar decisiones informadas">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APC Automatización - Integración de Sistemas en Bogotá</title>
+  <meta name="description" content="APC Automatización en Bogotá: integración de sistemas, dashboards ejecutivos y automatización RPA para medianas empresas. Optimiza procesos con nosotros.">
+  <meta property="og:title" content="APC Automatización - Integración de Sistemas en Bogotá">
+  <meta property="og:description" content="Integración de sistemas, dashboards ejecutivos y automatización RPA para empresas medianas en Bogotá y Sabana.">
+  <meta property="og:image" content="https://apcautomatizacion.site/imagenes/hero-og.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://apcautomatizacion.site">
+  <meta name="keywords" content="automatización Bogotá, integración sistemas, RPA Bogotá, dashboard ejecutivo, CRM post-venta, transformación digital">
+  <link rel="canonical" href="https://apcautomatizacion.site">
+  <meta name="geo.placename" content="Bogotá">
+  <meta name="geo.region" content="CO">
+  <meta name="geo.position" content="4.6001461;-74.1330034">
+  <meta name="ICBM" content="4.6001461, -74.1330034">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "APC Automatización",
+    "description": "Integración de sistemas, dashboards ejecutivos y automatización RPA para empresas medianas en Bogotá y Sabana.",
+    "url": "https://apcautomatizacion.site",
+    "telephone": "+573337450634",
+    "email": "serviciosapcsoporte@gmail.com",
+    "image": "https://apcautomatizacion.site/imagenes/logo.webp",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Cra. 52c #39b-22",
+      "addressLocality": "Bogotá",
+      "addressRegion": "Bogotá D.C.",
+      "addressCountry": "CO"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "4.6001461",
+      "longitude": "-74.1330034"
+    },
+    "areaServed": ["Bogotá", "Sabana de Bogotá"],
+    "priceRange": "$200,000 - $2,500,000",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "08:00",
+        "closes": "13:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/alejandropiraquiveapc",
+      "https://www.instagram.com/serviciosapc"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios APC Automatización",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Dashboard Ejecutivo",
+            "description": "Visualiza en tiempo real tus KPI de ventas, operaciones y finanzas en un solo panel.",
+            "identifier": "APC-INT-01"
+          },
+          "price": "350000",
+          "priceCurrency": "COP",
+          "priceValidUntil": "2027-12-31"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Integración de Sistemas",
+            "description": "Conectamos tus sistemas desconectados en una sola plataforma automatizada.",
+            "identifier": "APC-INT-02"
+          },
+          "price": "450000",
+          "priceCurrency": "COP",
+          "priceValidUntil": "2027-12-31"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "CRM Post-venta Automatizado",
+            "description": "Automatiza seguimiento a clientes, recordatorios de pago y encuestas post-servicio.",
+            "identifier": "APC-INT-03"
+          },
+          "price": "290000",
+          "priceCurrency": "COP",
+          "priceValidUntil": "2027-12-31"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Onboarding Digital de Clientes",
+            "description": "Digitaliza la vinculación de clientes con formularios inteligentes y flujos automatizados.",
+            "identifier": "APC-INT-04"
+          },
+          "price": "250000",
+          "priceCurrency": "COP",
+          "priceValidUntil": "2027-12-31"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Módulo Central de Flujos",
+            "description": "Infraestructura central que orquesta todas las automatizaciones.",
+            "identifier": "APC-INF-01"
+          },
+          "price": "890000",
+          "priceCurrency": "COP",
+          "priceValidUntil": "2027-12-31"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Automatización RPA",
+            "description": "Automatiza tareas repetitivas en tus sistemas sin reemplazar tu infraestructura.",
+            "identifier": "APC-RPA-01"
+          },
+          "priceCurrency": "COP",
+          "priceValidUntil": "2027-12-31"
+        }
+      ]
+    }
+  }
+  </script>
 </head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#como-funciona">Cómo Funciona</a></li>
-                <li><a href="#casos-exito">Casos de Éxito</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="inicio">
-            <h1>APC Vision AI - Soluciones de Visión Computacional</h1>
-            <p>Mejora la eficiencia operativa y toma decisiones informadas con nuestras soluciones de visión computacional</p>
-            <button>Descubre más</button>
-        </section>
+<body class="antialiased overflow-x-hidden selection:bg-cyan-400/30">
 
-        <section id="servicios">
-            <h2>Servicios</h2>
-            <ul>
-                <li>Análisis de Video</li>
-                <li>Conteo de Personas</li>
-                <li>Mapas de Calor</li>
-                <li>Eficiencia Operativa</li>
-            </ul>
-        </section>
+<!-- VIDEO BACKGROUND -->
+<div id="videoBg" class="fixed inset-0 w-full h-full overflow-hidden pointer-events-none" style="z-index: -1">
+  <video autoplay muted loop playsinline class="w-full h-full object-cover">
+    <source src="imagenes/Servicios APC.mp4" type="video/mp4">
+  </video>
+  <div id="scrollOverlay" class="absolute inset-0 bg-[#080C18]" style="opacity: 0.4"></div>
+</div>
 
-        <section id="como-funciona">
-            <h2>Cómo Funciona</h2>
-            <p>Nuestra tecnología de visión computacional utiliza algoritmos avanzados para analizar imágenes y videos, y proporcionar información valiosa para tomar decisiones informadas</p>
-        </section>
+<!-- WHATSAPP FLOATING -->
+<a href="https://wa.me/573337450634" target="_blank" class="whatsapp-float" aria-label="WhatsApp APC Automatización">
+  <i data-lucide="message-circle" class="w-7 h-7"></i>
+</a>
 
-        <section id="casos-exito">
-            <h2>Casos de Éxito</h2>
-            <ul>
-                <li>Caso de Éxito 1</li>
-                <li>Caso de Éxito 2</li>
-                <li>Caso de Éxito 3</li>
-            </ul>
-        </section>
+<!-- HEADER -->
+<header class="sticky top-0 z-50 backdrop-blur-xl bg-[#080C18]/80 border-b border-[#1E2A4A]">
+  <div class="mx-auto max-w-7xl px-6 h-[70px] flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <img src="imagenes/logo.webp" alt="APC Automatización - Integración de Sistemas en Bogotá" class="h-10 w-auto">
+      <div class="leading-tight">
+        <div class="font-extrabold tracking-tight text-white">APC Automatización</div>
+        <div class="text-[10px] tracking-[0.22em] text-[#00D1FF]/70">INTEGRACIÓN & RPA</div>
+      </div>
+    </div>
+    <nav class="hidden md:flex items-center gap-1">
+      <a href="#hero" class="px-3.5 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-[#111A2E]">Inicio</a>
+      <a href="#servicios" class="px-3.5 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-[#111A2E]">Servicios</a>
+      <a href="#beneficios" class="px-3.5 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-[#111A2E]">Beneficios</a>
+      <a href="#contacto" class="px-3.5 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-[#111A2E]">Contacto</a>
+      <a href="https://wa.me/573337450634" target="_blank" class="ml-2 px-4 py-2 rounded-xl bg-[#00D1FF] text-[#080C18] text-sm font-semibold hover:bg-[#22E6FF] shadow shadow-[#00D1FF]/20">Cotizar Ahora</a>
+    </nav>
+    <button id="mb" class="md:hidden size-10 grid place-items-center rounded-xl bg-[#111A2E] border border-[#1E2A4A]">
+      <i data-lucide="menu" class="w-5 h-5 text-slate-300"></i>
+    </button>
+  </div>
+  <div id="mm" class="hidden md:hidden border-t border-[#1E2A4A] bg-[#080C18] px-4 py-3 space-y-1">
+    <a href="#hero" class="block px-3 py-2.5 rounded-lg hover:bg-[#111A2E]">Inicio</a>
+    <a href="#servicios" class="block px-3 py-2.5 rounded-lg hover:bg-[#111A2E]">Servicios</a>
+    <a href="#beneficios" class="block px-3 py-2.5 rounded-lg hover:bg-[#111A2E]">Beneficios</a>
+    <a href="#contacto" class="block px-3 py-2.5 rounded-lg hover:bg-[#111A2E]">Contacto</a>
+    <a href="https://wa.me/573337450634" target="_blank" class="block mt-2 text-center px-4 py-3 rounded-xl bg-[#00D1FF] text-black font-semibold">Cotizar Ahora</a>
+  </div>
+</header>
 
-        <section id="blog">
-            <h2>Blog</h2>
-            <p>Próximamente disponibles nuestros artículos sobre visión computacional y eficiencia operativa</p>
-        </section>
+<!-- HERO -->
+<section id="hero" class="relative min-h-[88vh] flex items-center overflow-hidden">
+  <div class="absolute inset-0 bg-[#080C18]/30"></div>
+  <div class="absolute inset-0 grid-bg opacity-[0.6]"></div>
+  <div class="absolute -top-32 -right-32 w-[700px] h-[700px] bg-[#00D1FF]/15 rounded-full blur-[140px]"></div>
+  <div class="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-violet-600/15 rounded-full blur-[130px]"></div>
+  <div class="relative mx-auto max-w-7xl px-6 py-20 w-full">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#111A2E] border border-[#1E2A4A] text-[11px] tracking-widest text-[#00D1FF]">
+        <span class="size-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        NUEVO • APC-INT-02
+      </div>
+      <h1 class="mt-6 text-[38px] sm:text-6xl font-black leading-[0.9] tracking-tight text-white">
+        Automatización de<br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00D1FF] to-violet-400">Procesos para Empresas</span><br>
+        en Bogotá
+      </h1>
+      <p class="mt-6 text-[18px] leading-relaxed text-slate-400 max-w-2xl mx-auto">
+        Integramos los sistemas de tu empresa para que ahorres tiempo, reduzcas errores y escales sin contratar más personal. Soluciones pensadas para medianas empresas en Bogotá.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a href="https://wa.me/573337450634" target="_blank" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#00D1FF] text-[#080C18] font-semibold hover:bg-[#22E6FF] shadow-lg shadow-[#00D1FF]/20">
+          <i data-lucide="clipboard-check" class="w-4 h-4"></i> Agenda Diagnóstico Gratuito
+        </a>
+        <a href="#servicios" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#111A2E] border border-[#1E2A4A] hover:bg-[#162040] text-white font-medium">
+          <i data-lucide="layers" class="w-4 h-4"></i> Ver Servicios
+        </a>
+      </div>
+    </div>
 
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <p>Información de contacto para comunicarse con nuestro equipo</p>
-        </section>
-    </main>
+    <!-- DASHBOARD METRICS -->
+    <div class="mt-12 max-w-5xl mx-auto">
+      <div class="rounded-[20px] border border-[#1E2A4A] bg-[#111A2E]/90 backdrop-blur shadow-2xl overflow-hidden">
+        <div class="h-11 border-b border-[#1E2A4A] flex items-center justify-between px-4 bg-[#0B1220]">
+          <div class="flex items-center gap-2">
+            <span class="size-2.5 rounded-full bg-red-500/70"></span>
+            <span class="size-2.5 rounded-full bg-yellow-400/70"></span>
+            <span class="size-2.5 rounded-full bg-emerald-400/70"></span>
+            <span class="ml-3 text-[11px] mono text-slate-500">apcautomatizacion.site / dashboard / integración</span>
+          </div>
+          <span class="text-[10px] px-2 py-1 rounded-full bg-emerald-400/10 border border-emerald-400/20 text-emerald-400 mono">LIVE</span>
+        </div>
+        <div class="p-6">
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="p-4 rounded-xl bg-[#0B1220] border border-[#1E2A4A]">
+              <div class="flex items-center gap-2 text-[12px] text-slate-400">
+                <i data-lucide="refresh-cw" class="w-3.5 h-3.5 text-[#00D1FF]"></i> CRM sync
+              </div>
+              <div class="mt-2 flex items-baseline gap-1">
+                <span class="text-2xl font-black text-white">HubSpot</span>
+              </div>
+              <div class="mt-1 text-[13px] text-emerald-400 font-medium">+124 leads hoy</div>
+            </div>
+            <div class="p-4 rounded-xl bg-[#0B1220] border border-[#1E2A4A]">
+              <div class="flex items-center gap-2 text-[12px] text-slate-400">
+                <i data-lucide="file-text" class="w-3.5 h-3.5 text-[#00D1FF]"></i> Facturación
+              </div>
+              <div class="mt-2 flex items-baseline gap-1">
+                <span class="text-2xl font-black text-white">Siigo API</span>
+              </div>
+              <div class="mt-1 text-[13px] text-emerald-400 font-medium">Auto-factura OK</div>
+            </div>
+            <div class="p-4 rounded-xl bg-[#0B1220] border border-[#1E2A4A]">
+              <div class="flex items-center gap-2 text-[12px] text-slate-400">
+                <i data-lucide="cpu" class="w-3.5 h-3.5 text-[#00D1FF]"></i> Nodo Central
+              </div>
+              <div class="mt-2 flex items-baseline gap-1">
+                <span class="text-2xl font-black text-white">APC-INT-02</span>
+              </div>
+              <div class="mt-1 text-[13px] text-[#00D1FF] font-medium">Integración · Tiempo real · Bogotá</div>
+            </div>
+          </div>
+          <div class="mt-4 grid md:grid-cols-3 gap-6">
+            <div class="p-4 rounded-xl bg-[#0B1220] border border-[#1E2A4A]">
+              <div class="flex items-center gap-2 text-[12px] text-slate-400">
+                <i data-lucide="message-circle" class="w-3.5 h-3.5 text-emerald-400"></i> WhatsApp
+              </div>
+              <div class="mt-1 text-[13px] text-slate-300">+57 320 · bot activo</div>
+            </div>
+            <div class="p-4 rounded-xl bg-[#0B1220] border border-[#1E2A4A]">
+              <div class="flex items-center gap-2 text-[12px] text-slate-400">
+                <i data-lucide="trending-down" class="w-3.5 h-3.5 text-emerald-400"></i> Costos operativos
+              </div>
+              <div class="mt-1 text-[13px] text-emerald-400 font-bold">-38%</div>
+            </div>
+            <div class="p-4 rounded-xl bg-[#0B1220] border border-[#1E2A4A]">
+              <div class="flex items-center gap-2 text-[12px] text-slate-400">
+                <i data-lucide="clock" class="w-3.5 h-3.5 text-[#00D1FF]"></i> Ahorro
+              </div>
+              <div class="mt-1 text-[13px] text-white font-bold">14h/sem</div>
+            </div>
+            <div class="p-4 rounded-xl bg-[#0B1220] border border-[#1E2A4A]">
+              <div class="flex items-center gap-2 text-[12px] text-slate-400">
+                <i data-lucide="bot" class="w-3.5 h-3.5 text-[#00D1FF]"></i> Tareas auto
+              </div>
+              <div class="mt-1 text-[13px] text-white font-bold">1,482 <span class="text-emerald-400">+12%</span></div>
+            </div>
+            <div class="p-4 rounded-xl bg-[#0B1220] border border-[#1E2A4A]">
+              <div class="flex items-center gap-2 text-[12px] text-slate-400">
+                <i data-lucide="alert-triangle" class="w-3.5 h-3.5 text-emerald-400"></i> Errores
+              </div>
+              <div class="mt-1 text-[13px] text-emerald-400 font-bold">0.3% <span class="text-slate-400">-92%</span></div>
+            </div>
+            <div class="p-4 rounded-xl bg-[#0B1220] border border-[#1E2A4A]">
+              <div class="flex items-center gap-2 text-[12px] text-slate-400">
+                <i data-lucide="signal" class="w-3.5 h-3.5 text-emerald-400"></i> SLA Bogotá
+              </div>
+              <div class="mt-1 text-[13px] text-emerald-400 font-bold">99.9% <span class="text-slate-400">local</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        <p>APC Vision AI - 2023</p>
-    </footer>
+<!-- SERVICIOS -->
+<section id="servicios" class="py-24 bg-[#0A1020]/80 border-t border-[#1E2A4A]">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div>
+        <div class="text-[11px] tracking-[0.2em] text-[#00D1FF] font-semibold">SOLUCIONES APC</div>
+        <h2 class="mt-3 text-4xl font-black tracking-tight text-white">Nuestros Servicios</h2>
+        <p class="mt-2 text-slate-400">Integración, dashboards y automatización para medianas empresas en Bogotá.</p>
+      </div>
+      <div class="text-[12px] px-3 py-1.5 rounded-full bg-[#111A2E] border border-[#1E2A4A] text-slate-400">Setup + Mensual / Por proyecto</div>
+    </div>
+    <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <article class="rounded-[20px] border border-[#1E2A4A] bg-[#111A2E] p-6 hover:border-[#00D1FF]/30 hover:-translate-y-1 transition-all">
+        <img src="imagenes/dashboard.svg" alt="Dashboard Ejecutivo APC" class="card-img" loading="lazy">
+        <div class="flex justify-between">
+          <span class="px-2.5 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-[11px] mono text-[#00D1FF]">APC-INT-01</span>
+          <span class="text-[11px] px-2.5 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-slate-400">Setup + Mensual</span>
+        </div>
+        <h3 class="mt-4 font-bold text-lg text-white">Dashboard Ejecutivo</h3>
+        <div class="mt-1 text-2xl font-black text-[#00D1FF]">$350.000 <span class="text-xs font-medium text-slate-500">COP/mes</span></div>
+        <p class="mt-3 text-sm text-slate-400 leading-relaxed">Visualiza en tiempo real tus KPI de ventas, operaciones y finanzas. Un solo panel con datos de todas tus plataformas.</p>
+        <div class="mt-4 text-[12px] text-slate-500 flex items-center gap-1.5"><i data-lucide="layout-dashboard" class="w-3.5 h-3.5 text-[#00D1FF]"></i> Gerentes y dueños de medianas empresas</div>
+      </article>
+
+      <article class="rounded-[20px] border border-[#00D1FF]/30 bg-gradient-to-b from-[#00D1FF]/5 to-[#111A2E] p-6 shadow-[0_0_0_1px_rgba(0,209,255,0.08)] hover:-translate-y-1 transition-all">
+        <img src="imagenes/integracion.svg" alt="Integración de Sistemas APC" class="card-img" loading="lazy">
+        <div class="flex justify-between">
+          <span class="px-2.5 py-1 rounded-full bg-[#00D1FF] text-black text-[11px] mono font-bold">APC-INT-02</span>
+          <span class="text-[11px] px-2.5 py-1 rounded-full bg-[#0B1220] border border-[#00D1FF]/20 text-[#00D1FF]">Setup + Mensual</span>
+        </div>
+        <h3 class="mt-4 font-bold text-lg text-white">Integración de Sistemas</h3>
+        <div class="mt-1 text-2xl font-black text-[#00D1FF]">$450.000 <span class="text-xs font-medium text-slate-400">COP/mes</span></div>
+        <p class="mt-3 text-sm text-slate-300 leading-relaxed">Conectamos tus sistemas desconectados (CRM, facturación, inventarios) en una sola plataforma automatizada.</p>
+        <div class="mt-4 text-[12px] text-[#00D1FF]/70 flex items-center gap-1.5"><i data-lucide="shuffle" class="w-3.5 h-3.5"></i> Medianas empresas con procesos manuales y sistemas aislados</div>
+        <div class="mt-4 w-full py-2.5 rounded-xl bg-[#00D1FF] text-black text-center text-sm font-semibold">Más contratado</div>
+      </article>
+
+      <article class="rounded-[20px] border border-[#1E2A4A] bg-[#111A2E] p-6 hover:border-[#00D1FF]/30 hover:-translate-y-1 transition-all">
+        <img src="imagenes/crm.svg" alt="CRM Post-venta Automatizado APC" class="card-img" loading="lazy">
+        <div class="flex justify-between">
+          <span class="px-2.5 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-[11px] mono text-[#00D1FF]">APC-INT-03</span>
+          <span class="text-[11px] px-2.5 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-slate-400">Setup + Mensual</span>
+        </div>
+        <h3 class="mt-4 font-bold text-lg text-white">CRM Post-venta Automatizado</h3>
+        <div class="mt-1 text-2xl font-black text-[#00D1FF]">$290.000 <span class="text-xs font-medium text-slate-500">COP/mes</span></div>
+        <p class="mt-3 text-sm text-slate-400 leading-relaxed">Automatiza seguimiento a clientes, recordatorios de pago y encuestas post-servicio sin intervención manual.</p>
+        <div class="mt-4 text-[12px] text-slate-500 flex items-center gap-1.5"><i data-lucide="users" class="w-3.5 h-3.5 text-[#00D1FF]"></i> Empresas con cartera de clientes activa</div>
+      </article>
+
+      <article class="rounded-[20px] border border-[#1E2A4A] bg-[#111A2E] p-6 hover:border-[#00D1FF]/30 hover:-translate-y-1 transition-all">
+        <img src="imagenes/onboarding.svg" alt="Onboarding Digital de Clientes APC" class="card-img" loading="lazy">
+        <div class="flex justify-between">
+          <span class="px-2.5 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-[11px] mono text-[#00D1FF]">APC-INT-04</span>
+          <span class="text-[11px] px-2.5 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-slate-400">Setup + Mensual</span>
+        </div>
+        <h3 class="mt-4 font-bold text-lg text-white">Onboarding Digital de Clientes</h3>
+        <div class="mt-1 text-2xl font-black text-[#00D1FF]">$250.000 <span class="text-xs font-medium text-slate-500">COP/mes</span></div>
+        <p class="mt-3 text-sm text-slate-400 leading-relaxed">Digitaliza el proceso de vinculación de clientes nuevos con formularios inteligentes y flujos automatizados.</p>
+        <div class="mt-4 text-[12px] text-slate-500 flex items-center gap-1.5"><i data-lucide="user-plus" class="w-3.5 h-3.5 text-[#00D1FF]"></i> Empresas con alto volumen de registro</div>
+      </article>
+
+      <article class="rounded-[20px] border border-[#1E2A4A] bg-[#111A2E] p-6 hover:border-[#00D1FF]/30 hover:-translate-y-1 transition-all">
+        <img src="imagenes/modulo-central.svg" alt="Módulo Central de Flujos APC" class="card-img" loading="lazy">
+        <div class="flex justify-between">
+          <span class="px-2.5 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-[11px] mono text-violet-300">APC-INF-01</span>
+          <span class="text-[11px] px-2.5 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-slate-400">Por proyecto</span>
+        </div>
+        <h3 class="mt-4 font-bold text-lg text-white">Módulo Central de Flujos</h3>
+        <div class="mt-1 text-2xl font-black text-violet-300">$890.000 <span class="text-xs font-medium text-slate-500">COP / setup</span></div>
+        <p class="mt-3 text-sm text-slate-400 leading-relaxed">Infraestructura central que orquesta todas las automatizaciones. Escala sin límites con tu operación.</p>
+        <div class="mt-4 text-[12px] text-slate-500 flex items-center gap-1.5"><i data-lucide="server" class="w-3.5 h-3.5 text-violet-300"></i> Empresas con operaciones en crecimiento</div>
+      </article>
+
+      <article class="rounded-[20px] border border-[#1E2A4A] bg-[#111A2E] p-6 hover:border-emerald-400/30 hover:-translate-y-1 transition-all">
+        <img src="imagenes/Automatización de Procesos para Empresas en Bogotá.webp" alt="Automatización RPA APC" class="card-img" loading="lazy">
+        <div class="flex justify-between">
+          <span class="px-2.5 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-[11px] mono text-emerald-400">APC-RPA-01</span>
+          <span class="text-[11px] px-2.5 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-slate-400">Por proceso</span>
+        </div>
+        <h3 class="mt-4 font-bold text-lg text-white">Automatización RPA</h3>
+        <div class="mt-1 text-2xl font-black text-emerald-400">A consultar</div>
+        <p class="mt-3 text-sm text-slate-400 leading-relaxed">Automatiza tareas repetitivas en tus sistemas sin reemplazar tu infraestructura actual. RPA local en Bogotá.</p>
+        <div class="mt-4 text-[12px] text-slate-500 flex items-center gap-1.5"><i data-lucide="bot" class="w-3.5 h-3.5 text-emerald-400"></i> Empresas con procesos manuales repetitivos</div>
+        <div class="mt-4 w-full py-2.5 rounded-xl bg-emerald-500 text-white text-center text-sm font-semibold">Nuevo</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section id="beneficios" class="py-24 bg-[#080C18]/80 border-y border-[#1E2A4A]">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-4xl font-black tracking-tight text-white">Beneficios de automatizar con APC</h2>
+      <p class="mt-3 text-slate-400">Resultados medibles desde el primer mes.</p>
+    </div>
+    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="p-6 rounded-2xl bg-[#111A2E] border border-[#1E2A4A]">
+        <div class="size-11 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><i data-lucide="layout-dashboard" class="w-5 h-5 text-[#00D1FF]"></i></div>
+        <h4 class="mt-4 font-semibold text-white">Orden y organización</h4>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Un solo panel. Adiós Excel disperso. Procesos estandarizados.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-[#111A2E] border border-[#1E2A4A]">
+        <div class="size-11 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><i data-lucide="zap" class="w-5 h-5 text-[#00D1FF]"></i></div>
+        <h4 class="mt-4 font-semibold text-white">Ahorro de tiempo real</h4>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">De horas a segundos. Procesos que antes tomaban días ahora son automáticos.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-[#111A2E] border border-[#1E2A4A]">
+        <div class="size-11 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><i data-lucide="trending-down" class="w-5 h-5 text-emerald-400"></i></div>
+        <h4 class="mt-4 font-semibold text-white">Reducción de errores</h4>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Elimina errores humanos en captura de datos, facturación y reportes.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-[#111A2E] border border-[#1E2A4A]">
+        <div class="size-11 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><i data-lucide="trending-up" class="w-5 h-5 text-[#00D1FF]"></i></div>
+        <h4 class="mt-4 font-semibold text-white">Escalabilidad</h4>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Crece sin contratar más personal. Tu operación escala automáticamente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section class="py-24 bg-[#0A1020]/80 border-t border-[#1E2A4A]">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="text-[11px] tracking-[0.2em] text-[#00D1FF] font-semibold">PROCESO</div>
+      <h2 class="mt-3 text-4xl font-black tracking-tight text-white">Cómo funciona</h2>
+      <p class="mt-3 text-slate-400">De la desconexión a la automatización total en tres pasos.</p>
+    </div>
+    <div class="mt-12 grid md:grid-cols-3 gap-8 items-start">
+      <div class="text-center">
+        <div class="mx-auto size-16 rounded-2xl bg-[#00D1FF]/10 border border-[#00D1FF]/20 grid place-items-center text-2xl font-black text-[#00D1FF]">1</div>
+        <h4 class="mt-5 font-semibold text-white text-lg">Diagnóstico</h4>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Analizamos tus procesos actuales, identificamos cuellos de botella y definimos qué automatizar primero. Sin compromiso.</p>
+      </div>
+      <div class="text-center">
+        <div class="mx-auto size-16 rounded-2xl bg-violet-500/10 border border-violet-500/20 grid place-items-center text-2xl font-black text-violet-300">2</div>
+        <h4 class="mt-5 font-semibold text-white text-lg">Integración</h4>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Conectamos tus sistemas con n8n y APIs. CRM, facturación, inventarios y más en una sola plataforma unificada.</p>
+      </div>
+      <div class="text-center">
+        <div class="mx-auto size-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 grid place-items-center text-2xl font-black text-emerald-400">3</div>
+        <h4 class="mt-5 font-semibold text-white text-lg">Dashboard + Monitoreo</h4>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Recibes un panel ejecutivo en tiempo real con métricas claras. Monitoreamos y ajustamos contigo cada mes.</p>
+      </div>
+    </div>
+    <div class="mt-12 rounded-2xl border border-[#1E2A4A] bg-[#111A2E] overflow-hidden">
+      <img src="imagenes/Integración de Sistemas para Empresas Medianas.webp" alt="Integración de Sistemas para Empresas Medianas en Bogotá" class="w-full h-auto object-cover" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE NOSOTROS -->
+<section class="py-24 bg-[#080C18]/80 border-t border-[#1E2A4A]">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <div class="text-[11px] tracking-[0.2em] text-[#00D1FF] font-semibold">NOSOTROS</div>
+        <h2 class="mt-3 text-4xl font-black tracking-tight text-white">Equipo de Trabajo APC</h2>
+        <p class="mt-4 text-slate-400 leading-relaxed">
+          Somos un equipo de ingenieros especializados en integración de sistemas, automatización RPA y dashboards ejecutivos para medianas empresas en Bogotá y la Sabana. 
+        </p>
+        <p class="mt-3 text-slate-400 leading-relaxed">
+          Trabajamos con n8n, APIs REST, Google Cloud y herramientas open-source para entregar soluciones modulares que se adaptan al presupuesto y crecimiento de cada negocio.
+        </p>
+        <div class="mt-6 grid grid-cols-2 gap-4">
+          <div class="p-4 rounded-xl bg-[#111A2E] border border-[#1E2A4A]">
+            <div class="text-2xl font-black text-[#00D1FF]">+15</div>
+            <div class="text-xs text-slate-500 mt-1">Sistemas integrados</div>
+          </div>
+          <div class="p-4 rounded-xl bg-[#111A2E] border border-[#1E2A4A]">
+            <div class="text-2xl font-black text-violet-300">+47</div>
+            <div class="text-xs text-slate-500 mt-1">Flujos activos</div>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-2xl border border-[#1E2A4A] bg-[#111A2E] overflow-hidden">
+        <img src="imagenes/Equipo de Trabajo de APC Automatización.webp" alt="Equipo de Trabajo de APC Automatización Bogotá" class="w-full h-auto object-cover" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTADOS -->
+<section class="py-24 bg-[#0A1020]/80 border-t border-[#1E2A4A]">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="text-[11px] tracking-[0.2em] text-[#00D1FF] font-semibold">RESULTADOS</div>
+      <h2 class="mt-3 text-4xl font-black tracking-tight text-white">Mejora la eficiencia de tu empresa</h2>
+      <p class="mt-3 text-slate-400">Resultados medibles que nuestras integraciones han entregado a medianas empresas en Bogotá.</p>
+    </div>
+    <div class="mt-12 grid md:grid-cols-3 gap-6">
+      <div class="p-6 rounded-2xl bg-[#111A2E] border border-[#1E2A4A]">
+        <div class="text-3xl font-black text-[#00D1FF]">-70%</div>
+        <h4 class="mt-2 font-semibold text-white">Tiempo en reportes</h4>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Los dashboards ejecutivos eliminan la preparación manual de informes. Datos actualizados al segundo.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-[#111A2E] border border-[#1E2A4A]">
+        <div class="text-3xl font-black text-emerald-400">-90%</div>
+        <h4 class="mt-2 font-semibold text-white">Errores de captura</h4>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">La automatización RPA elimina errores humanos en facturación, inventarios y registro de datos.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-[#111A2E] border border-[#1E2A4A]">
+        <div class="text-3xl font-black text-violet-300">+40%</div>
+        <h4 class="mt-2 font-semibold text-white">Productividad operativa</h4>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Equipos que dedican menos tiempo a tareas repetitivas y más a lo que realmente importa.</p>
+      </div>
+    </div>
+    <div class="mt-10 grid md:grid-cols-2 gap-6">
+      <div class="rounded-2xl border border-[#1E2A4A] bg-[#111A2E] overflow-hidden">
+        <img src="imagenes/Automatización de Procesos para Mejorar la Eficiencia Empresaria.webp" alt="Automatización de Procesos para Mejorar la Eficiencia Empresarial" class="w-full h-auto object-cover" loading="lazy">
+      </div>
+      <div class="rounded-2xl border border-[#1E2A4A] bg-[#111A2E] overflow-hidden">
+        <img src="imagenes/Dashboard Ejecutivo para Gerentes y Dueños de Empresas.webp" alt="Dashboard Ejecutivo para Gerentes y Dueños de Empresas" class="w-full h-auto object-cover" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTACTO -->
+<section id="contacto" class="py-24 bg-[#080C18]/80 border-t border-[#1E2A4A]">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <div class="text-[11px] tracking-[0.2em] text-[#00D1FF] font-semibold">CONTACTO</div>
+      <h2 class="mt-3 text-4xl font-black tracking-tight text-white">Contáctanos</h2>
+      <p class="mt-3 text-slate-400">Te respondemos en menos de 15 minutos. Agenda tu diagnóstico gratuito.</p>
+    </div>
+    <div class="mt-10 grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div class="rounded-2xl border border-[#1E2A4A] bg-[#111A2E] p-8">
+        <h4 class="font-semibold text-white text-lg">Información</h4>
+        <div class="mt-6 space-y-5 text-sm text-slate-300">
+          <div class="flex gap-3"><i data-lucide="map-pin" class="w-4 h-4 text-[#00D1FF] mt-0.5 shrink-0"></i> Cra. 52c #39b-22, Bogotá</div>
+          <div class="flex gap-3"><i data-lucide="mail" class="w-4 h-4 text-[#00D1FF] mt-0.5 shrink-0"></i> <a href="mailto:serviciosapcsoporte@gmail.com" class="hover:text-[#00D1FF]">serviciosapcsoporte@gmail.com</a></div>
+          <div class="flex gap-3"><i data-lucide="phone" class="w-4 h-4 text-[#00D1FF] mt-0.5 shrink-0"></i> <a href="tel:+573337450634" class="hover:text-[#00D1FF]">+57 333 7450634</a></div>
+        </div>
+        <div class="mt-6 flex flex-wrap gap-2 text-[11px] mono">
+          <span class="px-2 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-slate-400">n8n · APIs</span>
+          <span class="px-2 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-[#00D1FF]">Integración</span>
+          <span class="px-2 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-violet-300">RPA</span>
+          <span class="px-2 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-emerald-400">Dashboard</span>
+        </div>
+        <a href="https://maps.google.com/?q=Cra.+52c+%2339b-22,+Bogot%C3%A1,+Colombia" target="_blank" class="mt-5 inline-flex items-center gap-2 text-[13px] text-[#00D1FF] hover:text-[#22E6FF] font-medium transition-colors"><i data-lucide="map-pinned" class="w-4 h-4"></i> Ver en Google Maps</a>
+      </div>
+      <div class="rounded-2xl border border-[#1E2A4A] bg-[#111A2E] p-8">
+        <h4 class="font-semibold text-white text-lg">Síguenos</h4>
+        <p class="mt-2 text-sm text-slate-400">Conoce más sobre nuestros proyectos y soluciones.</p>
+        <div class="mt-6 flex flex-col gap-4">
+          <a href="https://www.facebook.com/alejandropiraquiveapc" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-[#0B1220] border border-[#1E2A4A] hover:border-blue-500/40 transition-all group">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-blue-400"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <div><div class="text-sm font-medium text-white group-hover:text-blue-300">Facebook</div><div class="text-[11px] text-slate-500">@alejandropiraquiveapc</div></div>
+          </a>
+          <a href="https://www.instagram.com/serviciosapc" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-[#0B1220] border border-[#1E2A4A] hover:border-pink-500/40 transition-all group">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-pink-400"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            <div><div class="text-sm font-medium text-white group-hover:text-pink-300">Instagram</div><div class="text-[11px] text-slate-500">@serviciosapc</div></div>
+          </a>
+          <a href="https://wa.me/573337450634" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-[#0B1220] border border-[#1E2A4A] hover:border-emerald-500/40 transition-all group">
+            <i data-lucide="message-circle" class="w-6 h-6 text-emerald-400"></i>
+            <div><div class="text-sm font-medium text-white group-hover:text-emerald-300">WhatsApp</div><div class="text-[11px] text-slate-500">+57 333 7450634</div></div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="mt-8 max-w-4xl mx-auto">
+      <div class="rounded-2xl border border-[#1E2A4A] bg-[#111A2E] p-2 overflow-hidden">
+        <iframe
+          width="100%"
+          height="280"
+          style="border:0;border-radius:12px"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCf7cXMH7XSoqnHnJ2Ku-YmP93rbW0tBOA&q=Cra.+52c+%2339b-22,+Bogot%C3%A1,+Colombia&zoom=15&language=es"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-[#050914]/90 border-t border-[#1E2A4A] py-10">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="flex flex-col md:flex-row justify-between gap-4 text-[12px] text-slate-500">
+      <div>© 2026 APC Automatización - Todos los derechos reservados.</div>
+      <div>Integración · RPA · Automatización - <span class="text-[#00D1FF]">Bogotá</span></div>
+    </div>
+    <div class="mt-6 flex justify-center md:justify-end gap-4">
+      <a href="https://www.facebook.com/alejandropiraquiveapc" target="_blank" class="size-9 rounded-xl bg-[#111A2E] border border-[#1E2A4A] grid place-items-center hover:bg-blue-950/40 hover:border-blue-500/40 transition-all group">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 text-slate-400 group-hover:text-blue-400"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/serviciosapc" target="_blank" class="size-9 rounded-xl bg-[#111A2E] border border-[#1E2A4A] grid place-items-center hover:bg-pink-950/40 hover:border-pink-500/40 transition-all group">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 text-slate-400 group-hover:text-pink-400"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <a href="https://wa.me/573337450634" target="_blank" class="size-9 rounded-xl bg-[#111A2E] border border-[#1E2A4A] grid place-items-center hover:bg-emerald-950/40 hover:border-emerald-500/40 transition-all group"><i data-lucide="message-circle" class="w-4 h-4 text-slate-400 group-hover:text-emerald-400"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>
