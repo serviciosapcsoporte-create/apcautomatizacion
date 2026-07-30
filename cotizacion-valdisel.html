@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cotización VIP Copiloto IA - Valdisel S.A.S</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background: #080C18; color: #E2E8F0; padding: 40px; }
+.page { max-width: 1000px; margin: 0 auto; background: #0A1020; border-radius: 24px; border: 1px solid #1E2A4A; overflow: hidden; }
+.header { background: linear-gradient(135deg, #0B1220 0%, #111A2E 100%); padding: 40px; border-bottom: 1px solid #1E2A4A; display: flex; justify-content: space-between; align-items: center; }
+.header-left { display: flex; align-items: center; gap: 16px; }
+.header-left img { width: 48px; height: 48px; }
+.header-left h1 { font-size: 20px; font-weight: 800; color: #fff; }
+.header-left span { font-size: 10px; letter-spacing: 0.22em; color: #00D1FF; opacity: 0.7; }
+.header-right { text-align: right; }
+.header-right .badge { display: inline-block; padding: 6px 16px; border-radius: 20px; background: linear-gradient(135deg, #7C3AED, #00D1FF); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; cursor: pointer; transition: opacity 0.2s; text-decoration: none; }
+.header-right .badge:hover { opacity: 0.85; }
+.header-right .num { font-size: 11px; color: #64748B; margin-top: 6px; font-weight: 500; }
+.top-bar { display: flex; gap: 24px; padding: 24px 40px; background: #0B1220; border-bottom: 1px solid #1E2A4A; flex-wrap: wrap; }
+.top-item { flex: 1; min-width: 180px; }
+.top-item .label { font-size: 10px; letter-spacing: 0.15em; color: #64748B; font-weight: 600; }
+.top-item .value { font-size: 14px; color: #fff; font-weight: 600; margin-top: 4px; }
+.top-item .value .accent { color: #00D1FF; }
+.section { padding: 32px 40px; }
+.section h2 { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+.section .sub { font-size: 13px; color: #64748B; margin-bottom: 20px; }
+.plans-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.plan-card { border-radius: 16px; border: 1px solid #1E2A4A; background: #111A2E; padding: 24px; }
+.plan-card.featured { border-color: #00D1FF; background: linear-gradient(180deg, rgba(0,209,255,0.05) 0%, #111A2E 100%); }
+.plan-card.vip { border-color: #7C3AED; background: linear-gradient(180deg, rgba(124,58,237,0.05) 0%, #111A2E 100%); }
+.plan-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; background: #0B1220; border: 1px solid #1E2A4A; color: #00D1FF; }
+.plan-badge.featured { background: #00D1FF; color: #000; border: none; }
+.plan-badge.vip { background: linear-gradient(135deg, #7C3AED, #00D1FF); color: #fff; border: none; }
+.plan-name { font-size: 20px; font-weight: 800; color: #fff; margin-top: 12px; }
+.plan-price { margin-top: 8px; }
+.plan-price .setup { font-size: 22px; font-weight: 900; color: #00D1FF; }
+.plan-price .monthly { font-size: 16px; font-weight: 600; color: #94A3B8; margin-top: 2px; }
+.plan-price .setup.vip { color: #A78BFA; }
+.plan-price .monthly.vip { color: #94A3B8; }
+.plan-items { margin-top: 12px; list-style: none; }
+.plan-items li { font-size: 12px; color: #94A3B8; padding: 4px 0; display: flex; align-items: center; gap: 8px; }
+.plan-items li::before { content: "✓"; color: #10B981; font-weight: 700; }
+.divider { height: 1px; background: #1E2A4A; margin: 0 40px; }
+.phases { margin-top: 16px; }
+.phase { background: #111A2E; border: 1px solid #1E2A4A; border-radius: 16px; padding: 20px; margin-bottom: 12px; }
+.phase-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+.phase-tag { display: inline-block; padding: 4px 10px; border-radius: 8px; font-size: 10px; font-weight: 700; background: rgba(0,209,255,0.1); color: #00D1FF; }
+.phase-tag.violet { background: rgba(124,58,237,0.1); color: #A78BFA; }
+.phase-tag.green { background: rgba(16,185,129,0.1); color: #10B981; }
+.phase-tag.amber { background: rgba(245,158,11,0.1); color: #F59E0B; }
+.phase-right { text-align: right; }
+.phase-price { font-size: 20px; font-weight: 900; color: #00D1FF; }
+.phase-pct { font-size: 11px; color: #64748B; font-weight: 600; }
+.phase-name { font-size: 15px; font-weight: 700; color: #fff; margin-top: 8px; }
+.phase-desc { font-size: 12px; color: #64748B; margin-top: 4px; line-height: 1.5; }
+.phase-bar { height: 6px; background: #0B1220; border-radius: 4px; margin-top: 10px; overflow: hidden; display: flex; }
+.phase-bar-fill { height: 100%; }
+.phase-bar-fill.p1 { width: 16.7%; background: #00D1FF; border-radius: 4px 0 0 4px; }
+.phase-bar-fill.p2 { width: 33.3%; background: #7C3AED; }
+.phase-bar-fill.p3 { width: 25%; background: #10B981; }
+.phase-bar-fill.p4 { width: 25%; background: #F59E0B; border-radius: 0 4px 4px 0; }
+.total-box { background: linear-gradient(135deg, rgba(0,209,255,0.05) 0%, rgba(124,58,237,0.05) 100%); border: 1px solid #00D1FF; border-radius: 16px; padding: 20px; text-align: center; margin-top: 16px; }
+.total-amount { font-size: 32px; font-weight: 900; color: #00D1FF; }
+.total-label { font-size: 11px; color: #64748B; letter-spacing: 0.15em; font-weight: 600; margin-top: 4px; }
+.kpis { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; }
+.kpi-card { background: #111A2E; border: 1px solid #1E2A4A; border-radius: 12px; padding: 16px; }
+.kpi-icon { font-size: 20px; margin-bottom: 6px; }
+.kpi-title { font-size: 12px; font-weight: 700; color: #fff; }
+.kpi-desc { font-size: 11px; color: #64748B; margin-top: 4px; line-height: 1.4; }
+.footer { background: #050914; border-top: 1px solid #1E2A4A; padding: 24px 40px; text-align: center; }
+.footer p { font-size: 11px; color: #475569; }
+.footer .contact { color: #00D1FF; font-weight: 600; }
+.whatsapp-cta { display: block; text-align: center; padding: 16px 40px; background: linear-gradient(135deg, #10B981, #059669); color: #fff; font-weight: 700; font-size: 15px; letter-spacing: 0.05em; text-decoration: none; transition: opacity 0.2s; }
+.whatsapp-cta:hover { opacity: 0.9; }
+@media print { body { padding: 0; background: #fff; } .page { box-shadow: none; } }
+
+.password-overlay { position: fixed; inset: 0; z-index: 9999; background: #080C18; display: flex; align-items: center; justify-content: center; }
+.password-box { background: #111A2E; border: 1px solid #1E2A4A; border-radius: 24px; padding: 48px; max-width: 420px; width: 90%; text-align: center; }
+.password-box img { width: 64px; height: 64px; margin-bottom: 16px; opacity: 0.8; }
+.password-box h2 { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+.password-box p { font-size: 13px; color: #64748B; margin-bottom: 24px; }
+.password-box input { width: 100%; padding: 14px 18px; border-radius: 12px; border: 1px solid #1E2A4A; background: #0B1220; color: #fff; font-size: 15px; outline: none; text-align: center; letter-spacing: 0.15em; }
+.password-box input:focus { border-color: #00D1FF; }
+.password-box .error { color: #EF4444; font-size: 12px; margin-top: 8px; display: none; }
+.password-box button { margin-top: 16px; width: 100%; padding: 14px; border-radius: 12px; border: none; background: linear-gradient(135deg, #00D1FF, #7C3AED); color: #fff; font-size: 15px; font-weight: 700; cursor: pointer; transition: opacity 0.2s; }
+.password-box button:hover { opacity: 0.85; }
+.content { display: none; }
+</style>
+</head>
+<body>
+
+<div id="passwordOverlay" class="password-overlay">
+  <div class="password-box">
+    <img src="https://apcautomatizacion.site/imagenes/logo.webp" alt="APC">
+    <h2>Cotización Protegida</h2>
+    <p>Ingresa la contraseña para ver la cotización.</p>
+    <input type="password" id="passwordInput" placeholder="Contraseña" autofocus>
+    <div class="error" id="errorMsg">Contraseña incorrecta. Intenta de nuevo.</div>
+    <button onclick="checkPassword()">Ver Cotización</button>
+  </div>
+</div>
+
+<div id="content" class="content">
+
+<div class="page">
+  <div class="header">
+    <div class="header-left">
+      <img src="https://apcautomatizacion.site/imagenes/logo.webp" alt="APC">
+      <div>
+        <h1>APC Automatización</h1>
+        <span>INTEGRACIÓN & RPA</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <a href="https://wa.me/573337450634?text=Hola%2C%20quiero%20recibir%20mi%20cotizaci%C3%B3n%20VIP%20Copiloto%20IA" target="_blank" class="badge">COTIZACIÓN</a>
+      <div class="num">No. APC-COT-003-2026</div>
+    </div>
+  </div>
+
+  <div class="top-bar">
+    <div class="top-item">
+      <div class="label">CLIENTE</div>
+      <div class="value">Valdisel S.A.S</div>
+    </div>
+    <div class="top-item">
+      <div class="label">CONTACTO</div>
+      <div class="value">Salome Tafur — <span class="accent">3195077995</span></div>
+    </div>
+    <div class="top-item">
+      <div class="label">FECHA</div>
+      <div class="value">Julio 2026</div>
+    </div>
+    <div class="top-item">
+      <div class="label">ID CLIENTE</div>
+      <div class="value"><span class="accent">APC-003</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Planes de Automatización</h2>
+    <div class="sub">Elige el plan que mejor se adapte a tu empresa. Todos incluyen diagnóstico y soporte local en Bogotá.</div>
+    <div class="plans-grid">
+      <div class="plan-card">
+        <div class="plan-badge">PLAN CORE</div>
+        <div class="plan-name">Core</div>
+        <div class="plan-price">
+          <div class="setup">$3.500.000</div>
+          <div class="monthly">$490.000 /mes</div>
+        </div>
+        <ul class="plan-items">
+          <li>Dashboard Ejecutivo</li>
+          <li>Integración de Sistemas</li>
+          <li>Onboarding Digital de Clientes</li>
+        </ul>
+      </div>
+      <div class="plan-card featured">
+        <div class="plan-badge featured">PLAN PRO</div>
+        <div class="plan-name">Pro</div>
+        <div class="plan-price">
+          <div class="setup">$6.900.000</div>
+          <div class="monthly">$890.000 /mes</div>
+        </div>
+        <ul class="plan-items">
+          <li>Dashboard Ejecutivo</li>
+          <li>Integración de Sistemas</li>
+          <li>Onboarding Digital de Clientes</li>
+          <li>CRM Post-venta Automatizado</li>
+          <li>Módulo Central de Flujos</li>
+        </ul>
+      </div>
+      <div class="plan-card vip">
+        <div class="plan-badge vip">VIP COPILOTO IA</div>
+        <div class="plan-name">VIP Copiloto IA</div>
+        <div class="plan-price">
+          <div class="setup vip">$6.000.000</div>
+          <div class="monthly vip">$1.290.000 /mes</div>
+        </div>
+        <ul class="plan-items">
+          <li>Dashboard Ejecutivo</li>
+          <li>Integración de Sistemas</li>
+          <li>Onboarding Digital de Clientes</li>
+          <li>CRM Post-venta Automatizado</li>
+          <li>Módulo Central de Flujos</li>
+          <li>Copiloto IA entrenado con tus datos</li>
+          <li>Automatización RPA</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <h2>Proyecto VIP Copiloto IA — Desglose por Fases</h2>
+    <div class="sub">Pago por fase completada y aprobada. Sin presiones, sin pagos únicos abrumadores.</div>
+
+    <div style="display:flex;gap:8px;margin-bottom:16px;font-size:11px;align-items:center;flex-wrap:wrap;">
+      <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:12px;height:12px;border-radius:3px;background:#00D1FF;display:inline-block;"></span> F1 16.7%</span>
+      <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:12px;height:12px;border-radius:3px;background:#7C3AED;display:inline-block;"></span> F2 33.3%</span>
+      <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:12px;height:12px;border-radius:3px;background:#10B981;display:inline-block;"></span> F3A 25%</span>
+      <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:12px;height:12px;border-radius:3px;background:#F59E0B;display:inline-block;"></span> F3B 25%</span>
+      <span style="margin-left:auto;font-weight:700;color:#fff;">100%</span>
+    </div>
+
+    <div class="phases">
+
+      <div class="phase">
+        <div class="phase-header">
+          <span class="phase-tag">FASE 1</span>
+          <div class="phase-right">
+            <div class="phase-price">$1.000.000</div>
+            <div class="phase-pct">16.7% del proyecto</div>
+          </div>
+        </div>
+        <div class="phase-name">Panel Visual y Control de Inventario (CRUD)</div>
+        <div class="phase-desc">Pantallas en HTML/CSS/JavaScript para ver, agregar, editar y eliminar productos (repuestos, cantidades). Catálogo completo con stock en tiempo real.</div>
+        <div class="phase-bar"><div class="phase-bar-fill p1"></div><div class="phase-bar-fill" style="width:83.3%;background:#0B1220;border-radius:0 4px 4px 0;"></div></div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-header">
+          <span class="phase-tag violet">FASE 2</span>
+          <div class="phase-right">
+            <div class="phase-price">$2.000.000</div>
+            <div class="phase-pct">33.3% del proyecto</div>
+          </div>
+        </div>
+        <div class="phase-name">Conexión API SIIGO y Métricas Comparativas</div>
+        <div class="phase-desc">Vinculación con la API de SIIGO para extraer ventas del mes en tiempo real. Cálculo automático de KPIS: rotación de inventario, margen por producto, tendencia mensual y alerta de punto de reorden.</div>
+        <div class="phase-bar"><div class="phase-bar-fill" style="width:16.7%;background:#0B1220;border-radius:4px 0 0 4px;"></div><div class="phase-bar-fill p2"></div><div class="phase-bar-fill" style="width:50%;background:#0B1220;border-radius:0 4px 4px 0;"></div></div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-header">
+          <span class="phase-tag green">FASE 3A</span>
+          <div class="phase-right">
+            <div class="phase-price">$1.500.000</div>
+            <div class="phase-pct">25% del proyecto</div>
+          </div>
+        </div>
+        <div class="phase-name">Motor IA Conversacional — Configuración RAG</div>
+        <div class="phase-desc">Estructura para que la IA entienda la base de datos de inventario sin equivocarse (RAG - Retrieval-Augmented Generation). Conexión de la base de datos con el modelo de lenguaje.</div>
+        <div class="phase-bar"><div class="phase-bar-fill" style="width:50%;background:#0B1220;border-radius:4px 0 0 4px;"></div><div class="phase-bar-fill p3"></div><div class="phase-bar-fill" style="width:25%;background:#0B1220;border-radius:0 4px 4px 0;"></div></div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-header">
+          <span class="phase-tag amber">FASE 3B</span>
+          <div class="phase-right">
+            <div class="phase-price">$1.500.000</div>
+            <div class="phase-pct">25% del proyecto</div>
+          </div>
+        </div>
+        <div class="phase-name">Motor IA — Chat Conversacional y Pruebas</div>
+        <div class="phase-desc">Conexión con OpenAI (ChatGPT) o Anthropic, ventana de chat conversacional, entrenamiento final con datos reales del cliente y pruebas de sincronización completa.</div>
+        <div class="phase-bar"><div class="phase-bar-fill" style="width:75%;background:#0B1220;border-radius:4px 0 0 4px;"></div><div class="phase-bar-fill p4"></div></div>
+      </div>
+
+    </div>
+
+    <div class="total-box">
+      <div class="total-label">TOTAL PROYECTO VIP COPILOTO IA</div>
+      <div class="total-amount">$6.000.000</div>
+      <div style="font-size:11px;color:#64748B;margin-top:4px;">+ $1.290.000 / mes (suscripción)</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <h2>KPIs incluidos en el Panel</h2>
+    <div class="sub">Métricas clave que tendrás en tiempo real desde el primer mes.</div>
+    <div class="kpis">
+      <div class="kpi-card">
+        <div class="kpi-icon">📊</div>
+        <div class="kpi-title">Rotación de Inventario</div>
+        <div class="kpi-desc">Top de productos más vendidos ("Ganadores") y los que llevan meses acumulando polvo ("Stock Muerto").</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon">🔔</div>
+        <div class="kpi-title">Alerta de Punto de Reorden</div>
+        <div class="kpi-desc">Notificación visual + alerta de IA cuando un repuesto baje de cierta cantidad crítica. Sugiere compra automática.</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon">💰</div>
+        <div class="kpi-title">Margen de Contribución</div>
+        <div class="kpi-desc">Qué repuestos o artículos dejan más ganancia neta, no solo cuáles se venden más en volumen.</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon">📈</div>
+        <div class="kpi-title">Tendencia de Venta Mensual</div>
+        <div class="kpi-desc">Comparativa gráfica interactiva: este mes vs mes anterior vs mismo mes del año pasado.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>APC Automatización — Bogotá, Colombia</p>
+    <p><span class="contact">+57 333 745 0634</span> · <span class="contact">serviciosapcsoporte@gmail.com</span></p>
+    <p style="margin-top:8px;">Cra. 52c #39b-22, Bogotá · <span class="contact">https://apcautomatizacion.site</span></p>
+    <p style="margin-top:12px;color:#334155;">Cotización válida por 15 días. Pago por fase completada y aprobada.</p>
+  </div>
+</div>
+
+<a href="https://wa.me/573337450634?text=Hola%2C%20recib%C3%AD%20mi%20cotizaci%C3%B3n%20VIP%20Copiloto%20IA%20y%20quiero%20empezar" target="_blank" class="whatsapp-cta">
+  💬 Cotizar por WhatsApp — +57 333 745 0634
+</a>
+
+</div>
+
+<script>
+function checkPassword() {
+  var input = document.getElementById('passwordInput').value;
+  var hash = '';
+  // SHA-256 calculation
+  var encoder = new TextEncoder();
+  var data = encoder.encode(input);
+  crypto.subtle.digest('SHA-256', data).then(function(hashBuffer) {
+    var hashArray = Array.from(new Uint8Array(hashBuffer));
+    var hashHex = hashArray.map(function(b) { return b.toString(16).padStart(2, '0'); }).join('');
+    var targetHash = '39b3ca9229781ab366467135efe51120565c4f887ab06119b82a59e4cbd9f112';
+    if (hashHex === targetHash) {
+      document.getElementById('passwordOverlay').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    } else {
+      document.getElementById('errorMsg').style.display = 'block';
+      document.getElementById('passwordInput').value = '';
+      document.getElementById('passwordInput').focus();
+    }
+  });
+}
+document.getElementById('passwordInput').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') { checkPassword(); }
+});
+</script>
+
+</body>
+</html>
