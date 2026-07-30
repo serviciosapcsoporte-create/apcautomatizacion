@@ -43,7 +43,7 @@
       "longitude": "-74.1330034"
     },
     "areaServed": ["Bogotá", "Sabana de Bogotá"],
-    "priceRange": "$200,000 - $2,500,000",
+    "priceRange": "$490,000 - $1,290,000/mes",
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
@@ -64,17 +64,17 @@
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Servicios APC Automatización",
+      "name": "Planes APC Automatización",
       "itemListElement": [
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Dashboard Ejecutivo",
-            "description": "Visualiza en tiempo real tus KPI de ventas, operaciones y finanzas en un solo panel.",
-            "identifier": "APC-INT-01"
+            "name": "Plan Core",
+            "description": "Dashboard Ejecutivo + Integración de Sistemas + Onboarding Digital de Clientes.",
+            "identifier": "APC-CORE-01"
           },
-          "price": "350000",
+          "price": "3500000",
           "priceCurrency": "COP",
           "priceValidUntil": "2027-12-31"
         },
@@ -82,11 +82,11 @@
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Integración de Sistemas",
-            "description": "Conectamos tus sistemas desconectados en una sola plataforma automatizada.",
-            "identifier": "APC-INT-02"
+            "name": "Plan Pro",
+            "description": "Dashboard Ejecutivo + Integración de Sistemas + Onboarding Digital + CRM Post-venta + Módulo Central de Flujos.",
+            "identifier": "APC-PRO-01"
           },
-          "price": "450000",
+          "price": "6900000",
           "priceCurrency": "COP",
           "priceValidUntil": "2027-12-31"
         },
@@ -94,45 +94,9 @@
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "CRM Post-venta Automatizado",
-            "description": "Automatiza seguimiento a clientes, recordatorios de pago y encuestas post-servicio.",
-            "identifier": "APC-INT-03"
-          },
-          "price": "290000",
-          "priceCurrency": "COP",
-          "priceValidUntil": "2027-12-31"
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Onboarding Digital de Clientes",
-            "description": "Digitaliza la vinculación de clientes con formularios inteligentes y flujos automatizados.",
-            "identifier": "APC-INT-04"
-          },
-          "price": "250000",
-          "priceCurrency": "COP",
-          "priceValidUntil": "2027-12-31"
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Módulo Central de Flujos",
-            "description": "Infraestructura central que orquesta todas las automatizaciones.",
-            "identifier": "APC-INF-01"
-          },
-          "price": "890000",
-          "priceCurrency": "COP",
-          "priceValidUntil": "2027-12-31"
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Automatización RPA",
-            "description": "Automatiza tareas repetitivas en tus sistemas sin reemplazar tu infraestructura.",
-            "identifier": "APC-RPA-01"
+            "name": "VIP Copiloto IA",
+            "description": "Plan Pro + Copiloto IA entrenado con datos de la empresa + Automatización RPA.",
+            "identifier": "APC-VIP-01"
           },
           "priceCurrency": "COP",
           "priceValidUntil": "2027-12-31"
@@ -170,6 +134,7 @@
     <nav class="hidden md:flex items-center gap-1">
       <a href="#hero" class="px-3.5 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-[#111A2E]">Inicio</a>
       <a href="#servicios" class="px-3.5 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-[#111A2E]">Servicios</a>
+      <a href="servicios.html" class="px-3.5 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-[#111A2E]">Precios</a>
       <a href="#beneficios" class="px-3.5 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-[#111A2E]">Beneficios</a>
       <a href="#contacto" class="px-3.5 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-[#111A2E]">Contacto</a>
       <a href="https://wa.me/573337450634" target="_blank" class="ml-2 px-4 py-2 rounded-xl bg-[#00D1FF] text-[#080C18] text-sm font-semibold hover:bg-[#22E6FF] shadow shadow-[#00D1FF]/20">Cotizar Ahora</a>
@@ -181,6 +146,7 @@
   <div id="mm" class="hidden md:hidden border-t border-[#1E2A4A] bg-[#080C18] px-4 py-3 space-y-1">
     <a href="#hero" class="block px-3 py-2.5 rounded-lg hover:bg-[#111A2E]">Inicio</a>
     <a href="#servicios" class="block px-3 py-2.5 rounded-lg hover:bg-[#111A2E]">Servicios</a>
+    <a href="servicios.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#111A2E]">Precios</a>
     <a href="#beneficios" class="block px-3 py-2.5 rounded-lg hover:bg-[#111A2E]">Beneficios</a>
     <a href="#contacto" class="block px-3 py-2.5 rounded-lg hover:bg-[#111A2E]">Contacto</a>
     <a href="https://wa.me/573337450634" target="_blank" class="block mt-2 text-center px-4 py-3 rounded-xl bg-[#00D1FF] text-black font-semibold">Cotizar Ahora</a>
@@ -197,7 +163,7 @@
     <div class="max-w-4xl mx-auto text-center">
       <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#111A2E] border border-[#1E2A4A] text-[11px] tracking-widest text-[#00D1FF]">
         <span class="size-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-        NUEVO • APC-INT-02
+        3 PLANES • CORE / PRO / VIP COPILOTO IA
       </div>
       <h1 class="mt-6 text-[38px] sm:text-6xl font-black leading-[0.9] tracking-tight text-white">
         Automatización de<br>
@@ -303,93 +269,93 @@
   </div>
 </section>
 
-<!-- SERVICIOS -->
+<!-- SERVICIOS / PLANES -->
 <section id="servicios" class="py-24 bg-[#0A1020]/80 border-t border-[#1E2A4A]">
   <div class="mx-auto max-w-7xl px-6">
-    <div class="flex flex-wrap items-end justify-between gap-6">
-      <div>
-        <div class="text-[11px] tracking-[0.2em] text-[#00D1FF] font-semibold">SOLUCIONES APC</div>
-        <h2 class="mt-3 text-4xl font-black tracking-tight text-white">Nuestros Servicios</h2>
-        <p class="mt-2 text-slate-400">Integración, dashboards y automatización para medianas empresas en Bogotá.</p>
-      </div>
-      <div class="text-[12px] px-3 py-1.5 rounded-full bg-[#111A2E] border border-[#1E2A4A] text-slate-400">Setup + Mensual / Por proyecto</div>
+    <div class="text-center">
+      <div class="text-[11px] tracking-[0.2em] text-[#00D1FF] font-semibold">PLANES</div>
+      <h2 class="mt-3 text-4xl font-black tracking-tight text-white">Planes de Automatización</h2>
+      <p class="mt-2 text-slate-400 max-w-2xl mx-auto">Elige el plan que mejor se adapte a tu empresa. Todos incluyen diagnóstico gratuito y soporte local en Bogotá.</p>
     </div>
-    <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="mt-10 grid md:grid-cols-3 gap-6">
 
-      <article class="rounded-[20px] border border-[#1E2A4A] bg-[#111A2E] p-6 hover:border-[#00D1FF]/30 hover:-translate-y-1 transition-all">
-        <img src="imagenes/dashboard.svg" alt="Dashboard Ejecutivo APC" class="card-img" loading="lazy">
-        <div class="flex justify-between">
-          <span class="px-2.5 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-[11px] mono text-[#00D1FF]">APC-INT-01</span>
+      <!-- CORE -->
+      <article class="rounded-[20px] border border-[#1E2A4A] bg-[#111A2E] p-6 flex flex-col hover:border-[#00D1FF]/30 hover:-translate-y-1 transition-all">
+        <div class="flex justify-between items-start">
+          <span class="px-3 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-[11px] mono text-[#00D1FF]">PLAN CORE</span>
           <span class="text-[11px] px-2.5 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-slate-400">Setup + Mensual</span>
         </div>
-        <h3 class="mt-4 font-bold text-lg text-white">Dashboard Ejecutivo</h3>
-        <div class="mt-1 text-2xl font-black text-[#00D1FF]">$350.000 <span class="text-xs font-medium text-slate-500">COP/mes</span></div>
-        <p class="mt-3 text-sm text-slate-400 leading-relaxed">Visualiza en tiempo real tus KPI de ventas, operaciones y finanzas. Un solo panel con datos de todas tus plataformas.</p>
-        <div class="mt-4 text-[12px] text-slate-500 flex items-center gap-1.5"><i data-lucide="layout-dashboard" class="w-3.5 h-3.5 text-[#00D1FF]"></i> Gerentes y dueños de medianas empresas</div>
+        <h3 class="mt-4 font-bold text-xl text-white">Core</h3>
+        <div class="mt-2">
+          <div class="text-2xl font-black text-[#00D1FF]">$3.500.000 <span class="text-xs font-medium text-slate-500">setup</span></div>
+          <div class="text-lg font-semibold text-slate-300">$490.000 <span class="text-xs font-medium text-slate-500">/mes</span></div>
+        </div>
+        <p class="mt-3 text-sm text-slate-400 leading-relaxed">Automatización esencial para empezar a digitalizar tu operación en Bogotá.</p>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Dashboard Ejecutivo</span></li>
+          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Integración de Sistemas</span></li>
+          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Onboarding Digital de Clientes</span></li>
+        </ul>
+        <div class="mt-auto pt-6">
+          <a href="https://wa.me/573337450634?text=Quiero%20el%20Plan%20Core%20-%20APC%20Automatizaci%C3%B3n" target="_blank" class="block w-full py-3 rounded-xl bg-[#00D1FF] text-black text-center text-sm font-semibold hover:bg-[#22E6FF] transition-all">Lo quiero</a>
+        </div>
       </article>
 
-      <article class="rounded-[20px] border border-[#00D1FF]/30 bg-gradient-to-b from-[#00D1FF]/5 to-[#111A2E] p-6 shadow-[0_0_0_1px_rgba(0,209,255,0.08)] hover:-translate-y-1 transition-all">
-        <img src="imagenes/integracion.svg" alt="Integración de Sistemas APC" class="card-img" loading="lazy">
-        <div class="flex justify-between">
-          <span class="px-2.5 py-1 rounded-full bg-[#00D1FF] text-black text-[11px] mono font-bold">APC-INT-02</span>
+      <!-- PRO -->
+      <article class="rounded-[20px] border border-[#00D1FF]/30 bg-gradient-to-b from-[#00D1FF]/5 to-[#111A2E] p-6 flex flex-col shadow-[0_0_0_1px_rgba(0,209,255,0.08)] hover:-translate-y-1 transition-all relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-24 h-24 bg-[#00D1FF]/5 rounded-bl-full"></div>
+        <div class="flex justify-between items-start">
+          <span class="px-3 py-1 rounded-full bg-[#00D1FF] text-black text-[11px] mono font-bold">PLAN PRO</span>
           <span class="text-[11px] px-2.5 py-1 rounded-full bg-[#0B1220] border border-[#00D1FF]/20 text-[#00D1FF]">Setup + Mensual</span>
         </div>
-        <h3 class="mt-4 font-bold text-lg text-white">Integración de Sistemas</h3>
-        <div class="mt-1 text-2xl font-black text-[#00D1FF]">$450.000 <span class="text-xs font-medium text-slate-400">COP/mes</span></div>
-        <p class="mt-3 text-sm text-slate-300 leading-relaxed">Conectamos tus sistemas desconectados (CRM, facturación, inventarios) en una sola plataforma automatizada.</p>
-        <div class="mt-4 text-[12px] text-[#00D1FF]/70 flex items-center gap-1.5"><i data-lucide="shuffle" class="w-3.5 h-3.5"></i> Medianas empresas con procesos manuales y sistemas aislados</div>
-        <div class="mt-4 w-full py-2.5 rounded-xl bg-[#00D1FF] text-black text-center text-sm font-semibold">Más contratado</div>
+        <h3 class="mt-4 font-bold text-xl text-white">Pro</h3>
+        <div class="mt-2">
+          <div class="text-2xl font-black text-[#00D1FF]">$6.900.000 <span class="text-xs font-medium text-slate-500">setup</span></div>
+          <div class="text-lg font-semibold text-slate-300">$890.000 <span class="text-xs font-medium text-slate-500">/mes</span></div>
+        </div>
+        <p class="mt-3 text-sm text-slate-300 leading-relaxed">Automatización completa para empresas en crecimiento con CRM y flujos centrales.</p>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Dashboard Ejecutivo</span></li>
+          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Integración de Sistemas</span></li>
+          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Onboarding Digital de Clientes</span></li>
+          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>CRM Post-venta Automatizado</span></li>
+          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Módulo Central de Flujos</span></li>
+        </ul>
+        <div class="mt-auto pt-6">
+          <a href="https://wa.me/573337450634?text=Quiero%20el%20Plan%20Pro%20-%20APC%20Automatizaci%C3%B3n" target="_blank" class="block w-full py-3 rounded-xl bg-[#00D1FF] text-black text-center text-sm font-semibold hover:bg-[#22E6FF] transition-all">Lo quiero</a>
+        </div>
+        <div class="mt-3 w-full py-2 rounded-xl bg-[#00D1FF]/10 border border-[#00D1FF]/20 text-[#00D1FF] text-center text-[11px] font-semibold mono tracking-wider">MÁS ELEGIDO</div>
       </article>
 
-      <article class="rounded-[20px] border border-[#1E2A4A] bg-[#111A2E] p-6 hover:border-[#00D1FF]/30 hover:-translate-y-1 transition-all">
-        <img src="imagenes/crm.svg" alt="CRM Post-venta Automatizado APC" class="card-img" loading="lazy">
-        <div class="flex justify-between">
-          <span class="px-2.5 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-[11px] mono text-[#00D1FF]">APC-INT-03</span>
+      <!-- VIP COPILOTO IA -->
+      <article class="rounded-[20px] border border-[#1E2A4A] bg-gradient-to-b from-violet-500/5 to-[#111A2E] p-6 flex flex-col hover:border-violet-400/30 hover:-translate-y-1 transition-all">
+        <div class="flex justify-between items-start">
+          <span class="px-3 py-1 rounded-full bg-gradient-to-r from-violet-600 to-[#00D1FF] text-white text-[11px] mono font-bold">VIP COPILOTO IA</span>
           <span class="text-[11px] px-2.5 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-slate-400">Setup + Mensual</span>
         </div>
-        <h3 class="mt-4 font-bold text-lg text-white">CRM Post-venta Automatizado</h3>
-        <div class="mt-1 text-2xl font-black text-[#00D1FF]">$290.000 <span class="text-xs font-medium text-slate-500">COP/mes</span></div>
-        <p class="mt-3 text-sm text-slate-400 leading-relaxed">Automatiza seguimiento a clientes, recordatorios de pago y encuestas post-servicio sin intervención manual.</p>
-        <div class="mt-4 text-[12px] text-slate-500 flex items-center gap-1.5"><i data-lucide="users" class="w-3.5 h-3.5 text-[#00D1FF]"></i> Empresas con cartera de clientes activa</div>
-      </article>
-
-      <article class="rounded-[20px] border border-[#1E2A4A] bg-[#111A2E] p-6 hover:border-[#00D1FF]/30 hover:-translate-y-1 transition-all">
-        <img src="imagenes/onboarding.svg" alt="Onboarding Digital de Clientes APC" class="card-img" loading="lazy">
-        <div class="flex justify-between">
-          <span class="px-2.5 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-[11px] mono text-[#00D1FF]">APC-INT-04</span>
-          <span class="text-[11px] px-2.5 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-slate-400">Setup + Mensual</span>
+        <h3 class="mt-4 font-bold text-xl text-white">VIP Copiloto IA</h3>
+        <div class="mt-2">
+          <div class="text-2xl font-black text-violet-300">A consultar <span class="text-xs font-medium text-slate-500">setup</span></div>
+          <div class="text-lg font-semibold text-slate-300">$1.290.000 <span class="text-xs font-medium text-slate-500">/mes</span></div>
         </div>
-        <h3 class="mt-4 font-bold text-lg text-white">Onboarding Digital de Clientes</h3>
-        <div class="mt-1 text-2xl font-black text-[#00D1FF]">$250.000 <span class="text-xs font-medium text-slate-500">COP/mes</span></div>
-        <p class="mt-3 text-sm text-slate-400 leading-relaxed">Digitaliza el proceso de vinculación de clientes nuevos con formularios inteligentes y flujos automatizados.</p>
-        <div class="mt-4 text-[12px] text-slate-500 flex items-center gap-1.5"><i data-lucide="user-plus" class="w-3.5 h-3.5 text-[#00D1FF]"></i> Empresas con alto volumen de registro</div>
-      </article>
-
-      <article class="rounded-[20px] border border-[#1E2A4A] bg-[#111A2E] p-6 hover:border-[#00D1FF]/30 hover:-translate-y-1 transition-all">
-        <img src="imagenes/modulo-central.svg" alt="Módulo Central de Flujos APC" class="card-img" loading="lazy">
-        <div class="flex justify-between">
-          <span class="px-2.5 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-[11px] mono text-violet-300">APC-INF-01</span>
-          <span class="text-[11px] px-2.5 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-slate-400">Por proyecto</span>
+        <p class="mt-3 text-sm text-slate-400 leading-relaxed">IA entrenada con los datos de tu empresa + automatización total de procesos.</p>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Dashboard Ejecutivo</span></li>
+          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Integración de Sistemas</span></li>
+          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Onboarding Digital de Clientes</span></li>
+          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>CRM Post-venta Automatizado</span></li>
+          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Módulo Central de Flujos</span></li>
+          <li class="flex items-start gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-violet-300 mt-0.5 shrink-0"></i> <span class="text-violet-200">Copiloto IA entrenado con tus datos</span></li>
+          <li class="flex items-start gap-2"><i data-lucide="bot" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Automatización RPA</span></li>
+        </ul>
+        <div class="mt-auto pt-6">
+          <a href="https://wa.me/573337450634?text=Quiero%20el%20Plan%20VIP%20Copiloto%20IA%20-%20APC%20Automatizaci%C3%B3n" target="_blank" class="block w-full py-3 rounded-xl bg-gradient-to-r from-violet-600 to-[#00D1FF] text-white text-center text-sm font-semibold hover:opacity-90 transition-all shadow-lg shadow-violet-600/20">Lo quiero</a>
         </div>
-        <h3 class="mt-4 font-bold text-lg text-white">Módulo Central de Flujos</h3>
-        <div class="mt-1 text-2xl font-black text-violet-300">$890.000 <span class="text-xs font-medium text-slate-500">COP / setup</span></div>
-        <p class="mt-3 text-sm text-slate-400 leading-relaxed">Infraestructura central que orquesta todas las automatizaciones. Escala sin límites con tu operación.</p>
-        <div class="mt-4 text-[12px] text-slate-500 flex items-center gap-1.5"><i data-lucide="server" class="w-3.5 h-3.5 text-violet-300"></i> Empresas con operaciones en crecimiento</div>
       </article>
 
-      <article class="rounded-[20px] border border-[#1E2A4A] bg-[#111A2E] p-6 hover:border-emerald-400/30 hover:-translate-y-1 transition-all">
-        <img src="imagenes/Automatización de Procesos para Empresas en Bogotá.webp" alt="Automatización RPA APC" class="card-img" loading="lazy">
-        <div class="flex justify-between">
-          <span class="px-2.5 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-[11px] mono text-emerald-400">APC-RPA-01</span>
-          <span class="text-[11px] px-2.5 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-slate-400">Por proceso</span>
-        </div>
-        <h3 class="mt-4 font-bold text-lg text-white">Automatización RPA</h3>
-        <div class="mt-1 text-2xl font-black text-emerald-400">A consultar</div>
-        <p class="mt-3 text-sm text-slate-400 leading-relaxed">Automatiza tareas repetitivas en tus sistemas sin reemplazar tu infraestructura actual. RPA local en Bogotá.</p>
-        <div class="mt-4 text-[12px] text-slate-500 flex items-center gap-1.5"><i data-lucide="bot" class="w-3.5 h-3.5 text-emerald-400"></i> Empresas con procesos manuales repetitivos</div>
-        <div class="mt-4 w-full py-2.5 rounded-xl bg-emerald-500 text-white text-center text-sm font-semibold">Nuevo</div>
-      </article>
-
+    </div>
+    <div class="mt-8 text-center">
+      <p class="text-sm text-slate-500">¿Necesitas un servicio específico? <a href="servicios.html" class="text-[#00D1FF] hover:text-[#22E6FF] font-medium">Ver desglose completo de precios →</a></p>
     </div>
   </div>
 </section>
