@@ -91,7 +91,8 @@ select { background: #0B1220; border: 1px solid #1E2A4A; border-radius: 8px; col
         <option value="2200000">$2.200.000 /mes</option>
         <option value="2800000">$2.800.000 /mes</option>
       </select>
-      <div class="neutral" style="margin-top:4px;">Valor hora: <strong id="hourlyRate" style="color:#fff;">$9.375</strong></div>
+      <div class="neutral" style="margin-top:4px;">Valor hora real (con prestaciones): <strong id="hourlyRate" style="color:#fff;">$14.250</strong></div>
+      <div class="neutral" style="margin-top:2px;font-size:11px;">Costo total empresa: <strong id="realCost" style="color:#fff;">$2.280.000</strong> /mes</div>
     </div>
     <div class="card" style="display:flex;flex-direction:column;justify-content:center;">
       <div style="font-size:10px;color:#64748B;letter-spacing:0.1em;font-weight:600;">HORAS LABORALES / MES</div>
@@ -107,7 +108,7 @@ select { background: #0B1220; border: 1px solid #1E2A4A; border-radius: 8px; col
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
       <div>
         <div style="font-size:10px;color:#64748B;letter-spacing:0.1em;font-weight:600;">TAREAS MANUALES</div>
-        <div style="font-size:12px;color:#94A3B8;">Desliza para ajustar las horas/mes que tu empresa gasta en cada tarea.</div>
+        <div style="font-size:12px;color:#94A3B8;">Desliza para ajustar las horas/mes que tu empresa gasta en cada tarea. Cada tarea tiene un % automatizable realista.</div>
       </div>
       <div style="text-align:right;">
         <div class="neutral">Total horas manuales</div>
@@ -116,27 +117,27 @@ select { background: #0B1220; border: 1px solid #1E2A4A; border-radius: 8px; col
     </div>
 
     <div class="slider-row">
-      <div class="slider-label">📦 Conteo y control de inventario</div>
+      <div class="slider-label">📦 Conteo y control de inventario <span class="neutral">(70% automatizable)</span></div>
       <div class="slider-input"><input type="range" min="0" max="60" value="20" id="s1" oninput="recalc()"></div>
       <div class="slider-value" id="v1">20h</div>
     </div>
     <div class="slider-row">
-      <div class="slider-label">🧾 Cuadre facturación vs SIIGO</div>
+      <div class="slider-label">🧾 Cuadre facturación vs SIIGO <span class="neutral">(80% automatizable)</span></div>
       <div class="slider-input"><input type="range" min="0" max="60" value="15" id="s2" oninput="recalc()"></div>
       <div class="slider-value" id="v2">15h</div>
     </div>
     <div class="slider-row">
-      <div class="slider-label">📊 Reportes mensuales de ventas y KPI</div>
+      <div class="slider-label">📊 Reportes mensuales de ventas y KPI <span class="neutral">(90% automatizable)</span></div>
       <div class="slider-input"><input type="range" min="0" max="40" value="8" id="s3" oninput="recalc()"></div>
       <div class="slider-value" id="v3">8h</div>
     </div>
     <div class="slider-row">
-      <div class="slider-label">📞 Seguimiento post-venta a clientes</div>
+      <div class="slider-label">📞 Seguimiento post-venta a clientes <span class="neutral">(60% automatizable)</span></div>
       <div class="slider-input"><input type="range" min="0" max="50" value="10" id="s4" oninput="recalc()"></div>
       <div class="slider-value" id="v4">10h</div>
     </div>
     <div class="slider-row">
-      <div class="slider-label">💬 Atención al cliente (WhatsApp/llamadas)</div>
+      <div class="slider-label">💬 Atención al cliente (WhatsApp/llamadas) <span class="neutral">(60% automatizable)</span></div>
       <div class="slider-input"><input type="range" min="0" max="80" value="25" id="s5" oninput="recalc()"></div>
       <div class="slider-value" id="v5">25h</div>
     </div>
@@ -144,26 +145,31 @@ select { background: #0B1220; border: 1px solid #1E2A4A; border-radius: 8px; col
 
   <div class="card" style="margin-bottom:16px;">
     <div style="font-size:10px;color:#64748B;letter-spacing:0.1em;font-weight:600;margin-bottom:8px;">TU AHORRO CON APC</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">
       <div style="background:#0B1220;border-radius:10px;padding:14px;text-align:center;">
-        <div class="neutral">Hoy gastas</div>
-        <div style="font-size:22px;font-weight:900;color:#EF4444;" id="costManual">$0</div>
-        <div class="neutral">/mes en estas tareas</div>
+        <div class="neutral">1. Ahorro por tiempo</div>
+        <div style="font-size:22px;font-weight:900;color:#00D1FF;" id="timeSavings">$0</div>
+        <div class="neutral">/mes automatizado</div>
       </div>
       <div style="background:#0B1220;border-radius:10px;padding:14px;text-align:center;">
-        <div class="neutral">Con APC pagas</div>
+        <div class="neutral">2. Evitas errores</div>
+        <div style="font-size:22px;font-weight:900;color:#F59E0B;" id="errorAvoidance">$0</div>
+        <div class="neutral">/mes en costos evitados</div>
+      </div>
+      <div style="background:#0B1220;border-radius:10px;padding:14px;text-align:center;">
+        <div class="neutral">3. Valor recuperado</div>
+        <div style="font-size:22px;font-weight:900;color:#EC4899;" id="valueRecovery">$0</div>
+        <div class="neutral">/mes en oportunidades</div>
+      </div>
+    </div>
+    <div style="margin-top:16px;padding-top:12px;border-top:1px solid #1E2A4A;">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div class="neutral">Con APC pagas /mes</div>
         <div style="font-size:22px;font-weight:900;color:#00D1FF;" id="costAPC">$0</div>
-        <div class="neutral">/mes en suscripción</div>
       </div>
-      <div style="background:#0B1220;border-radius:10px;padding:14px;text-align:center;">
-        <div class="neutral">Ahorras</div>
-        <div style="font-size:22px;font-weight:900;color:#10B981;" id="savings">$0</div>
-        <div class="neutral">/mes en tiempo</div>
-      </div>
-      <div style="background:linear-gradient(135deg,rgba(16,185,129,0.1),rgba(0,209,255,0.05));border:1px solid #10B981;border-radius:10px;padding:14px;text-align:center;">
-        <div class="neutral" style="color:#10B981;">GANANCIA NETA</div>
-        <div style="font-size:22px;font-weight:900;color:#10B981;" id="netGain">$0</div>
-        <div class="neutral">/mes después de invertir</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px;">
+        <div class="neutral" style="color:#10B981;font-weight:700;">GANANCIA NETA /mes</div>
+        <div style="font-size:28px;font-weight:900;color:#10B981;" id="netGain">$0</div>
       </div>
     </div>
   </div>
@@ -205,36 +211,42 @@ select { background: #0B1220; border: 1px solid #1E2A4A; border-radius: 8px; col
         <thead>
           <tr style="border-bottom:2px solid #1E2A4A;text-align:left;">
             <th style="padding:12px 12px 12px 0;color:#64748B;font-size:10px;letter-spacing:0.1em;font-weight:600;">Cargo equivalente</th>
-            <th style="padding:12px 12px;color:#64748B;font-size:10px;letter-spacing:0.1em;font-weight:600;text-align:center;">Rango mensual visible</th>
-            <th style="padding:12px 12px;color:#64748B;font-size:10px;letter-spacing:0.1em;font-weight:600;">Qué cubre</th>
-            <th style="padding:12px 0 12px 12px;color:#64748B;font-size:10px;letter-spacing:0.1em;font-weight:600;">Cómo se relaciona con tu sistema</th>
+            <th style="padding:12px 12px;color:#64748B;font-size:10px;letter-spacing:0.1em;font-weight:600;text-align:center;">Salario + Prestaciones / Mes</th>
+            <th style="padding:12px 12px;color:#64748B;font-size:10px;letter-spacing:0.1em;font-weight:600;">Lo que hace una persona</th>
+            <th style="padding:12px 0 12px 12px;color:#64748B;font-size:10px;letter-spacing:0.1em;font-weight:600;">Lo que hace tu Sistema APC</th>
           </tr>
         </thead>
         <tbody>
           <tr style="border-bottom:1px solid #1E2A4A/50;">
-            <td style="padding:14px 12px 14px 0;font-weight:600;color:#fff;">Auxiliar de inventario</td>
-            <td style="padding:14px 12px;text-align:center;font-weight:700;color:#00D1FF;">$1.42M–$1.75M</td>
-            <td style="padding:14px 12px;color:#94A3B8;">Conteo, registro, apoyo de bodega.</td>
-            <td style="padding:14px 0 14px 12px;color:#94A3B8;">Tu sistema reemplaza varias horas de consulta, conteo y seguimiento.</td>
+            <td style="padding:14px 12px 14px 0;font-weight:600;color:#fff;">Auxiliar de Inventarios</td>
+            <td style="padding:14px 12px;text-align:center;font-weight:700;color:#00D1FF;">$2.10M – $2.50M</td>
+            <td style="padding:14px 12px;color:#94A3B8;">Conteo manual, hojas de Excel, reportes lentos.</td>
+            <td style="padding:14px 0 14px 12px;color:#94A3B8;">Automatizado 24/7: Alertas automáticas y auditoría de stock sin errores.</td>
           </tr>
           <tr style="border-bottom:1px solid #1E2A4A/50;">
-            <td style="padding:14px 12px 14px 0;font-weight:600;color:#fff;">Jefe de almacén</td>
-            <td style="padding:14px 12px;text-align:center;font-weight:700;color:#00D1FF;">~$2.0M–$2.08M</td>
-            <td style="padding:14px 12px;color:#94A3B8;">Control de stock, organización, supervisión.</td>
-            <td style="padding:14px 0 14px 12px;color:#94A3B8;">Tu sistema cubre visibilidad, alertas y parte del control diario.</td>
+            <td style="padding:14px 12px 14px 0;font-weight:600;color:#fff;">Auxiliar Contable / Siigo</td>
+            <td style="padding:14px 12px;text-align:center;font-weight:700;color:#00D1FF;">$2.30M – $2.80M</td>
+            <td style="padding:14px 12px;color:#94A3B8;">Cuadre de facturas, digitación manual de ventas.</td>
+            <td style="padding:14px 0 14px 12px;color:#94A3B8;">Sincronización Inmediata: Cruce de facturas y reportes al instante vía API.</td>
+          </tr>
+          <tr style="border-bottom:1px solid #1E2A4A/50;">
+            <td style="padding:14px 12px 14px 0;font-weight:600;color:#fff;">Asesor Comercial WhatsApp</td>
+            <td style="padding:14px 12px;text-align:center;font-weight:700;color:#00D1FF;">$2.00M – $2.40M</td>
+            <td style="padding:14px 12px;color:#94A3B8;">Responde cuando puede, olvida hacer seguimiento.</td>
+            <td style="padding:14px 0 14px 12px;color:#94A3B8;">Copiloto IA: Respuestas inmediatas, seguimiento a clientes y flujo post-venta automático.</td>
           </tr>
           <tr>
-            <td style="padding:14px 12px 14px 0;font-weight:600;color:#fff;">Coordinador de operaciones</td>
-            <td style="padding:14px 12px;text-align:center;font-weight:700;color:#00D1FF;">~$2.48M–$3.23M+</td>
-            <td style="padding:14px 12px;color:#94A3B8;">Coordina procesos, supervisa flujo y atiende incidencias.</td>
-            <td style="padding:14px 0 14px 12px;color:#94A3B8;">Tu sistema asiste decisiones, elimina tareas repetitivas y ordena flujos.</td>
+            <td style="padding:14px 12px 14px 0;font-weight:600;color:#fff;">SISTEMA APC INTEGRADO</td>
+            <td style="padding:14px 12px;text-align:center;font-weight:700;color:#10B981;">Desde $490.000 /mes</td>
+            <td style="padding:14px 12px;color:#94A3B8;">Requiere contratar 3 personas ($6.40M/mes)</td>
+            <td style="padding:14px 0 14px 12px;color:#94A3B8;">Ecosistema Completo: Realiza el trabajo repetitivo de los 3 cargos por una fracción del costo.</td>
           </tr>
         </tbody>
       </table>
     </div>
     <div style="margin-top:16px;padding:12px;background:#0B1220;border-radius:8px;border:1px solid #1E2A4A/50;">
-      <div style="font-size:11px;color:#00D1FF;font-weight:700;margin-bottom:4px;">Conclusión:</div>
-      <div style="font-size:12px;color:#94A3B8;">Con planes desde <strong style="color:#fff;">$490.000/mes</strong>, tu solución cuesta <strong style="color:#10B981;">3x a 6x menos</strong> que contratar un solo cargo operativo, y reemplaza funciones de varios roles simultáneamente.</div>
+      <div style="font-size:11px;color:#00D1FF;font-weight:700;margin-bottom:4px;">💡 Regla de Oro:</div>
+      <div style="font-size:12px;color:#94A3B8;">"Sr. Cliente, usted no está comprando un software: está contratando un equipo digital multitarea por menos de la tercera parte de lo que le cuesta un solo salario mínimo en Colombia, con la diferencia de que el sistema no se enferma, no comete errores de digitación y trabaja los 365 días del año."</div>
     </div>
   </div>
 
@@ -243,6 +255,7 @@ select { background: #0B1220; border: 1px solid #1E2A4A; border-radius: 8px; col
 <script>
 let currentPlan = 'vip';
 const planPrices = { core: 490000, pro: 890000, vip: 1290000 };
+const automationRates = { s1: 0.70, s2: 0.80, s3: 0.90, s4: 0.60, s5: 0.60 };
 
 function selectPlan(plan) {
   currentPlan = plan;
@@ -272,17 +285,26 @@ function recalc() {
 
   const salary = parseInt(document.getElementById('salarySelect').value) || 1500000;
   const workHours = parseInt(document.getElementById('hoursSelect').value) || 160;
-  const hourly = salary / workHours;
+  const realCost = Math.round(salary * 1.52);
+  const hourly = realCost / workHours;
   document.getElementById('hourlyRate').textContent = '$' + Math.round(hourly).toLocaleString('es-CO');
+  document.getElementById('realCost').textContent = '$' + realCost.toLocaleString('es-CO');
 
-  const manualCost = Math.round(totalHours * hourly);
+  const automatableHours = (s1 * automationRates.s1) + (s2 * automationRates.s2) + (s3 * automationRates.s3) + (s4 * automationRates.s4) + (s5 * automationRates.s5);
+  
+  const timeSavings = Math.round(automatableHours * hourly);
+  const errorAvoidance = 250000;
+  const valueRecovery = 450000;
+  const totalValue = timeSavings + errorAvoidance + valueRecovery;
+  
   const planCost = planPrices[currentPlan];
-  const savingsValue = manualCost - planCost;
+  const netGain = totalValue - planCost;
 
-  document.getElementById('costManual').textContent = '$' + manualCost.toLocaleString('es-CO');
+  document.getElementById('timeSavings').textContent = '$' + timeSavings.toLocaleString('es-CO');
+  document.getElementById('errorAvoidance').textContent = '$' + errorAvoidance.toLocaleString('es-CO');
+  document.getElementById('valueRecovery').textContent = '$' + valueRecovery.toLocaleString('es-CO');
   document.getElementById('costAPC').textContent = '$' + planCost.toLocaleString('es-CO');
-  document.getElementById('savings').textContent = '$' + (manualCost - planCost).toLocaleString('es-CO');
-  document.getElementById('netGain').textContent = (savingsValue > 0 ? '+' : '') + '$' + savingsValue.toLocaleString('es-CO');
+  document.getElementById('netGain').textContent = (netGain > 0 ? '+' : '') + '$' + netGain.toLocaleString('es-CO');
 }
 recalc();
 </script>
