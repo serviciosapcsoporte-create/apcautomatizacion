@@ -263,7 +263,11 @@ function selectPlan(plan) {
     el.style.borderColor = '#1E2A4A';
   });
   const colors = { core: '#00D1FF', pro: '#00D1FF', vip: '#7C3AED' };
-  document.getElementById('plan' + plan.charAt(0).toUpperCase() + plan.slice(1)).style.borderColor = colors[plan];
+  const planElementIds = { core: 'planCore', pro: 'planPro', vip: 'planVIP' };
+  const el = document.getElementById(planElementIds[plan]);
+  if (el) {
+    el.style.borderColor = colors[plan];
+  }
   recalc();
 }
 
