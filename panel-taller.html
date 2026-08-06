@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Control Operativo y Financiero para Talleres de Motos en Bogotá - APC Automatización</title>
+  <meta name="description" content="Panel de control operativo y financiero para talleres de motos en Bogotá: órdenes de trabajo, inventario de repuestos, caja, rentabilidad y KPIs integrados con SIIGO. A medida, con soporte local.">
+  <meta property="og:title" content="Panel de Control Operativo y Financiero para Talleres de Motos en Bogotá">
+  <meta property="og:description" content="Controla las operaciones y las finanzas de tu taller de motos en un solo panel: órdenes, inventario, caja, rentabilidad e integración SIIGO. Hecho a medida en Bogotá.">
+  <meta property="og:image" content="https://apcautomatizacion.site/imagenes/software-taller-2.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://apcautomatizacion.site/panel-taller.html">
+  <meta name="keywords" content="panel de control para taller de motos, software para taller de motos Bogotá, control financiero taller de motos, dashboard taller de motos, panel inventario repuestos, integrar SIIGO con panel de inventario, control operativo taller mecánico">
+  <link rel="canonical" href="https://apcautomatizacion.site/panel-taller.html">
+  <meta name="geo.placename" content="Bogotá">
+  <meta name="geo.region" content="CO">
+  <meta name="geo.position" content="4.6001461;-74.1330034">
+  <meta name="ICBM" content="4.6001461, -74.1330034">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Panel de Control Operativo y Financiero para Talleres de Motos",
+    "description": "Sistema a medida para talleres de motos en Bogotá: órdenes de trabajo, inventario de repuestos, control de caja, rentabilidad y KPIs en un solo panel, integrado con SIIGO y WhatsApp.",
+    "brand": {
+      "@type": "Brand",
+      "name": "APC Automatización"
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "COP",
+      "price": "0",
+      "description": "Proyecto a medida: setup + mensualidad. Precio según alcance del taller.",
+      "url": "https://apcautomatizacion.site/panel-taller.html",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "LocalBusiness",
+        "name": "APC Automatización",
+        "telephone": "+573337450634",
+        "email": "serviciosapcsoporte@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Cra. 52c #39b-22",
+          "addressLocality": "Bogotá",
+          "addressRegion": "Bogotá D.C.",
+          "addressCountry": "CO"
+        }
+      }
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué es un panel de control operativo y financiero para taller de motos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Es un sistema a medida que centraliza las operaciones del taller (órdenes de trabajo, inventario de repuestos, caja) y su información financiera (rentabilidad, costos, ventas) en un solo lugar, con KPIs en tiempo real."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Se integra con SIIGO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. El panel se conecta con SIIGO vía API para sincronizar facturación, contabilidad e inventario de forma automática, evitando digitación manual."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo es el modelo de precio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Es un proyecto a medida: un pago de setup según el alcance del taller y una mensualidad de soporte y mantenimiento. Se cotiza tras un diagnóstico gratuito."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Para talleres de carros también sirve?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. El panel está pensado para talleres de motos y carros. Se adapta al flujo de trabajo, inventario y KPIs de cada taller en Bogotá."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="antialiased overflow-x-hidden selection:bg-cyan-400/30">
+
+<!-- VIDEO BACKGROUND -->
+<div id="videoBg" class="fixed inset-0 w-full h-full overflow-hidden pointer-events-none" style="z-index: -1">
+  <video autoplay muted loop playsinline class="w-full h-full object-cover">
+    <source src="imagenes/Servicios%20APC.mp4" type="video/mp4">
+  </video>
+  <div id="scrollOverlay" class="absolute inset-0 bg-[#080C18]" style="opacity: 0.4"></div>
+</div>
+
+<!-- WHATSAPP FLOATING -->
+<a href="https://wa.me/573337450634?text=Hola%2C%20quiero%20un%20panel%20de%20control%20para%20mi%20taller%20de%20motos" target="_blank" class="whatsapp-float" aria-label="WhatsApp APC Automatización">
+  <i data-lucide="message-circle" class="w-7 h-7"></i>
+</a>
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 backdrop-blur-xl bg-[#080C18]/80 border-b border-[#1E2A4A]">
+  <div class="mx-auto max-w-7xl px-6 h-[70px] flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <a href="index.html"><img src="imagenes/logo.webp" alt="APC Automatización Bogotá" class="h-10 w-auto"></a>
+      <div class="leading-tight">
+        <div class="font-extrabold tracking-tight text-white">APC Automatización</div>
+        <div class="text-[10px] tracking-[0.22em] text-[#00D1FF]/70">INTEGRACIÓN & RPA</div>
+      </div>
+    </div>
+    <nav class="hidden md:flex items-center gap-1">
+      <a href="index.html" class="px-3.5 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-[#111A2E]">Inicio</a>
+      <a href="servicios.html" class="px-3.5 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-[#111A2E]">Servicios</a>
+      <a href="panel-taller.html" class="px-3.5 py-2 rounded-lg text-sm text-[#00D1FF] bg-[#111A2E] font-medium">Panel Taller</a>
+      <a href="calculadora-ahorro.html" class="px-3.5 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-[#111A2E]">Ahorro</a>
+      <a href="index.html#contacto" class="px-3.5 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-[#111A2E]">Contacto</a>
+      <a href="https://wa.me/573337450634" target="_blank" class="ml-2 px-4 py-2 rounded-xl bg-[#00D1FF] text-[#080C18] text-sm font-semibold hover:bg-[#22E6FF] shadow shadow-[#00D1FF]/20">Cotizar Ahora</a>
+    </nav>
+    <button id="mb" class="md:hidden size-10 grid place-items-center rounded-xl bg-[#111A2E] border border-[#1E2A4A]">
+      <i data-lucide="menu" class="w-5 h-5 text-slate-300"></i>
+    </button>
+  </div>
+  <div id="mm" class="hidden md:hidden border-t border-[#1E2A4A] bg-[#080C18] px-4 py-3 space-y-1">
+    <a href="index.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#111A2E]">Inicio</a>
+    <a href="servicios.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#111A2E]">Servicios</a>
+    <a href="panel-taller.html" class="block px-3 py-2.5 rounded-lg text-[#00D1FF] font-medium">Panel Taller</a>
+    <a href="calculadora-ahorro.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#111A2E]">Ahorro</a>
+    <a href="index.html#contacto" class="block px-3 py-2.5 rounded-lg hover:bg-[#111A2E]">Contacto</a>
+    <a href="https://wa.me/573337450634" target="_blank" class="block mt-2 text-center px-4 py-3 rounded-xl bg-[#00D1FF] text-black font-semibold">Cotizar Ahora</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="relative min-h-[92vh] flex items-center overflow-hidden">
+  <div class="absolute inset-0 bg-[#080C18]/30"></div>
+  <div class="absolute inset-0 grid-bg opacity-[0.6]"></div>
+  <div class="absolute -top-32 -right-32 w-[700px] h-[700px] bg-[#00D1FF]/15 rounded-full blur-[140px]"></div>
+  <div class="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-violet-600/15 rounded-full blur-[130px]"></div>
+  <div class="relative mx-auto max-w-7xl px-6 py-20 w-full">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#111A2E] border border-[#1E2A4A] text-[11px] tracking-widest text-[#00D1FF]">
+        <span class="size-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        SOFTWARE PARA TALLER DE MOTOS EN BOGOTÁ
+      </div>
+      <h1 class="mt-6 text-[34px] sm:text-6xl font-black leading-[0.9] tracking-tight text-white">
+        Panel de Control<br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00D1FF] to-violet-400">Operativo y Financiero</span><br>
+        para Talleres de Motos
+      </h1>
+      <p class="mt-6 text-[17px] leading-relaxed text-slate-400 max-w-2xl mx-auto">
+        Órdenes de trabajo, inventario de repuestos, caja y rentabilidad en un solo panel. Hecho a medida para tu taller en Bogotá, integrado con SIIGO y WhatsApp.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a href="https://wa.me/573337450634?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratuito%20para%20mi%20taller%20de%20motos" target="_blank" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#00D1FF] text-[#080C18] font-semibold hover:bg-[#22E6FF] shadow-lg shadow-[#00D1FF]/20">
+          <i data-lucide="clipboard-check" class="w-4 h-4"></i> Agenda Diagnóstico Gratuito
+        </a>
+        <a href="#panel" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#111A2E] border border-[#1E2A4A] hover:bg-[#162040] text-white font-medium">
+          <i data-lucide="monitor-smartphone" class="w-4 h-4"></i> Ver el Panel
+        </a>
+      </div>
+    </div>
+
+    <!-- SCREENSHOT PREVIEW -->
+    <div id="panel" class="mt-12 max-w-5xl mx-auto">
+      <div class="rounded-[20px] border border-[#1E2A4A] bg-[#111A2E]/90 backdrop-blur shadow-2xl overflow-hidden">
+        <div class="h-11 border-b border-[#1E2A4A] flex items-center justify-between px-4 bg-[#0B1220]">
+          <div class="flex items-center gap-2">
+            <span class="size-2.5 rounded-full bg-red-500/70"></span>
+            <span class="size-2.5 rounded-full bg-yellow-400/70"></span>
+            <span class="size-2.5 rounded-full bg-emerald-400/70"></span>
+            <span class="ml-3 text-[11px] mono text-slate-500">panel-taller / control operativo y financiero</span>
+          </div>
+          <span class="text-[10px] px-2 py-1 rounded-full bg-emerald-400/10 border border-emerald-400/20 text-emerald-400 mono">LIVE</span>
+        </div>
+        <div class="p-3 sm:p-4 space-y-3">
+          <img src="imagenes/software-taller-2.png" alt="Panel de control operativo y financiero para taller de motos en Bogotá" class="w-full h-auto rounded-xl border border-[#1E2A4A]" loading="eager">
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <img src="imagenes/software-taller-1.png" alt="Módulo de inventario de repuestos del software para taller de motos" class="w-full h-auto rounded-xl border border-[#1E2A4A]" loading="lazy">
+            <img src="imagenes/software-taller-3.png" alt="Módulo de órdenes de trabajo del panel para taller de motos" class="w-full h-auto rounded-xl border border-[#1E2A4A]" loading="lazy">
+            <img src="imagenes/software-taller-4.png" alt="KPIs y reportes financieros del panel de control para taller de motos" class="w-full h-auto rounded-xl border border-[#1E2A4A]" loading="lazy">
+            <img src="imagenes/software-taller-5.png" alt="Dashboard ejecutivo del software para talleres de motos en Bogotá" class="w-full h-auto rounded-xl border border-[#1E2A4A]" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÉTRICAS CLAVE -->
+<section class="py-16 bg-[#0A1020]/80 border-t border-[#1E2A4A]">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="p-6 rounded-2xl bg-[#111A2E] border border-[#1E2A4A]">
+        <div class="text-3xl font-black text-[#00D1FF]">-70%</div>
+        <h4 class="mt-2 font-semibold text-white">Tiempo en reportes</h4>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Datos de ventas, inventario y caja actualizados al segundo. Adiós a las hojas de cálculo manuales.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-[#111A2E] border border-[#1E2A4A]">
+        <div class="text-3xl font-black text-emerald-400">-90%</div>
+        <h4 class="mt-2 font-semibold text-white">Errores de captura</h4>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">La integración con SIIGO y la automatización eliminan la digitación duplicada de facturas e inventario.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-[#111A2E] border border-[#1E2A4A]">
+        <div class="text-3xl font-black text-violet-300">+40%</div>
+        <h4 class="mt-2 font-semibold text-white">Productividad operativa</h4>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Tu equipo dedica menos tiempo a lo repetitivo y más a atender motos y clientes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUÉ INCLUYE -->
+<section class="py-24 bg-[#080C18]/80 border-t border-[#1E2A4A]">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="text-[11px] tracking-[0.2em] text-[#00D1FF] font-semibold">MÓDULOS</div>
+      <h2 class="mt-3 text-4xl font-black tracking-tight text-white">Todo lo que tu taller de motos necesita en un solo panel</h2>
+      <p class="mt-3 text-slate-400">Control operativo y financiero en tiempo real, pensado para talleres de motos en Bogotá.</p>
+    </div>
+    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="p-6 rounded-2xl bg-[#111A2E] border border-[#1E2A4A] hover:border-[#00D1FF]/30 transition-all">
+        <div class="size-11 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><i data-lucide="wrench" class="w-5 h-5 text-[#00D1FF]"></i></div>
+        <h4 class="mt-4 font-semibold text-white">Órdenes de Trabajo</h4>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Registro de entrada de motos, servicios, repuestos usados y estados de cada orden en tiempo real.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-[#111A2E] border border-[#1E2A4A] hover:border-[#00D1FF]/30 transition-all">
+        <div class="size-11 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><i data-lucide="package" class="w-5 h-5 text-[#00D1FF]"></i></div>
+        <h4 class="mt-4 font-semibold text-white">Inventario de Repuestos</h4>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Control de existencias, punto de reorden y rotación. Evita quedarte sin el repuesto que más vende tu taller.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-[#111A2E] border border-[#1E2A4A] hover:border-[#00D1FF]/30 transition-all">
+        <div class="size-11 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><i data-lucide="wallet" class="w-5 h-5 text-emerald-400"></i></div>
+        <h4 class="mt-4 font-semibold text-white">Control de Caja</h4>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Entradas, salidas y arqueo de caja diario. Sabes cuánto dinero tiene tu taller en cada momento.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-[#111A2E] border border-[#1E2A4A] hover:border-[#00D1FF]/30 transition-all">
+        <div class="size-11 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><i data-lucide="trending-up" class="w-5 h-5 text-emerald-400"></i></div>
+        <h4 class="mt-4 font-semibold text-white">Rentabilidad</h4>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Margen por servicio y por repuesto. Descubre qué trabajos dejan más plata y cuáles deberías dejar de hacer.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-[#111A2E] border border-[#1E2A4A] hover:border-[#00D1FF]/30 transition-all">
+        <div class="size-11 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><i data-lucide="layout-dashboard" class="w-5 h-5 text-[#00D1FF]"></i></div>
+        <h4 class="mt-4 font-semibold text-white">KPIs en Tiempo Real</h4>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Dashboard ejecutivo con métricas de ventas, productividad y rentabilidad para decidir con datos.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-[#111A2E] border border-[#1E2A4A] hover:border-[#00D1FF]/30 transition-all">
+        <div class="size-11 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><i data-lucide="message-circle" class="w-5 h-5 text-emerald-400"></i></div>
+        <h4 class="mt-4 font-semibold text-white">WhatsApp Automatizado</h4>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Recordatorios de mantenimiento y avisos de entrega de motos a tus clientes de forma automática.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTEGRACIÓN SIIGO -->
+<section class="py-24 bg-[#0A1020]/80 border-t border-[#1E2A4A]">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#111A2E] border border-[#1E2A4A] text-[11px] tracking-widest text-[#00D1FF]">
+          <i data-lucide="shuffle" class="w-3.5 h-3.5"></i> INTEGRACIÓN SIIGO
+        </div>
+        <h2 class="mt-4 text-4xl font-black tracking-tight text-white">Conectado con SIIGO, tu contabilidad al día sin digitación</h2>
+        <p class="mt-4 text-slate-400 leading-relaxed">
+          El panel se sincroniza con SIIGO vía API: facturas, inventario y movimientos de caja fluyen solos. Tu contadora y tu taller trabajan sobre los mismos datos, siempre actualizados.
+        </p>
+        <ul class="mt-6 space-y-3 text-sm text-slate-300">
+          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Facturación sincronizada automáticamente con SIIGO</span></li>
+          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Inventario de repuestos consistente entre sistemas</span></li>
+          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Reportes gerenciales sin exportar a Excel</span></li>
+          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Automatización con n8n y APIs para tareas repetitivas</span></li>
+        </ul>
+        <a href="https://wa.me/573337450634?text=Quiero%20saber%20m%C3%A1s%20de%20la%20integraci%C3%B3n%20del%20panel%20con%20SIIGO" target="_blank" class="mt-8 inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#00D1FF] text-[#080C18] font-semibold hover:bg-[#22E6FF] shadow-lg shadow-[#00D1FF]/20">
+          <i data-lucide="message-circle" class="w-4 h-4"></i> Consultar por WhatsApp
+        </a>
+      </div>
+      <div class="rounded-2xl border border-[#1E2A4A] bg-[#111A2E] overflow-hidden">
+        <img src="imagenes/software-taller-1.png" alt="Panel de inventario de repuestos integrado con SIIGO para taller de motos" class="w-full h-auto object-cover" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section class="py-24 bg-[#080C18]/80 border-t border-[#1E2A4A]">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="text-[11px] tracking-[0.2em] text-[#00D1FF] font-semibold">PROCESO</div>
+      <h2 class="mt-3 text-4xl font-black tracking-tight text-white">Cómo funciona el proyecto a medida</h2>
+      <p class="mt-3 text-slate-400">Tu panel se construye según cómo trabaja tu taller, no al revés.</p>
+    </div>
+    <div class="mt-12 grid md:grid-cols-3 gap-8 items-start">
+      <div class="text-center">
+        <div class="mx-auto size-16 rounded-2xl bg-[#00D1FF]/10 border border-[#00D1FF]/20 grid place-items-center text-2xl font-black text-[#00D1FF]">1</div>
+        <h4 class="mt-5 font-semibold text-white text-lg">Diagnóstico gratuito</h4>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Analizamos cómo funciona tu taller de motos hoy: procesos, inventario, caja y qué quieres mejorar. Sin compromiso.</p>
+      </div>
+      <div class="text-center">
+        <div class="mx-auto size-16 rounded-2xl bg-violet-500/10 border border-violet-500/20 grid place-items-center text-2xl font-black text-violet-300">2</div>
+        <h4 class="mt-5 font-semibold text-white text-lg">Panel a medida</h4>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Diseñamos e implementamos tu panel: órdenes, inventario, caja y KPIs, integrado con SIIGO y WhatsApp.</p>
+      </div>
+      <div class="text-center">
+        <div class="mx-auto size-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 grid place-items-center text-2xl font-black text-emerald-400">3</div>
+        <h4 class="mt-5 font-semibold text-white text-lg">Soporte y mejora continua</h4>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Mensualidad de soporte y monitoreo. Ajustamos el panel conforme tu taller crece. Soporte local en Bogotá.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTADOS -->
+<section class="py-24 bg-[#0A1020]/80 border-t border-[#1E2A4A]">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="text-[11px] tracking-[0.2em] text-[#00D1FF] font-semibold">RESULTADOS</div>
+      <h2 class="mt-3 text-4xl font-black tracking-tight text-white">Resultados medibles en talleres de motos en Bogotá</h2>
+      <p class="mt-3 text-slate-400">Lo que logran los talleres que operan con un panel de control centralizado.</p>
+    </div>
+    <div class="mt-12 grid md:grid-cols-2 gap-6">
+      <div class="rounded-2xl border border-[#1E2A4A] bg-[#111A2E] overflow-hidden">
+        <img src="imagenes/software-taller-4.png" alt="KPIs financieros del panel de control para taller de motos en Bogotá" class="w-full h-auto object-cover" loading="lazy">
+      </div>
+      <div class="rounded-2xl border border-[#1E2A4A] bg-[#111A2E] overflow-hidden">
+        <img src="imagenes/software-taller-5.png" alt="Dashboard ejecutivo del software para taller de motos" class="w-full h-auto object-cover" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRECIO -->
+<section class="py-24 bg-[#080C18]/80 border-t border-[#1E2A4A]">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <div class="text-[11px] tracking-[0.2em] text-[#00D1FF] font-semibold">PRECIO</div>
+      <h2 class="mt-3 text-4xl font-black tracking-tight text-white">Proyecto a medida: setup + mensualidad</h2>
+      <p class="mt-3 text-slate-400">Cada taller es distinto. El precio depende del alcance del panel, los módulos y las integraciones que necesites. Cotizamos tras el diagnóstico gratuito.</p>
+    </div>
+    <div class="mt-10 max-w-4xl mx-auto">
+      <div class="rounded-[20px] border border-[#00D1FF]/30 bg-gradient-to-b from-[#00D1FF]/5 to-[#111A2E] p-8 text-center shadow-[0_0_0_1px_rgba(0,209,255,0.08)]">
+        <div class="text-[11px] px-3 py-1.5 rounded-full bg-[#00D1FF]/10 border border-[#00D1FF]/20 text-[#00D1FF] mono tracking-widest inline-block">PANEL DE CONTROL TALLER DE MOTOS</div>
+        <div class="mt-6 grid sm:grid-cols-2 gap-6 text-left">
+          <div class="p-5 rounded-xl bg-[#0B1220] border border-[#1E2A4A]">
+            <div class="text-[11px] tracking-[0.2em] text-[#00D1FF] font-semibold">SETUP</div>
+            <div class="mt-2 text-2xl font-black text-white">A cotizar <span class="text-xs font-medium text-slate-500">según alcance</span></div>
+            <p class="mt-2 text-xs text-slate-400 leading-relaxed">Implementación del panel, integración SIIGO, WhatsApp y capacitación de tu equipo.</p>
+          </div>
+          <div class="p-5 rounded-xl bg-[#0B1220] border border-[#1E2A4A]">
+            <div class="text-[11px] tracking-[0.2em] text-emerald-400 font-semibold">MENSUAL</div>
+            <div class="mt-2 text-2xl font-black text-white">Soporte <span class="text-xs font-medium text-slate-500">+ mantenimiento</span></div>
+            <p class="mt-2 text-xs text-slate-400 leading-relaxed">Monitoreo, ajustes y mejoras continuas. Soporte local en Bogotá.</p>
+          </div>
+        </div>
+        <a href="https://wa.me/573337450634?text=Hola%2C%20quiero%20cotizar%20el%20panel%20de%20control%20para%20mi%20taller%20de%20motos" target="_blank" class="mt-8 inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#00D1FF] text-[#080C18] font-semibold hover:bg-[#22E6FF] shadow-lg shadow-[#00D1FF]/20">
+          <i data-lucide="calculator" class="w-5 h-5"></i> Cotizar mi panel
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-20 bg-[#0A1020]/80 border-t border-[#1E2A4A]">
+  <div class="mx-auto max-w-3xl px-6">
+    <div class="text-center">
+      <div class="text-[11px] tracking-[0.2em] text-[#00D1FF] font-semibold">FAQ</div>
+      <h2 class="mt-3 text-3xl font-black tracking-tight text-white">Preguntas frecuentes</h2>
+    </div>
+    <div class="mt-8 space-y-3">
+      <details class="group rounded-2xl border border-[#1E2A4A] bg-[#111A2E] p-5 open:border-[#00D1FF]/30">
+        <summary class="flex items-center justify-between cursor-pointer list-none font-semibold text-white">
+          ¿Qué es un panel de control operativo y financiero para taller de motos?
+          <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition-transform shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-sm text-slate-400 leading-relaxed">Es un sistema a medida que centraliza las operaciones del taller (órdenes de trabajo, inventario de repuestos, caja) y su información financiera (rentabilidad, costos, ventas) en un solo lugar, con KPIs en tiempo real.</p>
+      </details>
+      <details class="group rounded-2xl border border-[#1E2A4A] bg-[#111A2E] p-5 open:border-[#00D1FF]/30">
+        <summary class="flex items-center justify-between cursor-pointer list-none font-semibold text-white">
+          ¿Se integra con SIIGO?
+          <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition-transform shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-sm text-slate-400 leading-relaxed">Sí. El panel se conecta con SIIGO vía API para sincronizar facturación, contabilidad e inventario de forma automática, evitando digitación manual.</p>
+      </details>
+      <details class="group rounded-2xl border border-[#1E2A4A] bg-[#111A2E] p-5 open:border-[#00D1FF]/30">
+        <summary class="flex items-center justify-between cursor-pointer list-none font-semibold text-white">
+          ¿Cómo es el modelo de precio?
+          <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition-transform shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-sm text-slate-400 leading-relaxed">Es un proyecto a medida: un pago de setup según el alcance del taller y una mensualidad de soporte y mantenimiento. Se cotiza tras un diagnóstico gratuito.</p>
+      </details>
+      <details class="group rounded-2xl border border-[#1E2A4A] bg-[#111A2E] p-5 open:border-[#00D1FF]/30">
+        <summary class="flex items-center justify-between cursor-pointer list-none font-semibold text-white">
+          ¿Para talleres de carros también sirve?
+          <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition-transform shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-sm text-slate-400 leading-relaxed">Sí. El panel está pensado para talleres de motos y carros. Se adapta al flujo de trabajo, inventario y KPIs de cada taller en Bogotá.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="py-20 bg-[#080C18]/80 border-t border-[#1E2A4A]">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-4xl font-black tracking-tight text-white">¿Listo para tener control total de tu taller de motos?</h2>
+      <p class="mt-3 text-slate-400">Te respondemos en menos de 15 minutos. Agenda tu diagnóstico gratuito en Bogotá.</p>
+      <div class="mt-6 flex flex-wrap justify-center gap-3">
+        <a href="https://wa.me/573337450634?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratuito%20para%20mi%20taller%20de%20motos" target="_blank" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#00D1FF] text-[#080C18] font-semibold hover:bg-[#22E6FF] shadow-lg shadow-[#00D1FF]/20">
+          <i data-lucide="message-circle" class="w-4 h-4"></i> Escríbenos a WhatsApp
+        </a>
+        <a href="index.html" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#111A2E] border border-[#1E2A4A] hover:bg-[#162040] text-white font-medium">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i> Volver al inicio
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-[#050914]/90 border-t border-[#1E2A4A] py-10">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="flex flex-col md:flex-row justify-between gap-4 text-[12px] text-slate-500">
+      <div>© 2026 APC Automatización - Todos los derechos reservados.</div>
+      <div>Panel de control para talleres · Integración SIIGO · Automatización - <span class="text-[#00D1FF]">Bogotá</span></div>
+    </div>
+    <div class="mt-6 flex justify-center md:justify-end gap-4">
+      <a href="https://www.facebook.com/alejandropiraquiveapc" target="_blank" class="size-9 rounded-xl bg-[#111A2E] border border-[#1E2A4A] grid place-items-center hover:bg-blue-950/40 hover:border-blue-500/40 transition-all group">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 text-slate-400 group-hover:text-blue-400"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/serviciosapc" target="_blank" class="size-9 rounded-xl bg-[#111A2E] border border-[#1E2A4A] grid place-items-center hover:bg-pink-950/40 hover:border-pink-500/40 transition-all group">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 text-slate-400 group-hover:text-pink-400"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <a href="https://wa.me/573337450634" target="_blank" class="size-9 rounded-xl bg-[#111A2E] border border-[#1E2A4A] grid place-items-center hover:bg-emerald-950/40 hover:border-emerald-500/40 transition-all group"><i data-lucide="message-circle" class="w-4 h-4 text-slate-400 group-hover:text-emerald-400"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>
