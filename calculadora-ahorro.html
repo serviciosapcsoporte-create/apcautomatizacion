@@ -55,6 +55,7 @@ select { background: #0B1220; border: 1px solid #1E2A4A; border-radius: 8px; col
       <a href="servicios.html" class="px-3.5 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-[#111A2E]">Servicios</a>
       <a href="index.html#servicios" class="px-3.5 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-[#111A2E]">Planes</a>
       <a href="calculadora-ahorro.html" class="px-3.5 py-2 rounded-lg text-sm text-[#00D1FF] bg-[#111A2E] font-medium">Ahorro</a>
+      <a href="panel-taller.html" class="px-3.5 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-[#111A2E]">Panel Taller</a>
       <a href="index.html#contacto" class="px-3.5 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-[#111A2E]">Contacto</a>
       <a href="https://wa.me/573337450634" target="_blank" class="ml-2 px-4 py-2 rounded-xl bg-[#00D1FF] text-[#080C18] text-sm font-semibold hover:bg-[#22E6FF]">Cotizar Ahora</a>
     </nav>
@@ -65,6 +66,7 @@ select { background: #0B1220; border: 1px solid #1E2A4A; border-radius: 8px; col
     <a href="servicios.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#111A2E]">Servicios</a>
     <a href="index.html#servicios" class="block px-3 py-2.5 rounded-lg hover:bg-[#111A2E]">Planes</a>
     <a href="calculadora-ahorro.html" class="block px-3 py-2.5 rounded-lg text-[#00D1FF] font-medium">Ahorro</a>
+    <a href="panel-taller.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#111A2E]">Panel Taller</a>
     <a href="index.html#contacto" class="block px-3 py-2.5 rounded-lg hover:bg-[#111A2E]">Contacto</a>
     <a href="https://wa.me/573337450634" target="_blank" class="block mt-2 text-center px-4 py-3 rounded-xl bg-[#00D1FF] text-black font-semibold">Cotizar Ahora</a>
   </div>
@@ -82,8 +84,8 @@ select { background: #0B1220; border: 1px solid #1E2A4A; border-radius: 8px; col
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
     <div class="card">
-      <div style="font-size:10px;color:#64748B;letter-spacing:0.1em;font-weight:600;">COSTO EMPLEADO</div>
-      <label style="font-size:12px;color:#94A3B8;margin-top:4px;display:block;">Salario mensual promedio de tu empleado:</label>
+      <div style="font-size:10px;color:#64748B;letter-spacing:0.1em;font-weight:600;">VALOR DEL TIEMPO</div>
+      <label style="font-size:12px;color:#94A3B8;margin-top:4px;display:block;">Costo mensual del tiempo que tu equipo invierte en estas tareas:</label>
       <select id="salarySelect" onchange="recalc()">
         <option value="1300000">$1.300.000 /mes</option>
         <option value="1500000" selected>$1.500.000 /mes</option>
@@ -92,7 +94,7 @@ select { background: #0B1220; border: 1px solid #1E2A4A; border-radius: 8px; col
         <option value="2800000">$2.800.000 /mes</option>
       </select>
       <div class="neutral" style="margin-top:4px;">Valor hora real (con prestaciones): <strong id="hourlyRate" style="color:#fff;">$14.250</strong></div>
-      <div class="neutral" style="margin-top:2px;font-size:11px;">Costo total empresa: <strong id="realCost" style="color:#fff;">$2.280.000</strong> /mes</div>
+      <div class="neutral" style="margin-top:2px;font-size:11px;">Costo total del tiempo: <strong id="realCost" style="color:#fff;">$2.280.000</strong> /mes</div>
     </div>
     <div class="card" style="display:flex;flex-direction:column;justify-content:center;">
       <div style="font-size:10px;color:#64748B;letter-spacing:0.1em;font-weight:600;">HORAS LABORALES / MES</div>
@@ -205,48 +207,43 @@ select { background: #0B1220; border: 1px solid #1E2A4A; border-radius: 8px; col
   </div>
 
   <div class="card" style="margin-top:24px;">
-    <div style="font-size:10px;color:#64748B;letter-spacing:0.1em;font-weight:600;margin-bottom:16px;">COMPARATIVA DE MERCADO: TU SISTEMA VS. CARGOS REALES</div>
+    <div style="font-size:10px;color:#64748B;letter-spacing:0.1em;font-weight:600;margin-bottom:16px;">TAREAS MANUALES VS. AUTOMATIZADAS CON APC</div>
     <div style="overflow-x:auto;">
       <table style="width:100%;border-collapse:collapse;font-size:13px;">
         <thead>
           <tr style="border-bottom:2px solid #1E2A4A;text-align:left;">
-            <th style="padding:12px 12px 12px 0;color:#64748B;font-size:10px;letter-spacing:0.1em;font-weight:600;">Cargo equivalente</th>
-            <th style="padding:12px 12px;color:#64748B;font-size:10px;letter-spacing:0.1em;font-weight:600;text-align:center;">Salario + Prestaciones / Mes</th>
-            <th style="padding:12px 12px;color:#64748B;font-size:10px;letter-spacing:0.1em;font-weight:600;">Lo que hace una persona</th>
-            <th style="padding:12px 0 12px 12px;color:#64748B;font-size:10px;letter-spacing:0.1em;font-weight:600;">Lo que hace tu Sistema APC</th>
+            <th style="padding:12px 12px 12px 0;color:#64748B;font-size:10px;letter-spacing:0.1em;font-weight:600;">Tarea</th>
+            <th style="padding:12px 12px;color:#64748B;font-size:10px;letter-spacing:0.1em;font-weight:600;">Hoy, a mano</th>
+            <th style="padding:12px 0 12px 12px;color:#64748B;font-size:10px;letter-spacing:0.1em;font-weight:600;">Con IA o sistema APC</th>
           </tr>
         </thead>
         <tbody>
           <tr style="border-bottom:1px solid #1E2A4A/50;">
-            <td style="padding:14px 12px 14px 0;font-weight:600;color:#fff;">Auxiliar de Inventarios</td>
-            <td style="padding:14px 12px;text-align:center;font-weight:700;color:#00D1FF;">$2.10M – $2.50M</td>
+            <td style="padding:14px 12px 14px 0;font-weight:600;color:#fff;">Inventario</td>
             <td style="padding:14px 12px;color:#94A3B8;">Conteo manual, hojas de Excel, reportes lentos.</td>
             <td style="padding:14px 0 14px 12px;color:#94A3B8;">Automatizado 24/7: Alertas automáticas y auditoría de stock sin errores.</td>
           </tr>
           <tr style="border-bottom:1px solid #1E2A4A/50;">
-            <td style="padding:14px 12px 14px 0;font-weight:600;color:#fff;">Auxiliar Contable / Siigo</td>
-            <td style="padding:14px 12px;text-align:center;font-weight:700;color:#00D1FF;">$2.30M – $2.80M</td>
+            <td style="padding:14px 12px 14px 0;font-weight:600;color:#fff;">Cuadre contable / SIIGO</td>
             <td style="padding:14px 12px;color:#94A3B8;">Cuadre de facturas, digitación manual de ventas.</td>
             <td style="padding:14px 0 14px 12px;color:#94A3B8;">Sincronización Inmediata: Cruce de facturas y reportes al instante vía API.</td>
           </tr>
           <tr style="border-bottom:1px solid #1E2A4A/50;">
-            <td style="padding:14px 12px 14px 0;font-weight:600;color:#fff;">Asesor Comercial WhatsApp</td>
-            <td style="padding:14px 12px;text-align:center;font-weight:700;color:#00D1FF;">$2.00M – $2.40M</td>
+            <td style="padding:14px 12px 14px 0;font-weight:600;color:#fff;">Atención y seguimiento a clientes</td>
             <td style="padding:14px 12px;color:#94A3B8;">Responde cuando puede, olvida hacer seguimiento.</td>
             <td style="padding:14px 0 14px 12px;color:#94A3B8;">Copiloto IA: Respuestas inmediatas, seguimiento a clientes y flujo post-venta automático.</td>
           </tr>
           <tr>
-            <td style="padding:14px 12px 14px 0;font-weight:600;color:#fff;">SISTEMA APC INTEGRADO</td>
-            <td style="padding:14px 12px;text-align:center;font-weight:700;color:#10B981;">Desde $490.000 /mes</td>
-            <td style="padding:14px 12px;color:#94A3B8;">Requiere contratar 3 personas ($6.40M/mes)</td>
-            <td style="padding:14px 0 14px 12px;color:#94A3B8;">Ecosistema Completo: Realiza el trabajo repetitivo de los 3 cargos por una fracción del costo.</td>
+            <td style="padding:14px 12px 14px 0;font-weight:600;color:#fff;">TIEMPO DE TU EQUIPO</td>
+            <td style="padding:14px 12px;color:#94A3B8;">Horas perdidas en tareas repetitivas cada mes.</td>
+            <td style="padding:14px 0 14px 12px;color:#94A3B8;">IA que acompaña a tu equipo: automatiza lo repetitivo y les devuelve horas para lo importante.</td>
           </tr>
         </tbody>
       </table>
     </div>
     <div style="margin-top:16px;padding:12px;background:#0B1220;border-radius:8px;border:1px solid #1E2A4A/50;">
-      <div style="font-size:11px;color:#00D1FF;font-weight:700;margin-bottom:4px;">💡 Regla de Oro:</div>
-      <div style="font-size:12px;color:#94A3B8;">"Sr. Cliente, usted no está comprando un software: está contratando un equipo digital multitarea por menos de la tercera parte de lo que le cuesta un solo salario mínimo en Colombia, con la diferencia de que el sistema no se enferma, no comete errores de digitación y trabaja los 365 días del año."</div>
+      <div style="font-size:11px;color:#00D1FF;font-weight:700;margin-bottom:4px;">💡 Cómo te acompañamos:</div>
+      <div style="font-size:12px;color:#94A3B8;">"Sr. Cliente, no se trata de reemplazar a tu equipo: te acompañamos a montar una IA que les ayuda a ahorrar tiempo, o un sistema que hace el trabajo repetitivo por si no quieres contratar a alguien para eso. Tu personal se enfoca en lo que realmente agrega valor."</div>
     </div>
   </div>
 
