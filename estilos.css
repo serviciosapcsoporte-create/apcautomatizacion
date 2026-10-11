@@ -63,3 +63,123 @@ body {
   border-radius: 12px;
   margin-bottom: 12px;
 }
+
+/* ============================================================
+   Apple-inspired design system (fluid interfaces)
+   - response on press, size-specific typography, scroll reveal,
+     material tuning, reduced motion / transparency / contrast
+   ============================================================ */
+
+:root {
+  --apc-cyan: #00D1FF;
+  --apc-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --apc-dur: 0.5s;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  scroll-padding-top: 84px; /* keep anchors clear of the sticky header */
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography: size-specific tracking + leading (never one fixed value) */
+h1, h2, h3, h4 {
+  font-optical-sizing: auto;
+}
+h1, h2 {
+  letter-spacing: -0.02em;
+}
+p {
+  text-wrap: pretty;
+}
+
+/* Response: immediate feedback on the press, not on release */
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+a:active,
+button:active {
+  filter: brightness(0.92);
+}
+
+/* Craft: keyboard-visible focus, invisible for mouse */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--apc-cyan);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* Scroll reveal (progressive enhancement: classes added by js/main.js) */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity var(--apc-dur) var(--apc-ease) var(--reveal-delay, 0ms),
+    transform var(--apc-dur) var(--apc-ease) var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Card glow: anchors + depth on hover (material arriving, not just recoloring) */
+.card-glow {
+  transition:
+    transform 0.3s var(--apc-ease),
+    box-shadow 0.3s var(--apc-ease),
+    border-color 0.3s var(--apc-ease);
+}
+.card-glow:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 50px -12px rgba(0, 209, 255, 0.35);
+}
+
+/* Material tuning for floating chrome (header) */
+.material {
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+}
+
+/* Reduced motion: gentle cross-fade instead of slide/spring */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Reduced transparency: frostier, more solid surfaces */
+@media (prefers-reduced-transparency: reduce) {
+  header,
+  .material {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+}
+
+/* More contrast: guarantee legibility of revealed content */
+@media (prefers-contrast: more) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

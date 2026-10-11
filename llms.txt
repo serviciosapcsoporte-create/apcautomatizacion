@@ -1,0 +1,33 @@
+# APC Automatización
+
+> Socio tecnológico de automatización para pymes y medianas empresas en Bogotá y la Sabana. Integramos los sistemas de tu empresa (Siigo, CRM, WhatsApp, Google Sheets, APIs REST vía n8n), construimos dashboards ejecutivos en tiempo real y aplicamos IA/RPA para reducir el trabajo manual y los errores. No somos una empresa de seguridad: vendemos orden, datos y eficiencia.
+
+Sitio: https://apcautomatizacion.site/
+Contacto: +57 333 745 0634 | serviciosapcsoporte@gmail.com
+Ubicación: Cra. 52c #39b-22, Bogotá, Colombia
+Fundador: Alejandro Piraquive
+
+## Servicios
+- Integración de Sistemas (Siigo, CRM, WhatsApp, Google Sheets, APIs REST, n8n)
+- Dashboard Ejecutivo en tiempo real (operación, ventas y finanzas)
+- Onboarding Digital de clientes
+- CRM post-venta automatizado
+- Módulo Central de Flujos (n8n)
+- Automatización RPA de procesos repetitivos
+- Copiloto IA entrenado con los datos de la empresa
+
+## Planes
+- CORE — $3.500.000 COP setup + $490.000 COP/mes: Dashboard Ejecutivo, Integración de Sistemas, Onboarding Digital.
+- PRO — $6.900.000 COP setup + $890.000 COP/mes: todo lo del Core + CRM post-venta + Módulo Central de Flujos.
+- VIP COPILOTO IA — setup a consultar + $1.290.000 COP/mes: todo lo del Pro + Copiloto IA + Automatización RPA.
+
+## Páginas
+- [Inicio](https://apcautomatizacion.site/)
+- [Servicios](https://apcautomatizacion.site/servicios.html)
+- [Panel Taller — software para talleres](https://apcautomatizacion.site/panel-taller.html)
+- [Calculadora de ahorro](https://apcautomatizacion.site/calculadora-ahorro.html)
+- [Cotización Valdiesel](https://apcautomatizacion.site/cotizacion-valdiesel.html)
+
+## Nota de marca
+- Posicionamiento permitido: automatización de procesos, integración de sistemas, datos y dashboards, eficiencia operativa, IA aplicada a negocio.
+- Posicionamiento prohibido: "empresa de seguridad", "protección / vigilancia", lenguaje de miedo o alarma.
