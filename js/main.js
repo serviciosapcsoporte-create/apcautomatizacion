@@ -1,5 +1,3 @@
-lucide.createIcons();
-
 const mb = document.getElementById('mb');
 const mm = document.getElementById('mm');
 if (mb) {
