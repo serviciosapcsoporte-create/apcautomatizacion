@@ -47,13 +47,19 @@ body {
   display: grid;
   place-items: center;
   box-shadow: 0 8px 32px rgba(16, 185, 129, 0.3);
-  transition: all 0.2s ease;
+  transition: transform 160ms var(--apc-ease), box-shadow 200ms var(--apc-ease), background-color 160ms ease;
 }
 
-.whatsapp-float:hover {
-  background: #34d399;
-  transform: scale(1.1);
-  box-shadow: 0 12px 40px rgba(16, 185, 129, 0.4);
+.whatsapp-float:active {
+  transform: scale(0.97);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .whatsapp-float:hover {
+    background: #34d399;
+    transform: scale(1.05);
+    box-shadow: 0 12px 40px rgba(16, 185, 129, 0.4);
+  }
 }
 
 .card-img {
@@ -102,10 +108,15 @@ p {
 /* Response: immediate feedback on the press, not on release */
 a, button {
   -webkit-tap-highlight-color: transparent;
+  transition: transform 160ms var(--apc-ease);
 }
 a:active,
 button:active {
-  filter: brightness(0.92);
+  filter: brightness(0.95);
+}
+a:active:not(.whatsapp-float),
+button:active {
+  transform: scale(0.97);
 }
 
 /* Craft: keyboard-visible focus, invisible for mouse */
@@ -124,7 +135,6 @@ button:focus-visible,
   transition:
     opacity var(--apc-dur) var(--apc-ease) var(--reveal-delay, 0ms),
     transform var(--apc-dur) var(--apc-ease) var(--reveal-delay, 0ms);
-  will-change: opacity, transform;
 }
 .reveal.is-visible {
   opacity: 1;
@@ -134,13 +144,15 @@ button:focus-visible,
 /* Card glow: anchors + depth on hover (material arriving, not just recoloring) */
 .card-glow {
   transition:
-    transform 0.3s var(--apc-ease),
-    box-shadow 0.3s var(--apc-ease),
-    border-color 0.3s var(--apc-ease);
+    transform 200ms var(--apc-ease),
+    box-shadow 200ms var(--apc-ease),
+    border-color 200ms var(--apc-ease);
 }
-.card-glow:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 50px -12px rgba(0, 209, 255, 0.35);
+@media (hover: hover) and (pointer: fine) {
+  .card-glow:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 50px -12px rgba(0, 209, 255, 0.35);
+  }
 }
 
 /* Material tuning for floating chrome (header) */

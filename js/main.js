@@ -20,7 +20,7 @@ if (overlay) {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduceMotion || !('IntersectionObserver' in window)) return;
 
-  const targets = document.querySelectorAll('section > div.relative, section > div.mx-auto');
+  const targets = document.querySelectorAll('section:not(#hero) > div.mx-auto');
   if (!targets.length) return;
 
   targets.forEach(function (el, i) {
