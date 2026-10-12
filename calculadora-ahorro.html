@@ -8,8 +8,9 @@
 <meta name="keywords" content="ahorro automatización Bogotá, calculadora ROI, automatización procesos, dashboard ejecutivo">
 <link rel="canonical" href="https://apcautomatizacion.site/calculadora-ahorro.html">
 <link rel="stylesheet" href="estilos.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="tailwind.generated.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -47,7 +48,7 @@ select { background: #0B1220; border: 1px solid #1E2A4A; border-radius: 8px; col
   <div class="absolute inset-0 bg-[#080C18]" style="opacity:0.4"></div>
 </div>
 
-<a href="https://wa.me/573337450634" target="_blank" class="whatsapp-float" aria-label="WhatsApp"><i data-lucide="message-circle" class="w-7 h-7"></i></a>
+<a href="https://wa.me/573337450634" target="_blank" class="whatsapp-float" aria-label="WhatsApp"><svg aria-hidden="true" focusable="false" class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /> </svg></a>
 
 <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#080C18]/80 border-b border-[#1E2A4A]">
   <div class="mx-auto max-w-7xl px-6 h-[70px] flex items-center justify-between">
@@ -67,7 +68,7 @@ select { background: #0B1220; border: 1px solid #1E2A4A; border-radius: 8px; col
       <a href="index.html#contacto" class="px-3.5 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-[#111A2E]">Contacto</a>
       <a href="https://wa.me/573337450634" target="_blank" class="ml-2 px-4 py-2 rounded-xl bg-[#00D1FF] text-[#080C18] text-sm font-semibold hover:bg-[#22E6FF]">Cotizar Ahora</a>
     </nav>
-    <button id="mb" class="md:hidden size-10 grid place-items-center rounded-xl bg-[#111A2E] border border-[#1E2A4A]"><i data-lucide="menu" class="w-5 h-5 text-slate-300"></i></button>
+    <button id="mb" class="md:hidden size-10 grid place-items-center rounded-xl bg-[#111A2E] border border-[#1E2A4A]"><svg aria-hidden="true" focusable="false" class="w-5 h-5 text-slate-300" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M4 5h16" /> <path d="M4 12h16" /> <path d="M4 19h16" /> </svg></button>
   </div>
   <div id="mm" class="hidden md:hidden border-t border-[#1E2A4A] bg-[#080C18] px-4 py-3 space-y-1">
     <a href="index.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#111A2E]">Inicio</a>
@@ -84,7 +85,7 @@ select { background: #0B1220; border: 1px solid #1E2A4A; border-radius: 8px; col
 
   <div style="text-align:center;margin-bottom:32px;">
     <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#111A2E] border border-[#1E2A4A] text-[11px] tracking-widest text-[#00D1FF]">
-      <i data-lucide="calculator" class="w-3.5 h-3.5"></i> CALCULADORA DE AHORRO
+      <svg aria-hidden="true" focusable="false" class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="16" height="20" x="4" y="2" rx="2" /> <line x1="8" x2="16" y1="6" y2="6" /> <line x1="16" x2="16" y1="14" y2="18" /> <path d="M16 10h.01" /> <path d="M12 10h.01" /> <path d="M8 10h.01" /> <path d="M12 14h.01" /> <path d="M8 14h.01" /> <path d="M12 18h.01" /> <path d="M8 18h.01" /> </svg> CALCULADORA DE AHORRO
     </div>
     <h1 style="margin-top:16px;">¿Cuánto vale tu <span>tiempo perdido</span>?</h1>
     <p class="subtitle">Ajusta las horas que tu empresa gasta en tareas manuales y descubre cuánto puedes ahorrar con APC Automatización.</p>
@@ -318,6 +319,5 @@ function recalc() {
 recalc();
 </script>
 <script src="js/main.js"></script>
-<script>lucide.createIcons();</script>
 </body>
 </html>

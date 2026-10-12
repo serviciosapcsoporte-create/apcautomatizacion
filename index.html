@@ -17,9 +17,10 @@
   <meta name="geo.position" content="4.6001461;-74.1330034">
   <meta name="ICBM" content="4.6001461, -74.1330034">
   <link rel="stylesheet" href="estilos.css">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tailwind.generated.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -127,7 +128,7 @@
 
 <!-- WHATSAPP FLOATING -->
 <a href="https://wa.me/573337450634" target="_blank" class="whatsapp-float" aria-label="WhatsApp APC Automatización">
-  <i data-lucide="message-circle" class="w-7 h-7"></i>
+  <svg aria-hidden="true" focusable="false" class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /> </svg>
 </a>
 
 <!-- HEADER -->
@@ -151,7 +152,7 @@
       <a href="https://wa.me/573337450634" target="_blank" class="ml-2 px-4 py-2 rounded-xl bg-[#00D1FF] text-[#080C18] text-sm font-semibold hover:bg-[#22E6FF] shadow shadow-[#00D1FF]/20">Cotizar Ahora</a>
     </nav>
     <button id="mb" class="md:hidden size-10 grid place-items-center rounded-xl bg-[#111A2E] border border-[#1E2A4A]">
-      <i data-lucide="menu" class="w-5 h-5 text-slate-300"></i>
+      <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-slate-300" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M4 5h16" /> <path d="M4 12h16" /> <path d="M4 19h16" /> </svg>
     </button>
   </div>
   <div id="mm" class="hidden md:hidden border-t border-[#1E2A4A] bg-[#080C18] px-4 py-3 space-y-1">
@@ -188,10 +189,10 @@
       </p>
       <div class="mt-8 flex flex-wrap justify-center gap-3">
         <a href="https://wa.me/573337450634" target="_blank" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#00D1FF] text-[#080C18] font-semibold hover:bg-[#22E6FF] shadow-lg shadow-[#00D1FF]/20">
-          <i data-lucide="clipboard-check" class="w-4 h-4"></i> Agenda Diagnóstico Gratuito
+          <svg aria-hidden="true" focusable="false" class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="8" height="4" x="8" y="2" rx="1" ry="1" /> <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" /> <path d="m9 14 2 2 4-4" /> </svg> Agenda Diagnóstico Gratuito
         </a>
         <a href="#servicios" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#111A2E] border border-[#1E2A4A] hover:bg-[#162040] text-white font-medium">
-          <i data-lucide="layers" class="w-4 h-4"></i> Ver servicios y planes
+          <svg aria-hidden="true" focusable="false" class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" /> <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" /> <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" /> </svg> Ver servicios y planes
         </a>
       </div>
     </div>
@@ -212,7 +213,7 @@
           <div class="grid md:grid-cols-3 gap-6">
             <div class="p-4 rounded-xl bg-[#0B1220] border border-[#1E2A4A]">
               <div class="flex items-center gap-2 text-[12px] text-slate-400">
-                <i data-lucide="refresh-cw" class="w-3.5 h-3.5 text-[#00D1FF]"></i> CRM sync
+                <svg aria-hidden="true" focusable="false" class="w-3.5 h-3.5 text-[#00D1FF]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" /> <path d="M21 3v5h-5" /> <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" /> <path d="M8 16H3v5" /> </svg> CRM sync
               </div>
               <div class="mt-2 flex items-baseline gap-1">
                 <span class="text-2xl font-black text-white">HubSpot</span>
@@ -221,7 +222,7 @@
             </div>
             <div class="p-4 rounded-xl bg-[#0B1220] border border-[#1E2A4A]">
               <div class="flex items-center gap-2 text-[12px] text-slate-400">
-                <i data-lucide="file-text" class="w-3.5 h-3.5 text-[#00D1FF]"></i> Facturación
+                <svg aria-hidden="true" focusable="false" class="w-3.5 h-3.5 text-[#00D1FF]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" /> <path d="M14 2v5a1 1 0 0 0 1 1h5" /> <path d="M10 9H8" /> <path d="M16 13H8" /> <path d="M16 17H8" /> </svg> Facturación
               </div>
               <div class="mt-2 flex items-baseline gap-1">
                 <span class="text-2xl font-black text-white">Siigo API</span>
@@ -230,7 +231,7 @@
             </div>
             <div class="p-4 rounded-xl bg-[#0B1220] border border-[#1E2A4A]">
               <div class="flex items-center gap-2 text-[12px] text-slate-400">
-                <i data-lucide="cpu" class="w-3.5 h-3.5 text-[#00D1FF]"></i> Nodo Central
+                <svg aria-hidden="true" focusable="false" class="w-3.5 h-3.5 text-[#00D1FF]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M12 20v2" /> <path d="M12 2v2" /> <path d="M17 20v2" /> <path d="M17 2v2" /> <path d="M2 12h2" /> <path d="M2 17h2" /> <path d="M2 7h2" /> <path d="M20 12h2" /> <path d="M20 17h2" /> <path d="M20 7h2" /> <path d="M7 20v2" /> <path d="M7 2v2" /> <rect x="4" y="4" width="16" height="16" rx="2" /> <rect x="8" y="8" width="8" height="8" rx="1" /> </svg> Nodo Central
               </div>
               <div class="mt-2 flex items-baseline gap-1">
                 <span class="text-2xl font-black text-white">APC-INT-02</span>
@@ -241,37 +242,37 @@
           <div class="mt-4 grid md:grid-cols-3 gap-6">
             <div class="p-4 rounded-xl bg-[#0B1220] border border-[#1E2A4A]">
               <div class="flex items-center gap-2 text-[12px] text-slate-400">
-                <i data-lucide="message-circle" class="w-3.5 h-3.5 text-emerald-400"></i> WhatsApp
+                <svg aria-hidden="true" focusable="false" class="w-3.5 h-3.5 text-emerald-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /> </svg> WhatsApp
               </div>
               <div class="mt-1 text-[13px] text-slate-300">+57 320 · bot activo</div>
             </div>
             <div class="p-4 rounded-xl bg-[#0B1220] border border-[#1E2A4A]">
               <div class="flex items-center gap-2 text-[12px] text-slate-400">
-                <i data-lucide="trending-down" class="w-3.5 h-3.5 text-emerald-400"></i> Costos operativos
+                <svg aria-hidden="true" focusable="false" class="w-3.5 h-3.5 text-emerald-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M16 17h6v-6" /> <path d="m22 17-8.5-8.5-5 5L2 7" /> </svg> Costos operativos
               </div>
               <div class="mt-1 text-[13px] text-emerald-400 font-bold">-38%</div>
             </div>
             <div class="p-4 rounded-xl bg-[#0B1220] border border-[#1E2A4A]">
               <div class="flex items-center gap-2 text-[12px] text-slate-400">
-                <i data-lucide="clock" class="w-3.5 h-3.5 text-[#00D1FF]"></i> Ahorro
+                <svg aria-hidden="true" focusable="false" class="w-3.5 h-3.5 text-[#00D1FF]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <circle cx="12" cy="12" r="10" /> <path d="M12 6v6l4 2" /> </svg> Ahorro
               </div>
               <div class="mt-1 text-[13px] text-white font-bold">14h/sem</div>
             </div>
             <div class="p-4 rounded-xl bg-[#0B1220] border border-[#1E2A4A]">
               <div class="flex items-center gap-2 text-[12px] text-slate-400">
-                <i data-lucide="bot" class="w-3.5 h-3.5 text-[#00D1FF]"></i> Tareas auto
+                <svg aria-hidden="true" focusable="false" class="w-3.5 h-3.5 text-[#00D1FF]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M12 8V4H8" /> <rect width="16" height="12" x="4" y="8" rx="2" /> <path d="M2 14h2" /> <path d="M20 14h2" /> <path d="M15 13v2" /> <path d="M9 13v2" /> </svg> Tareas auto
               </div>
               <div class="mt-1 text-[13px] text-white font-bold">1,482 <span class="text-emerald-400">+12%</span></div>
             </div>
             <div class="p-4 rounded-xl bg-[#0B1220] border border-[#1E2A4A]">
               <div class="flex items-center gap-2 text-[12px] text-slate-400">
-                <i data-lucide="alert-triangle" class="w-3.5 h-3.5 text-emerald-400"></i> Errores
+                <svg aria-hidden="true" focusable="false" class="w-3.5 h-3.5 text-emerald-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" /> <path d="M12 9v4" /> <path d="M12 17h.01" /> </svg> Errores
               </div>
               <div class="mt-1 text-[13px] text-emerald-400 font-bold">0.3% <span class="text-slate-400">-92%</span></div>
             </div>
             <div class="p-4 rounded-xl bg-[#0B1220] border border-[#1E2A4A]">
               <div class="flex items-center gap-2 text-[12px] text-slate-400">
-                <i data-lucide="signal" class="w-3.5 h-3.5 text-emerald-400"></i> SLA Bogotá
+                <svg aria-hidden="true" focusable="false" class="w-3.5 h-3.5 text-emerald-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M2 20h.01" /> <path d="M7 20v-4" /> <path d="M12 20v-8" /> <path d="M17 20V8" /> <path d="M22 4v16" /> </svg> SLA Bogotá
               </div>
               <div class="mt-1 text-[13px] text-emerald-400 font-bold">99.9% <span class="text-slate-400">local</span></div>
             </div>
@@ -305,12 +306,12 @@
         </div>
         <p class="mt-3 text-sm text-slate-400 leading-relaxed">Tu primer panel en tiempo real: ventas, facturación y clientes en un solo lugar.</p>
         <ul class="mt-4 space-y-2 text-sm">
-          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Dashboard Ejecutivo</span></li>
-          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Integración de Sistemas</span></li>
-          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Onboarding Digital de Clientes</span></li>
+          <li class="flex items-start gap-2"><svg aria-hidden="true" focusable="false" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg> <span>Dashboard Ejecutivo</span></li>
+          <li class="flex items-start gap-2"><svg aria-hidden="true" focusable="false" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg> <span>Integración de Sistemas</span></li>
+          <li class="flex items-start gap-2"><svg aria-hidden="true" focusable="false" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg> <span>Onboarding Digital de Clientes</span></li>
         </ul>
         <div class="mt-4 p-3 rounded-xl bg-gradient-to-r from-violet-500/5 to-transparent border border-violet-500/10">
-          <div class="flex items-center gap-1.5 text-[11px] text-violet-300 font-semibold"><i data-lucide="sparkles" class="w-3 h-3"></i> + Copiloto IA entrenado con tus datos</div>
+          <div class="flex items-center gap-1.5 text-[11px] text-violet-300 font-semibold"><svg aria-hidden="true" focusable="false" class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" /> <path d="M20 2v4" /> <path d="M22 4h-4" /> <circle cx="4" cy="20" r="2" /> </svg> + Copiloto IA entrenado con tus datos</div>
           <div class="mt-1 text-[11px] text-slate-500">Disponible como complemento</div>
         </div>
         <div class="mt-auto pt-6">
@@ -332,14 +333,14 @@
         </div>
         <p class="mt-3 text-sm text-slate-300 leading-relaxed">Suma un CRM que hace el seguimiento post-venta por ti y flujos que conectan tus sistemas sin intervención manual.</p>
         <ul class="mt-4 space-y-2 text-sm">
-          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Dashboard Ejecutivo</span></li>
-          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Integración de Sistemas</span></li>
-          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Onboarding Digital de Clientes</span></li>
-          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>CRM Post-venta Automatizado</span></li>
-          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Módulo Central de Flujos</span></li>
+          <li class="flex items-start gap-2"><svg aria-hidden="true" focusable="false" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg> <span>Dashboard Ejecutivo</span></li>
+          <li class="flex items-start gap-2"><svg aria-hidden="true" focusable="false" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg> <span>Integración de Sistemas</span></li>
+          <li class="flex items-start gap-2"><svg aria-hidden="true" focusable="false" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg> <span>Onboarding Digital de Clientes</span></li>
+          <li class="flex items-start gap-2"><svg aria-hidden="true" focusable="false" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg> <span>CRM Post-venta Automatizado</span></li>
+          <li class="flex items-start gap-2"><svg aria-hidden="true" focusable="false" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg> <span>Módulo Central de Flujos</span></li>
         </ul>
         <div class="mt-4 p-3 rounded-xl bg-gradient-to-r from-violet-500/5 to-transparent border border-violet-500/10">
-          <div class="flex items-center gap-1.5 text-[11px] text-violet-300 font-semibold"><i data-lucide="sparkles" class="w-3 h-3"></i> + Copiloto IA entrenado con tus datos</div>
+          <div class="flex items-center gap-1.5 text-[11px] text-violet-300 font-semibold"><svg aria-hidden="true" focusable="false" class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" /> <path d="M20 2v4" /> <path d="M22 4h-4" /> <circle cx="4" cy="20" r="2" /> </svg> + Copiloto IA entrenado con tus datos</div>
           <div class="mt-1 text-[11px] text-slate-500">Disponible como complemento</div>
         </div>
         <div class="mt-auto pt-6">
@@ -361,13 +362,13 @@
         </div>
         <p class="mt-3 text-sm text-slate-400 leading-relaxed">El Copiloto IA entrenado con tus datos: responde, reporta y ejecuta procesos por ti.</p>
         <ul class="mt-4 space-y-2 text-sm">
-          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Dashboard Ejecutivo</span></li>
-          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Integración de Sistemas</span></li>
-          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Onboarding Digital de Clientes</span></li>
-          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>CRM Post-venta Automatizado</span></li>
-          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Módulo Central de Flujos</span></li>
-          <li class="flex items-start gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-violet-300 mt-0.5 shrink-0"></i> <span class="text-violet-200">Copiloto IA entrenado con tus datos</span> <span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold">INCLUIDO</span></li>
-          <li class="flex items-start gap-2"><i data-lucide="bot" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <span>Automatización RPA</span></li>
+          <li class="flex items-start gap-2"><svg aria-hidden="true" focusable="false" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg> <span>Dashboard Ejecutivo</span></li>
+          <li class="flex items-start gap-2"><svg aria-hidden="true" focusable="false" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg> <span>Integración de Sistemas</span></li>
+          <li class="flex items-start gap-2"><svg aria-hidden="true" focusable="false" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg> <span>Onboarding Digital de Clientes</span></li>
+          <li class="flex items-start gap-2"><svg aria-hidden="true" focusable="false" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg> <span>CRM Post-venta Automatizado</span></li>
+          <li class="flex items-start gap-2"><svg aria-hidden="true" focusable="false" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg> <span>Módulo Central de Flujos</span></li>
+          <li class="flex items-start gap-2"><svg aria-hidden="true" focusable="false" class="w-4 h-4 text-violet-300 mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" /> <path d="M20 2v4" /> <path d="M22 4h-4" /> <circle cx="4" cy="20" r="2" /> </svg> <span class="text-violet-200">Copiloto IA entrenado con tus datos</span> <span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold">INCLUIDO</span></li>
+          <li class="flex items-start gap-2"><svg aria-hidden="true" focusable="false" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M12 8V4H8" /> <rect width="16" height="12" x="4" y="8" rx="2" /> <path d="M2 14h2" /> <path d="M20 14h2" /> <path d="M15 13v2" /> <path d="M9 13v2" /> </svg> <span>Automatización RPA</span></li>
         </ul>
         <div class="mt-4 p-3 rounded-xl bg-emerald-500/5 border border-emerald-500/20">
           <div class="text-[11px] text-emerald-400 text-center"><strong>✓ IA incluida en el plan.</strong> En Core y Pro se agrega como complemento.</div>
@@ -393,22 +394,22 @@
     </div>
     <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
       <div class="p-6 rounded-2xl bg-[#111A2E] border border-[#1E2A4A]">
-        <div class="size-11 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><i data-lucide="layout-dashboard" class="w-5 h-5 text-[#00D1FF]"></i></div>
+        <div class="size-11 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><svg aria-hidden="true" focusable="false" class="w-5 h-5 text-[#00D1FF]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="7" height="9" x="3" y="3" rx="1" /> <rect width="7" height="5" x="14" y="3" rx="1" /> <rect width="7" height="9" x="14" y="12" rx="1" /> <rect width="7" height="5" x="3" y="16" rx="1" /> </svg></div>
         <h4 class="mt-4 font-semibold text-white">Orden y organización</h4>
         <p class="mt-2 text-sm text-slate-400 leading-relaxed">Un solo panel. Adiós Excel disperso. Procesos estandarizados.</p>
       </div>
       <div class="p-6 rounded-2xl bg-[#111A2E] border border-[#1E2A4A]">
-        <div class="size-11 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><i data-lucide="zap" class="w-5 h-5 text-[#00D1FF]"></i></div>
+        <div class="size-11 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><svg aria-hidden="true" focusable="false" class="w-5 h-5 text-[#00D1FF]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z" /> </svg></div>
         <h4 class="mt-4 font-semibold text-white">Ahorro de tiempo real</h4>
         <p class="mt-2 text-sm text-slate-400 leading-relaxed">De horas a segundos. Procesos que antes tomaban días ahora son automáticos.</p>
       </div>
       <div class="p-6 rounded-2xl bg-[#111A2E] border border-[#1E2A4A]">
-        <div class="size-11 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><i data-lucide="trending-down" class="w-5 h-5 text-emerald-400"></i></div>
+        <div class="size-11 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><svg aria-hidden="true" focusable="false" class="w-5 h-5 text-emerald-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M16 17h6v-6" /> <path d="m22 17-8.5-8.5-5 5L2 7" /> </svg></div>
         <h4 class="mt-4 font-semibold text-white">Reducción de errores</h4>
         <p class="mt-2 text-sm text-slate-400 leading-relaxed">Elimina errores humanos en captura de datos, facturación y reportes.</p>
       </div>
       <div class="p-6 rounded-2xl bg-[#111A2E] border border-[#1E2A4A]">
-        <div class="size-11 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><i data-lucide="trending-up" class="w-5 h-5 text-[#00D1FF]"></i></div>
+        <div class="size-11 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><svg aria-hidden="true" focusable="false" class="w-5 h-5 text-[#00D1FF]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M16 7h6v6" /> <path d="m22 7-8.5 8.5-5-5L2 17" /> </svg></div>
         <h4 class="mt-4 font-semibold text-white">Escalabilidad</h4>
         <p class="mt-2 text-sm text-slate-400 leading-relaxed">Crece sin contratar más personal. Tu operación escala automáticamente.</p>
       </div>
@@ -520,9 +521,9 @@
       <div class="rounded-2xl border border-[#1E2A4A] bg-[#111A2E] p-8">
         <h4 class="font-semibold text-white text-lg">Información</h4>
         <div class="mt-6 space-y-5 text-sm text-slate-300">
-          <div class="flex gap-3"><i data-lucide="map-pin" class="w-4 h-4 text-[#00D1FF] mt-0.5 shrink-0"></i> Cra. 52c #39b-22, Bogotá</div>
-          <div class="flex gap-3"><i data-lucide="mail" class="w-4 h-4 text-[#00D1FF] mt-0.5 shrink-0"></i> <a href="mailto:serviciosapcsoporte@gmail.com" class="hover:text-[#00D1FF]">serviciosapcsoporte@gmail.com</a></div>
-          <div class="flex gap-3"><i data-lucide="phone" class="w-4 h-4 text-[#00D1FF] mt-0.5 shrink-0"></i> <a href="tel:+573337450634" class="hover:text-[#00D1FF]">+57 333 7450634</a></div>
+          <div class="flex gap-3"><svg aria-hidden="true" focusable="false" class="w-4 h-4 text-[#00D1FF] mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /> <circle cx="12" cy="10" r="3" /> </svg> Cra. 52c #39b-22, Bogotá</div>
+          <div class="flex gap-3"><svg aria-hidden="true" focusable="false" class="w-4 h-4 text-[#00D1FF] mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /> <rect x="2" y="4" width="20" height="16" rx="2" /> </svg> <a href="mailto:serviciosapcsoporte@gmail.com" class="hover:text-[#00D1FF]">serviciosapcsoporte@gmail.com</a></div>
+          <div class="flex gap-3"><svg aria-hidden="true" focusable="false" class="w-4 h-4 text-[#00D1FF] mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /> </svg> <a href="tel:+573337450634" class="hover:text-[#00D1FF]">+57 333 7450634</a></div>
         </div>
         <div class="mt-6 flex flex-wrap gap-2 text-[11px] mono">
           <span class="px-2 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-slate-400">n8n · APIs</span>
@@ -530,7 +531,7 @@
           <span class="px-2 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-violet-300">RPA</span>
           <span class="px-2 py-1 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-emerald-400">Dashboard</span>
         </div>
-        <a href="https://maps.google.com/?q=Cra.+52c+%2339b-22,+Bogot%C3%A1,+Colombia" target="_blank" class="mt-5 inline-flex items-center gap-2 text-[13px] text-[#00D1FF] hover:text-[#22E6FF] font-medium transition-colors"><i data-lucide="map-pinned" class="w-4 h-4"></i> Ver en Google Maps</a>
+        <a href="https://maps.google.com/?q=Cra.+52c+%2339b-22,+Bogot%C3%A1,+Colombia" target="_blank" class="mt-5 inline-flex items-center gap-2 text-[13px] text-[#00D1FF] hover:text-[#22E6FF] font-medium transition-colors"><svg aria-hidden="true" focusable="false" class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M18 8c0 3.613-3.869 7.429-5.393 8.795a1 1 0 01-1.214 0C9.87 15.429 6 11.613 6 8a6 6 0 0112 0" /> <path d="M4.474 15h-.197a1 1 0 00-.969.753l-1.097 4.35a1.5 1.5 0 001.444 1.898L20.344 22a1.5 1.5 0 001.446-1.897l-1.098-4.35a1 1 0 00-.969-.753h-.197" /> <circle cx="12" cy="8" r="2" /> </svg> Ver en Google Maps</a>
       </div>
       <div class="rounded-2xl border border-[#1E2A4A] bg-[#111A2E] p-8">
         <h4 class="font-semibold text-white text-lg">Síguenos</h4>
@@ -545,7 +546,7 @@
             <div><div class="text-sm font-medium text-white group-hover:text-pink-300">Instagram</div><div class="text-[11px] text-slate-500">@serviciosapc</div></div>
           </a>
           <a href="https://wa.me/573337450634" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-[#0B1220] border border-[#1E2A4A] hover:border-emerald-500/40 transition-all group">
-            <i data-lucide="message-circle" class="w-6 h-6 text-emerald-400"></i>
+            <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-emerald-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /> </svg>
             <div><div class="text-sm font-medium text-white group-hover:text-emerald-300">WhatsApp</div><div class="text-[11px] text-slate-500">+57 333 7450634</div></div>
           </a>
         </div>
@@ -580,7 +581,7 @@
       <a href="https://www.instagram.com/serviciosapc" target="_blank" class="size-9 rounded-xl bg-[#111A2E] border border-[#1E2A4A] grid place-items-center hover:bg-pink-950/40 hover:border-pink-500/40 transition-all group">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 text-slate-400 group-hover:text-pink-400"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
       </a>
-      <a href="https://wa.me/573337450634" target="_blank" class="size-9 rounded-xl bg-[#111A2E] border border-[#1E2A4A] grid place-items-center hover:bg-emerald-950/40 hover:border-emerald-500/40 transition-all group"><i data-lucide="message-circle" class="w-4 h-4 text-slate-400 group-hover:text-emerald-400"></i></a>
+      <a href="https://wa.me/573337450634" target="_blank" class="size-9 rounded-xl bg-[#111A2E] border border-[#1E2A4A] grid place-items-center hover:bg-emerald-950/40 hover:border-emerald-500/40 transition-all group"><svg aria-hidden="true" focusable="false" class="w-4 h-4 text-slate-400 group-hover:text-emerald-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /> </svg></a>
     </div>
   </div>
 </footer>
