@@ -86,7 +86,7 @@ select { background: #0B1220; border: 1px solid #1E2A4A; border-radius: 8px; col
       <svg aria-hidden="true" focusable="false" class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="16" height="20" x="4" y="2" rx="2" /> <line x1="8" x2="16" y1="6" y2="6" /> <line x1="16" x2="16" y1="14" y2="18" /> <path d="M16 10h.01" /> <path d="M12 10h.01" /> <path d="M8 10h.01" /> <path d="M12 14h.01" /> <path d="M8 14h.01" /> <path d="M12 18h.01" /> <path d="M8 18h.01" /> </svg> CALCULADORA DE AHORRO
     </div>
     <h1 style="margin-top:16px;">¿Cuánto vale tu <span>tiempo perdido</span>?</h1>
-    <p class="subtitle">Ajusta las horas que tu empresa gasta en tareas manuales y descubre cuánto puedes ahorrar con APC Automatización.</p>
+    <p class="subtitle">Ajusta las horas que hoy se van en tareas manuales y mira el ahorro en plata. Es una estimación conservadora: el número real de tu empresa lo calculamos en el diagnóstico gratuito.</p>
   </div>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
@@ -153,23 +153,11 @@ select { background: #0B1220; border: 1px solid #1E2A4A; border-radius: 8px; col
   </div>
 
   <div class="card" style="margin-bottom:16px;">
-    <div style="font-size:10px;color:#64748B;letter-spacing:0.1em;font-weight:600;margin-bottom:8px;">TU AHORRO CON APC</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">
-      <div style="background:#0B1220;border-radius:10px;padding:14px;text-align:center;">
-        <div class="neutral">1. Ahorro por tiempo</div>
-        <div style="font-size:22px;font-weight:900;color:#00D1FF;" id="timeSavings">$0</div>
-        <div class="neutral">/mes automatizado</div>
-      </div>
-      <div style="background:#0B1220;border-radius:10px;padding:14px;text-align:center;">
-        <div class="neutral">2. Evitas errores</div>
-        <div style="font-size:22px;font-weight:900;color:#F59E0B;" id="errorAvoidance">$0</div>
-        <div class="neutral">/mes en costos evitados</div>
-      </div>
-      <div style="background:#0B1220;border-radius:10px;padding:14px;text-align:center;">
-        <div class="neutral">3. Valor recuperado</div>
-        <div style="font-size:22px;font-weight:900;color:#EC4899;" id="valueRecovery">$0</div>
-        <div class="neutral">/mes en oportunidades</div>
-      </div>
+    <div style="font-size:10px;color:#64748B;letter-spacing:0.1em;font-weight:600;margin-bottom:8px;">TU AHORRO ESTIMADO CON APC</div>
+    <div style="background:#0B1220;border-radius:10px;padding:18px;text-align:center;">
+      <div class="neutral">Ahorro por tiempo automatizado</div>
+      <div style="font-size:30px;font-weight:900;color:#00D1FF;" id="timeSavings">$0</div>
+      <div class="neutral">/mes</div>
     </div>
     <div style="margin-top:16px;padding-top:12px;border-top:1px solid #1E2A4A;">
       <div style="display:flex;justify-content:space-between;align-items:center;">
@@ -177,16 +165,17 @@ select { background: #0B1220; border: 1px solid #1E2A4A; border-radius: 8px; col
         <div style="font-size:22px;font-weight:900;color:#00D1FF;" id="costAPC">$0</div>
       </div>
       <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px;">
-        <div class="neutral" style="color:#10B981;font-weight:700;">GANANCIA NETA /mes</div>
+        <div class="neutral" style="color:#10B981;font-weight:700;">AHORRO NETO ESTIMADO /mes</div>
         <div style="font-size:28px;font-weight:900;color:#10B981;" id="netGain">$0</div>
       </div>
     </div>
+    <div class="neutral" style="margin-top:10px;">Solo contamos el tiempo que recuperas. Los errores evitados y las oportunidades reales de tu empresa los calculamos en el diagnóstico gratuito.</div>
   </div>
 
     <div style="margin-bottom:16px;">
     <div style="font-size:10px;color:#64748B;letter-spacing:0.1em;font-weight:600;margin-bottom:8px;">SELECCIONA TU PLAN <span style="color:#A78BFA;font-weight:400;">· + Copiloto IA disponible en todo plan</span></div>
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">
-      <div onclick="selectPlan('core')" id="planCore" style="border-radius:12px;border:2px solid #1E2A4A;background:#111A2E;padding:16px;cursor:pointer;text-align:center;transition:all 0.2s;">
+      <div onclick="selectPlan('core')" id="planCore" style="border-radius:12px;border:2px solid #00D1FF;background:#111A2E;padding:16px;cursor:pointer;text-align:center;transition:all 0.2s;">
         <div style="font-size:10px;color:#00D1FF;font-weight:700;letter-spacing:0.08em;">CORE</div>
         <div style="font-size:16px;font-weight:800;color:#fff;margin-top:4px;">$490.000</div>
         <div class="neutral">/mes</div>
@@ -196,7 +185,7 @@ select { background: #0B1220; border: 1px solid #1E2A4A; border-radius: 8px; col
         <div style="font-size:16px;font-weight:800;color:#fff;margin-top:4px;">$890.000</div>
         <div class="neutral">/mes</div>
       </div>
-      <div onclick="selectPlan('vip')" id="planVIP" style="border-radius:12px;border:2px solid #7C3AED;background:linear-gradient(180deg,rgba(124,58,237,0.05),#111A2E);padding:16px;cursor:pointer;text-align:center;transition:all 0.2s;">
+      <div onclick="selectPlan('vip')" id="planVIP" style="border-radius:12px;border:2px solid #1E2A4A;background:linear-gradient(180deg,rgba(124,58,237,0.05),#111A2E);padding:16px;cursor:pointer;text-align:center;transition:all 0.2s;">
         <div style="font-size:10px;background:linear-gradient(135deg,#7C3AED,#00D1FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;letter-spacing:0.08em;">VIP COPILOTO IA</div>
         <div style="font-size:16px;font-weight:800;color:#A78BFA;margin-top:4px;">$1.290.000</div>
         <div class="neutral">/mes</div>
@@ -257,7 +246,7 @@ select { background: #0B1220; border: 1px solid #1E2A4A; border-radius: 8px; col
 </div>
 
 <script>
-let currentPlan = 'vip';
+let currentPlan = 'core';
 const planPrices = { core: 490000, pro: 890000, vip: 1290000 };
 const automationRates = { s1: 0.70, s2: 0.80, s3: 0.90, s4: 0.60, s5: 0.60 };
 
@@ -301,16 +290,12 @@ function recalc() {
   const automatableHours = (s1 * automationRates.s1) + (s2 * automationRates.s2) + (s3 * automationRates.s3) + (s4 * automationRates.s4) + (s5 * automationRates.s5);
   
   const timeSavings = Math.round(automatableHours * hourly);
-  const errorAvoidance = 250000;
-  const valueRecovery = 450000;
-  const totalValue = timeSavings + errorAvoidance + valueRecovery;
+  const totalValue = timeSavings;
   
   const planCost = planPrices[currentPlan];
   const netGain = totalValue - planCost;
 
   document.getElementById('timeSavings').textContent = '$' + timeSavings.toLocaleString('es-CO');
-  document.getElementById('errorAvoidance').textContent = '$' + errorAvoidance.toLocaleString('es-CO');
-  document.getElementById('valueRecovery').textContent = '$' + valueRecovery.toLocaleString('es-CO');
   document.getElementById('costAPC').textContent = '$' + planCost.toLocaleString('es-CO');
   document.getElementById('netGain').textContent = (netGain > 0 ? '+' : '') + '$' + netGain.toLocaleString('es-CO');
 }
