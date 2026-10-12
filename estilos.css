@@ -128,17 +128,35 @@ button:focus-visible,
   border-radius: 8px;
 }
 
-/* Scroll reveal (progressive enhancement: classes added by js/main.js) */
-.reveal {
+/* Motion (progressive enhancement: classes added by js/main.js)
+   - Reveal + Stagger: each section reveals its items as a cascade
+     instead of fading the whole block as one.
+   - Orchestration: hero dashboard tiles stagger in on first paint.
+   Keyframes (not transition) so the transform doesn't fight the
+   hover transition of .card-glow once the entrance has finished. */
+.reveal,
+[data-hero-panel] .cascade-item {
   opacity: 0;
-  transform: translateY(14px);
-  transition:
-    opacity var(--apc-dur) var(--apc-ease) var(--reveal-delay, 0ms),
-    transform var(--apc-dur) var(--apc-ease) var(--reveal-delay, 0ms);
 }
 .reveal.is-visible {
   opacity: 1;
-  transform: none;
+  animation: apc-reveal var(--apc-dur) var(--apc-ease) var(--reveal-delay, 0ms) backwards;
+}
+[data-hero-panel].cascade-in .cascade-item {
+  opacity: 1;
+  animation: apc-reveal 0.55s var(--apc-ease) var(--cascade-delay, 0ms) backwards;
+}
+@keyframes apc-reveal {
+  from { opacity: 0; transform: translateY(14px); }
+}
+
+/* Material: header chrome lifts into a frosted state on scroll */
+header {
+  transition: background-color 300ms var(--apc-ease), box-shadow 300ms var(--apc-ease);
+}
+header.header-scrolled {
+  background-color: rgba(8, 12, 24, 0.92);
+  box-shadow: 0 10px 30px -16px rgba(0, 0, 0, 0.75);
 }
 
 /* Card glow: anchors + depth on hover (material arriving, not just recoloring) */
@@ -166,10 +184,15 @@ button:focus-visible,
   html {
     scroll-behavior: auto !important;
   }
-  .reveal {
+  .reveal,
+  [data-hero-panel] .cascade-item {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+  }
+  .reveal.is-visible,
+  [data-hero-panel].cascade-in .cascade-item {
+    animation: none !important;
   }
   *, *::before, *::after {
     animation-duration: 0.001ms !important;

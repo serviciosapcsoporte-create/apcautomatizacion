@@ -14,19 +14,58 @@ if (overlay) {
   update();
 }
 
-/* Scroll reveal — progressive enhancement.
+/* Material: header lifts into its frosted state once the page scrolls. */
+(function () {
+  const header = document.getElementById('siteHeader');
+  if (!header) return;
+  const update = () => header.classList.toggle('header-scrolled', window.scrollY > 8);
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
+
+/* Orchestration: hero dashboard tiles stagger in on first paint.
+   Progressive enhancement — without JS they are simply visible. */
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const panel = document.querySelector('[data-hero-panel]');
+  if (!panel) return;
+  const tiles = panel.querySelectorAll('.grid > *');
+  if (!tiles.length) return;
+  tiles.forEach(function (el, i) {
+    el.classList.add('cascade-item');
+    el.style.setProperty('--cascade-delay', 140 + i * 55 + 'ms');
+  });
+  requestAnimationFrame(function () {
+    requestAnimationFrame(function () { panel.classList.add('cascade-in'); });
+  });
+})();
+
+/* Reveal + Stagger: each section reveals its own items as a cascade.
    Content stays visible if JS is off or reduced motion is requested. */
 (function () {
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduceMotion || !('IntersectionObserver' in window)) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
 
-  const targets = document.querySelectorAll('section:not(#hero) > div.mx-auto');
-  if (!targets.length) return;
+  const sections = document.querySelectorAll('section:not(#hero) > div.mx-auto');
+  if (!sections.length) return;
 
-  targets.forEach(function (el, i) {
-    el.classList.add('reveal');
-    el.style.setProperty('--reveal-delay', Math.min(i, 6) * 45 + 'ms');
+  const targets = [];
+  sections.forEach(function (sec) {
+    const group = [];
+    sec.querySelectorAll(':scope > *').forEach(function (child) {
+      if (child.classList.contains('grid')) {
+        Array.prototype.forEach.call(child.children, function (gc) { group.push(gc); });
+      } else {
+        group.push(child);
+      }
+    });
+    group.forEach(function (el, i) {
+      el.classList.add('reveal');
+      el.style.setProperty('--reveal-delay', Math.min(i, 7) * 60 + 'ms');
+      targets.push(el);
+    });
   });
+  if (!targets.length) return;
 
   const io = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
