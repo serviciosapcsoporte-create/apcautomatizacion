@@ -78,3 +78,67 @@ if (overlay) {
 
   targets.forEach(function (el) { io.observe(el); });
 })();
+
+/* Number ticker: counts a value up on first paint (tabular digits keep it steady). */
+(function () {
+  const els = document.querySelectorAll('[data-count]');
+  if (!els.length) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  els.forEach(function (el) {
+    const target = parseFloat(el.getAttribute('data-count'));
+    if (isNaN(target)) return;
+    const dur = 900;
+    const ease = function (t) { return 1 - Math.pow(1 - t, 3); };
+    let start;
+    function step(now) {
+      if (start === undefined) start = now;
+      const p = Math.min((now - start) / dur, 1);
+      el.textContent = String(Math.round(target * ease(p)));
+      if (p < 1) requestAnimationFrame(step);
+    }
+    setTimeout(function () { requestAnimationFrame(step); }, 420);
+  });
+})();
+
+/* 3D tilt: subtle pointer-driven depth on the hero dashboard (fine pointers only). */
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  const panel = document.querySelector('[data-hero-panel]');
+  if (!panel) return;
+  const card = panel.firstElementChild;
+  if (!card) return;
+
+  const MAX = 2.5;
+  panel.style.perspective = '1200px';
+  let tx = 0, ty = 0, cx = 0, cy = 0, running = false;
+
+  function loop() {
+    cx += (tx - cx) * 0.12;
+    cy += (ty - cy) * 0.12;
+    card.style.transform = 'rotateX(' + cx.toFixed(2) + 'deg) rotateY(' + cy.toFixed(2) + 'deg)';
+    if (Math.abs(tx - cx) > 0.02 || Math.abs(ty - cy) > 0.02) {
+      requestAnimationFrame(loop);
+    } else {
+      cx = tx; cy = ty;
+      card.style.transform = 'rotateX(' + cx.toFixed(2) + 'deg) rotateY(' + cy.toFixed(2) + 'deg)';
+      card.style.willChange = '';
+      running = false;
+    }
+  }
+  function kick() { if (!running) { running = true; requestAnimationFrame(loop); } }
+
+  panel.addEventListener('mousemove', function (e) {
+    const r = panel.getBoundingClientRect();
+    const px = (e.clientX - r.left) / r.width - 0.5;
+    const py = (e.clientY - r.top) / r.height - 0.5;
+    tx = -py * MAX;
+    ty = px * MAX;
+    card.style.willChange = 'transform';
+    kick();
+  });
+  panel.addEventListener('mouseleave', function () {
+    tx = 0; ty = 0;
+    kick();
+  });
+})();

@@ -27,6 +27,12 @@ body {
   font-family: "JetBrains Mono", monospace;
 }
 
+/* Number ticker: fixed-width digits so the value doesn't shift while counting */
+.apc-tick {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
 .grid-bg {
   background-image:
     linear-gradient(to right, rgba(34, 211, 238, 0.07) 1px, transparent 1px),
