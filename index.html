@@ -193,129 +193,187 @@
   <div class="mx-auto max-w-7xl px-6">
     <div class="max-w-3xl mx-auto text-center">
       <div class="text-[11px] tracking-[0.2em] text-[#00D1FF] font-semibold">PANEL DE CONTROL OPERATIVO</div>
-      <h2 class="mt-3 text-4xl font-black tracking-tight text-white">Tu operación centralizada en una sola pantalla</h2>
-      <p class="mt-3 text-slate-400 max-w-2xl mx-auto">Mira cuánto vendió cada local, qué productos rotaron y el margen real del día sin abrir múltiples sistemas ni consolidar archivos en Excel.</p>
+      <h2 class="mt-3 text-4xl font-black tracking-tight text-white">Toda tu operación comercial en un panel central</h2>
+      <p class="mt-3 text-slate-400 max-w-2xl mx-auto">Conoce en tiempo real cuánto vendió cada local, el margen bruto del día y los repuestos/productos agotados, sin abrir múltiples programas.</p>
     </div>
 
     <div class="mt-10 max-w-5xl mx-auto" data-hero-panel>
-      <div class="rounded-[20px] border border-[#1E2A4A] bg-[#080C18]/85 backdrop-blur-xl shadow-2xl overflow-hidden">
-        <!-- barra de navegador simulada -->
+      <div class="rounded-[20px] border border-[#1E2A4A] bg-[#080C18]/85 shadow-2xl overflow-hidden">
+        <!-- barra superior -->
         <div class="h-11 border-b border-[#1E2A4A] flex items-center justify-between px-4 bg-[#0B1220]">
           <div class="flex items-center gap-2">
             <span class="size-2.5 rounded-full bg-red-500/70"></span>
             <span class="size-2.5 rounded-full bg-yellow-400/70"></span>
             <span class="size-2.5 rounded-full bg-emerald-400/70"></span>
-            <span class="ml-3 text-[11px] mono text-slate-500">apcautomatizacion.site / panel-operativo / tiempo real</span>
+            <span class="ml-3 text-[11px] mono text-slate-500">panel-operativo · tiempo real</span>
           </div>
-          <span class="text-[10px] px-2 py-1 rounded-full bg-emerald-400/10 border border-emerald-400/20 text-emerald-400 mono">DEMO</span>
+          <span class="text-[10px] px-2 py-1 rounded-full bg-[#111A2E] border border-[#1E2A4A] text-slate-400">DEMO</span>
         </div>
 
-        <!-- bento grid -->
-        <div class="p-5 md:p-6 grid md:grid-cols-3 gap-5">
+        <!-- pestañas -->
+        <div class="border-b border-[#1E2A4A] bg-[#0B1220] px-3 pt-2 flex flex-wrap gap-1" role="tablist" aria-label="Vistas del panel demo">
+          <button type="button" class="panel-tab px-3.5 py-2 rounded-t-lg text-[12px] font-medium text-white bg-[#111A2E]" data-tab="ventas" aria-selected="true">Vista General de Ventas</button>
+          <button type="button" class="panel-tab px-3.5 py-2 rounded-t-lg text-[12px] font-medium text-slate-400 hover:text-white" data-tab="inventario" aria-selected="false">Inventario &amp; Reorden</button>
+          <button type="button" class="panel-tab px-3.5 py-2 rounded-t-lg text-[12px] font-medium text-slate-400 hover:text-white" data-tab="reporte" aria-selected="false">Reporte para Gerencia</button>
+        </div>
 
-          <!-- MÓDULO 1 · Ventas y Conteo por Local -->
-          <div class="md:col-span-2 bento-card p-5">
-            <div class="flex items-start justify-between gap-3 flex-wrap">
-              <div class="flex items-center gap-2">
-                <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-[#00D1FF]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M16 17h6v-6" /> <path d="m22 17-8.5-8.5-5 5L2 7" /> </svg>
-                <h3 class="text-sm font-semibold text-white">Ventas y Conteo por Local</h3>
-              </div>
-              <span class="inline-flex items-center gap-1.5 text-[10px] px-2 py-1 rounded-full bg-emerald-400/10 border border-emerald-400/20 text-emerald-400 mono"><span class="size-1.5 rounded-full bg-emerald-400 animate-pulse"></span>EN VIVO</span>
-            </div>
-            <div class="mt-4 flex flex-wrap items-end gap-x-8 gap-y-3">
-              <div>
-                <div class="text-[10px] text-slate-500 tracking-[0.12em] font-semibold">FACTURACIÓN HOY</div>
-                <div class="mt-1 text-3xl font-black text-white">$<span class="apc-tick" data-count="12480900">12.480.900</span></div>
-              </div>
-              <div>
-                <div class="text-[10px] text-slate-500 tracking-[0.12em] font-semibold">TICKET PROMEDIO</div>
-                <div class="mt-1 text-xl font-black text-[#00D1FF]">$38.500</div>
-              </div>
-              <div>
-                <div class="text-[10px] text-slate-500 tracking-[0.12em] font-semibold">MARGEN DEL DÍA</div>
-                <div class="mt-1 text-xl font-black text-emerald-400">34,2%</div>
-              </div>
-            </div>
-            <div class="mt-5 space-y-3">
-              <div>
-                <div class="flex items-center justify-between text-[12px] mb-1.5"><span class="text-slate-300">Local Centro</span><span class="text-white font-semibold">$5.240.600</span></div>
-                <div class="h-1.5 rounded-full bg-[#0B1220] overflow-hidden"><div class="h-full rounded-full bg-gradient-to-r from-[#00D1FF] to-violet-400" style="width: 84%"></div></div>
-              </div>
-              <div>
-                <div class="flex items-center justify-between text-[12px] mb-1.5"><span class="text-slate-300">Local Norte</span><span class="text-white font-semibold">$4.180.200</span></div>
-                <div class="h-1.5 rounded-full bg-[#0B1220] overflow-hidden"><div class="h-full rounded-full bg-gradient-to-r from-violet-500 to-[#00D1FF]" style="width: 67%"></div></div>
-              </div>
-              <div>
-                <div class="flex items-center justify-between text-[12px] mb-1.5"><span class="text-slate-300">Local Sur</span><span class="text-white font-semibold">$3.059.100</span></div>
-                <div class="h-1.5 rounded-full bg-[#0B1220] overflow-hidden"><div class="h-full rounded-full bg-gradient-to-r from-emerald-400 to-[#00D1FF]" style="width: 49%"></div></div>
-              </div>
-            </div>
-          </div>
+        <!-- PESTAÑA 1 · Vista General de Ventas -->
+        <div class="p-5 md:p-6" data-panel="ventas">
+          <div class="grid md:grid-cols-3 gap-5">
 
-          <!-- MÓDULO 2 · Sincronización Automática -->
-          <div class="bento-card p-5">
-            <div class="flex items-center gap-2">
-              <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-violet-300" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" /> <path d="M21 3v5h-5" /> <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" /> <path d="M8 16H3v5" /> </svg>
-              <h3 class="text-sm font-semibold text-white">Sincronización Automática</h3>
-            </div>
-            <div class="mt-4 space-y-2.5">
-              <div class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-xl bg-[#0B1220] border border-[#1E2A4A]">
-                <span class="text-[12px] text-slate-300 mono">Siigo API</span>
-                <span class="inline-flex items-center gap-1.5 text-[11px] text-emerald-400 font-medium"><span class="size-1.5 rounded-full bg-emerald-400 animate-pulse"></span>Activo</span>
+            <!-- A · Consolidado de Ventas por Sede -->
+            <div class="md:col-span-2 rounded-xl bg-[#111A2E] border border-[#1E2A4A] p-5">
+              <div class="flex items-center justify-between gap-3 flex-wrap">
+                <h3 class="text-sm font-semibold text-white">Consolidado de Ventas por Sede</h3>
+                <span class="text-[11px] text-slate-500 mono">HOY</span>
               </div>
-              <div class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-xl bg-[#0B1220] border border-[#1E2A4A]">
-                <span class="text-[12px] text-slate-300 mono">WhatsApp Bot</span>
-                <span class="inline-flex items-center gap-1.5 text-[11px] text-emerald-400 font-medium"><span class="size-1.5 rounded-full bg-emerald-400 animate-pulse"></span>Activo</span>
-              </div>
-              <div class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-xl bg-[#0B1220] border border-[#1E2A4A]">
-                <span class="text-[12px] text-slate-300 mono">POS Local</span>
-                <span class="inline-flex items-center gap-1.5 text-[11px] text-emerald-400 font-medium"><span class="size-1.5 rounded-full bg-emerald-400 animate-pulse"></span>Activo</span>
-              </div>
-            </div>
-            <div class="mt-4 pt-3 border-t border-[#1E2A4A] flex items-center justify-between text-[11px]">
-              <span class="text-slate-500">Última sincronización</span>
-              <span class="text-[#00D1FF] mono">hace 40 seg</span>
-            </div>
-          </div>
-
-          <!-- MÓDULO 3 · Alertas Autónomas -->
-          <div class="md:col-span-3 bento-card p-5">
-            <div class="flex items-center justify-between gap-3 flex-wrap">
-              <div class="flex items-center gap-2">
-                <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-[#00D1FF]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" /> <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" /> </svg>
-                <h3 class="text-sm font-semibold text-white">Alertas Autónomas</h3>
-              </div>
-              <span class="text-[11px] text-slate-500">Disparadas por reglas, sin que nadie las envíe a mano.</span>
-            </div>
-            <div class="mt-4 grid sm:grid-cols-2 gap-4">
-              <div class="flex gap-3 p-4 rounded-xl bg-[#0B1220] border border-[#1E2A4A]">
-                <span class="size-8 shrink-0 rounded-lg bg-emerald-500/15 border border-emerald-500/25 grid place-items-center">
-                  <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-emerald-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /> </svg>
-                </span>
-                <div class="min-w-0">
-                  <div class="flex items-center gap-2 flex-wrap">
-                    <span class="text-[13px] font-semibold text-white">Cierre de caja — Local Centro</span>
-                    <span class="text-[10px] text-slate-500 mono">hace 4 min</span>
-                  </div>
-                  <p class="mt-1 text-[12px] text-slate-400 leading-relaxed">Caja cuadrada: <span class="text-white font-semibold">$2.340.500</span>. Conciliación con SIIGO completada y reporte enviado al WhatsApp del responsable.</p>
+              <div class="mt-4 space-y-3">
+                <div>
+                  <div class="flex items-center justify-between text-[12px] mb-1"><span class="text-slate-300">Local Centro</span><span class="text-white font-semibold mono">$5.240.600</span></div>
+                  <div class="h-1.5 rounded-full bg-[#0B1220] overflow-hidden"><div class="h-full rounded-full bg-[#00D1FF]" style="width: 84%"></div></div>
+                </div>
+                <div>
+                  <div class="flex items-center justify-between text-[12px] mb-1"><span class="text-slate-300">Local Norte</span><span class="text-white font-semibold mono">$4.180.200</span></div>
+                  <div class="h-1.5 rounded-full bg-[#0B1220] overflow-hidden"><div class="h-full rounded-full bg-[#00D1FF]/70" style="width: 67%"></div></div>
+                </div>
+                <div>
+                  <div class="flex items-center justify-between text-[12px] mb-1"><span class="text-slate-300">Ventas WhatsApp</span><span class="text-white font-semibold mono">$2.315.400</span></div>
+                  <div class="h-1.5 rounded-full bg-[#0B1220] overflow-hidden"><div class="h-full rounded-full bg-[#00D1FF]/40" style="width: 37%"></div></div>
                 </div>
               </div>
-              <div class="flex gap-3 p-4 rounded-xl bg-[#0B1220] border border-[#1E2A4A]">
-                <span class="size-8 shrink-0 rounded-lg bg-amber-500/15 border border-amber-500/25 grid place-items-center">
-                  <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-amber-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m7.5 4.27 9 5.15" /> <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" /> <path d="m3.3 7 8.7 5 8.7-5" /> <path d="M12 22V12" /> </svg>
-                </span>
-                <div class="min-w-0">
-                  <div class="flex items-center gap-2 flex-wrap">
-                    <span class="text-[13px] font-semibold text-white">Punto de reorden — Filtro CG160</span>
-                    <span class="text-[10px] text-slate-500 mono">automático</span>
-                  </div>
-                  <p class="mt-1 text-[12px] text-slate-400 leading-relaxed">Quedan <span class="text-white font-semibold">3 unidades</span> (mínimo 5). Orden de compra sugerida al proveedor con el último precio registrado.</p>
+              <div class="mt-4 pt-3 border-t border-[#1E2A4A] flex items-center justify-between text-[12px]">
+                <span class="text-slate-500">Total consolidado</span>
+                <span class="text-white font-bold mono">$11.736.200</span>
+              </div>
+            </div>
+
+            <!-- B · Estado de Conexión en Vivo -->
+            <div class="rounded-xl bg-[#111A2E] border border-[#1E2A4A] p-5">
+              <h3 class="text-sm font-semibold text-white">Estado de Conexión en Vivo</h3>
+              <div class="mt-4 space-y-2.5">
+                <div class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg bg-[#0B1220] border border-[#1E2A4A]">
+                  <span class="text-[12px] text-slate-300">Siigo API</span>
+                  <span class="inline-flex items-center gap-1.5 text-[11px] text-emerald-400"><span class="size-1.5 rounded-full bg-emerald-400"></span>Sincronizado</span>
+                </div>
+                <div class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg bg-[#0B1220] border border-[#1E2A4A]">
+                  <span class="text-[12px] text-slate-300">WhatsApp</span>
+                  <span class="inline-flex items-center gap-1.5 text-[11px] text-emerald-400"><span class="size-1.5 rounded-full bg-emerald-400"></span>Activo</span>
+                </div>
+                <div class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg bg-[#0B1220] border border-[#1E2A4A]">
+                  <span class="text-[12px] text-slate-300">Caja</span>
+                  <span class="inline-flex items-center gap-1.5 text-[11px] text-emerald-400"><span class="size-1.5 rounded-full bg-emerald-400"></span>Cuadrada</span>
+                </div>
+              </div>
+              <div class="mt-4 pt-3 border-t border-[#1E2A4A] text-[11px] text-slate-500">Última verificación: hace 40 seg</div>
+            </div>
+
+            <!-- C · Flujos Autónomos -->
+            <div class="md:col-span-3 rounded-xl bg-[#111A2E] border border-[#1E2A4A] p-5">
+              <div class="flex items-center justify-between gap-3 flex-wrap">
+                <h3 class="text-sm font-semibold text-white">Flujos Autónomos</h3>
+                <span class="text-[11px] text-slate-500">Una venta dispara el resto sola.</span>
+              </div>
+              <div class="mt-4 flex flex-col md:flex-row md:items-center gap-3">
+                <div class="flex-1 rounded-lg bg-[#0B1220] border border-[#1E2A4A] px-4 py-3">
+                  <div class="text-[10px] tracking-[0.12em] text-slate-500 font-semibold">PASO 1</div>
+                  <div class="mt-1 text-[13px] font-semibold text-white">Venta registrada en POS</div>
+                  <div class="mt-0.5 text-[11px] text-slate-400">El local cobra y el dato entra una sola vez.</div>
+                </div>
+                <div class="hidden md:flex text-slate-600 shrink-0" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+                <div class="flex-1 rounded-lg bg-[#0B1220] border border-[#1E2A4A] px-4 py-3">
+                  <div class="text-[10px] tracking-[0.12em] text-slate-500 font-semibold">PASO 2</div>
+                  <div class="mt-1 text-[13px] font-semibold text-white">Factura creada en Siigo</div>
+                  <div class="mt-0.5 text-[11px] text-slate-400">Documento y ajuste contable, automáticos.</div>
+                </div>
+                <div class="hidden md:flex text-slate-600 shrink-0" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+                <div class="flex-1 rounded-lg bg-[#0B1220] border border-[#1E2A4A] px-4 py-3">
+                  <div class="text-[10px] tracking-[0.12em] text-slate-500 font-semibold">PASO 3</div>
+                  <div class="mt-1 text-[13px] font-semibold text-white">Inventario descontado</div>
+                  <div class="mt-0.5 text-[11px] text-slate-400">Stock y punto de reorden actualizados al instante.</div>
                 </div>
               </div>
             </div>
-          </div>
 
+          </div>
         </div>
+
+        <!-- PESTAÑA 2 · Inventario & Reorden -->
+        <div class="p-5 md:p-6" data-panel="inventario" hidden>
+          <div class="rounded-xl bg-[#111A2E] border border-[#1E2A4A] overflow-hidden">
+            <div class="px-5 py-4 border-b border-[#1E2A4A] flex items-center justify-between gap-3 flex-wrap">
+              <h3 class="text-sm font-semibold text-white">Inventario &amp; Punto de Reorden</h3>
+              <span class="text-[11px] text-slate-500 mono">2 alertas activas</span>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-[12px]">
+                <thead>
+                  <tr class="text-[10px] tracking-[0.12em] text-slate-500 border-b border-[#1E2A4A]">
+                    <th class="px-5 py-2.5 font-semibold">PRODUCTO</th>
+                    <th class="px-5 py-2.5 font-semibold text-right">STOCK</th>
+                    <th class="px-5 py-2.5 font-semibold text-right">MÍNIMO</th>
+                    <th class="px-5 py-2.5 font-semibold">ESTADO</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-[#1E2A4A]">
+                  <tr>
+                    <td class="px-5 py-3 text-slate-200">Aceite 20W50 1L</td>
+                    <td class="px-5 py-3 text-right mono text-white">0</td>
+                    <td class="px-5 py-3 text-right mono text-slate-400">8</td>
+                    <td class="px-5 py-3"><span class="text-[10px] px-2 py-0.5 rounded-full bg-red-500/10 border border-red-500/25 text-red-400">Agotado</span></td>
+                  </tr>
+                  <tr>
+                    <td class="px-5 py-3 text-slate-200">Filtro CG160</td>
+                    <td class="px-5 py-3 text-right mono text-white">3</td>
+                    <td class="px-5 py-3 text-right mono text-slate-400">5</td>
+                    <td class="px-5 py-3"><span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/25 text-amber-400">Reorden</span></td>
+                  </tr>
+                  <tr>
+                    <td class="px-5 py-3 text-slate-200">Bujía NGK CPR7EA</td>
+                    <td class="px-5 py-3 text-right mono text-white">24</td>
+                    <td class="px-5 py-3 text-right mono text-slate-400">10</td>
+                    <td class="px-5 py-3"><span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400">Óptimo</span></td>
+                  </tr>
+                  <tr>
+                    <td class="px-5 py-3 text-slate-200">Pastillas de freno delanteras</td>
+                    <td class="px-5 py-3 text-right mono text-white">12</td>
+                    <td class="px-5 py-3 text-right mono text-slate-400">6</td>
+                    <td class="px-5 py-3"><span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400">Óptimo</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="px-5 py-3 border-t border-[#1E2A4A] text-[11px] text-slate-500">Cuando el stock baja del mínimo, el panel sugiere la orden de compra con el último precio del proveedor y avisa por WhatsApp.</div>
+          </div>
+        </div>
+
+        <!-- PESTAÑA 3 · Reporte para Gerencia -->
+        <div class="p-5 md:p-6" data-panel="reporte" hidden>
+          <div class="grid sm:grid-cols-3 gap-5">
+            <div class="rounded-xl bg-[#111A2E] border border-[#1E2A4A] p-5">
+              <div class="text-[10px] tracking-[0.12em] text-slate-500 font-semibold">VENTAS DEL DÍA</div>
+              <div class="mt-2 text-2xl font-black text-white mono">$11.736.200</div>
+              <div class="mt-1 text-[11px] text-slate-500">Consolidado de 3 canales</div>
+            </div>
+            <div class="rounded-xl bg-[#111A2E] border border-[#1E2A4A] p-5">
+              <div class="text-[10px] tracking-[0.12em] text-slate-500 font-semibold">MARGEN BRUTO</div>
+              <div class="mt-2 text-2xl font-black text-emerald-400 mono">34,2%</div>
+              <div class="mt-1 text-[11px] text-slate-500">Del día en curso</div>
+            </div>
+            <div class="rounded-xl bg-[#111A2E] border border-[#1E2A4A] p-5">
+              <div class="text-[10px] tracking-[0.12em] text-slate-500 font-semibold">TICKET PROMEDIO</div>
+              <div class="mt-2 text-2xl font-black text-white mono">$38.500</div>
+              <div class="mt-1 text-[11px] text-slate-500">Todas las sedes</div>
+            </div>
+          </div>
+          <div class="mt-5 rounded-xl bg-[#111A2E] border border-[#1E2A4A] p-5 flex items-start gap-3">
+            <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-slate-400 mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="8" height="4" x="8" y="2" rx="1" ry="1" /> <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" /> <path d="M12 11h4" /> <path d="M12 16h4" /> <path d="M8 11h.01" /> <path d="M8 16h.01" /> </svg>
+            <div>
+              <div class="text-[13px] font-semibold text-white">Reporte de cierre automático</div>
+              <p class="mt-1 text-[12px] text-slate-400 leading-relaxed">Al final del día el panel compila ventas, margen, arqueo de caja y alertas de inventario, y lo envía al WhatsApp del gerente. Sin consolidar Excel ni pedir números a las sedes.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
       <p class="mt-4 text-center text-[13px] text-slate-500">Vista ilustrativa con datos de ejemplo — tu panel se construye con la información real de tu operación.</p>
     </div>
@@ -326,45 +384,60 @@
 <section id="garantias" class="py-24 bg-[#0A1020]/80 border-t border-[#1E2A4A]">
   <div class="mx-auto max-w-7xl px-6">
     <div class="max-w-3xl mx-auto text-center">
-      <div class="text-[11px] tracking-[0.2em] text-[#00D1FF] font-semibold">GARANTÍA Y SOPORTE LOCAL</div>
-      <h2 class="mt-3 text-4xl font-black tracking-tight text-white">Integración segura, sin pausar las ventas de tus locales</h2>
-      <p class="mt-3 text-slate-400">Trabajamos sobre los sistemas que ya usas, con acompañamiento local en Bogotá y sin frenar tu operación.</p>
+      <div class="text-[11px] tracking-[0.2em] text-[#00D1FF] font-semibold">CONFIANZA E IMPLEMENTACIÓN</div>
+      <h2 class="mt-3 text-4xl font-black tracking-tight text-white">Un socio tecnológico local, no un software que instalas solo</h2>
+      <p class="mt-3 text-slate-400">Adoptar un panel operativo no tiene por qué frenar tu operación ni depender de manuales.</p>
     </div>
 
-    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+    <div class="mt-12 grid md:grid-cols-3 gap-5">
 
-      <!-- 1 · Acompañamiento Directo -->
+      <!-- Pilar 1 · Acompañamiento e Inundación de Uso -->
       <div class="bento-card p-6">
         <div class="size-11 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><svg aria-hidden="true" focusable="false" class="w-5 h-5 text-[#00D1FF]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /> <circle cx="9" cy="7" r="4" /> <path d="M22 21v-2a4 4 0 0 0-3-3.87" /> <path d="M16 3.13a4 4 0 0 1 0 7.75" /> </svg></div>
-        <h4 class="mt-4 font-semibold text-white">Acompañamiento Directo</h4>
-        <p class="mt-2 text-sm text-slate-400 leading-relaxed">No te entregamos un programa y nos vamos. Acompañamos a tu equipo hasta que el panel operativo esté 100% adoptado.</p>
+        <h4 class="mt-4 font-semibold text-white">Acompañamiento e Inundación de Uso</h4>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Capacitamos a tu personal y no nos retiramos hasta que la herramienta esté funcionando al 100% en tus locales.</p>
       </div>
 
-      <!-- 2 · Protección de Datos -->
+      <!-- Pilar 2 · Cero Caídas de Operación -->
+      <div class="bento-card p-6">
+        <div class="size-11 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><svg aria-hidden="true" focusable="false" class="w-5 h-5 text-violet-300" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M12 22v-5" /> <path d="M9 8V2" /> <path d="M15 8V2" /> <path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z" /> </svg></div>
+        <h4 class="mt-4 font-semibold text-white">Cero Caídas de Operación</h4>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Integramos tus sistemas actuales (Siigo, WhatsApp, POS) por detrás, sin interrumpir las ventas de tu día a día.</p>
+      </div>
+
+      <!-- Pilar 3 · Seguridad y Privacidad de Datos -->
       <div class="bento-card p-6">
         <div class="size-11 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><svg aria-hidden="true" focusable="false" class="w-5 h-5 text-emerald-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /> <path d="m9 12 2 2 4-4" /> </svg></div>
-        <h4 class="mt-4 font-semibold text-white">Protección de Datos</h4>
-        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Toda la información de tus clientes y facturación se procesa con seguridad y accesos restringidos.</p>
+        <h4 class="mt-4 font-semibold text-white">Seguridad y Privacidad de Datos</h4>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Tu información contable y base de clientes permanece bajo tus propios accesos y respaldos seguros.</p>
       </div>
 
-      <!-- 3 · Integración Transparente -->
-      <div class="bento-card p-6">
-        <div class="size-11 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><svg aria-hidden="true" focusable="false" class="w-5 h-5 text-violet-300" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <circle cx="18" cy="18" r="3" /> <circle cx="6" cy="6" r="3" /> <path d="M6 21V9a9 9 0 0 0 9 9" /> </svg></div>
-        <h4 class="mt-4 font-semibold text-white">Integración Transparente</h4>
-        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Trabajamos sobre los sistemas que ya usas (Siigo, WhatsApp, Excel) sin interrumpir la atención al cliente.</p>
+    </div>
+
+    <!-- FUNDADOR + CRÉDITO -->
+    <div class="mt-8 grid md:grid-cols-3 gap-5">
+      <div class="md:col-span-2 rounded-2xl border border-[#1E2A4A] bg-[#111A2E] p-6 md:p-8 flex flex-col sm:flex-row gap-6 items-start">
+        <div class="shrink-0 size-16 rounded-2xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center overflow-hidden">
+          <img src="imagenes/logo.webp" alt="APC Automatización" class="w-10 h-auto opacity-90">
+        </div>
+        <div>
+          <div class="text-[10px] tracking-[0.2em] text-[#00D1FF] font-semibold">COMPROMISO DEL FUNDADOR</div>
+          <h4 class="mt-2 text-xl font-black text-white">Alejandro Piraquive — APC Automatización</h4>
+          <p class="mt-2 text-sm text-slate-400 leading-relaxed">Soporte directo en Bogotá y Sabana: cada proyecto lo acompaña el mismo equipo que lo diseña. Dudas, ajustes y capacitación sin ticket impersonal ni call center.</p>
+          <a href="https://wa.me/573337450634?text=Hola%20Alejandro%2C%20quiero%20agendar%20un%20diagn%C3%B3stico" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-2 text-sm text-[#00D1FF] hover:text-[#22E6FF] font-semibold transition-colors">Escribir a Alejandro →</a>
+        </div>
       </div>
 
-      <!-- 4 · Pago a Crédito -->
+      <!-- Pago a Crédito -->
       <div class="bento-card p-6">
         <div class="size-11 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><svg aria-hidden="true" focusable="false" class="w-5 h-5 text-amber-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="20" height="14" x="2" y="5" rx="2" /> <line x1="2" x2="22" y1="10" y2="10" /> </svg></div>
         <h4 class="mt-4 font-semibold text-white">Pago a Crédito para tu Software</h4>
         <p class="mt-2 text-sm text-slate-400 leading-relaxed">Abrimos opciones de pago a crédito para crear tu software a la medida: defines el alcance del proyecto y financias el desarrollo sin frenar el resto de tu operación. Escríbenos y te contamos cómo funciona.</p>
       </div>
-
     </div>
 
     <!-- CASO REAL -->
-    <div class="mt-10 rounded-2xl border border-[#1E2A4A] bg-[#111A2E] p-8 md:p-10 grid md:grid-cols-3 gap-8 items-center">
+    <div class="mt-8 rounded-2xl border border-[#1E2A4A] bg-[#111A2E] p-8 md:p-10 grid md:grid-cols-3 gap-8 items-center">
       <div class="md:col-span-2">
         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-[10px] tracking-widest text-[#00D1FF]">CASO REAL · PANEL PARA TALLERES</div>
         <h4 class="mt-4 text-2xl font-black tracking-tight text-white">Arqueo de caja e inventario, automatizados</h4>
@@ -489,47 +562,49 @@
       <h2 class="text-4xl font-black tracking-tight text-white">Beneficios de automatizar con APC</h2>
       <p class="mt-3 text-slate-400">Menos copiar y pegar, más tiempo para decidir.</p>
     </div>
-    <div class="mt-12 grid md:grid-cols-3 gap-5">
+<div class="mt-12 grid md:grid-cols-3 gap-5">
 
-      <!-- CAJA 1 · Aumento de Ticket Promedio -->
-      <div class="md:col-span-2 bento-card p-6 md:p-7">
-        <div class="flex items-center gap-2">
-          <div class="size-11 shrink-0 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><svg aria-hidden="true" focusable="false" class="w-5 h-5 text-[#00D1FF]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M16 7h6v6" /> <path d="m22 7-8.5 8.5-5-5L2 17" /> </svg></div>
-          <h4 class="font-semibold text-white">Aumento de Ticket Promedio</h4>
+      <!-- CAJA 1 (Destacada) · Aumento de Ticket Promedio -->
+      <div class="md:col-span-3 bento-card p-6 md:p-7">
+        <div class="flex flex-col md:flex-row md:items-center gap-5">
+          <div class="flex items-center gap-3 md:w-64 shrink-0">
+            <div class="size-11 shrink-0 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><svg aria-hidden="true" focusable="false" class="w-5 h-5 text-[#00D1FF]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M16 7h6v6" /> <path d="m22 7-8.5 8.5-5-5L2 17" /> </svg></div>
+            <h4 class="font-semibold text-white">Aumento de Ticket Promedio</h4>
+          </div>
+          <p class="text-sm text-slate-400 leading-relaxed">Procesos de venta y seguimiento autónomo por WhatsApp que <span class="text-white font-semibold">recuerdan recompras y promociones</span> a tus clientes sin intervención de un vendedor.</p>
         </div>
-        <p class="mt-3 text-sm text-slate-400 leading-relaxed max-w-2xl">Procesos de venta autónomos y seguimiento post-venta automatizado por WhatsApp que <span class="text-white font-semibold">reactivan clientes y sugieren compras complementarias</span> en cada transacción.</p>
       </div>
 
-      <!-- CAJA 2 · Control Total sin Dependencia -->
+      <!-- CAJA 2 · Control Total sin Llamar a Nadie -->
       <div class="bento-card p-6 md:p-7">
         <div class="flex items-center gap-2">
           <div class="size-11 shrink-0 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><svg aria-hidden="true" focusable="false" class="w-5 h-5 text-emerald-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="14" height="20" x="5" y="2" rx="2" ry="2" /> <path d="M12 18h.01" /> </svg></div>
-          <h4 class="font-semibold text-white">Control Total sin Dependencia</h4>
+          <h4 class="font-semibold text-white">Control Total sin Llamar a Nadie</h4>
         </div>
-        <p class="mt-3 text-sm text-slate-400 leading-relaxed">Elimina las llamadas diarias a tus administradores para saber cuánto se vendió. Accede desde tu celular o computador al <span class="text-white font-semibold">estado real de cada punto de venta</span>.</p>
+        <p class="mt-3 text-sm text-slate-400 leading-relaxed">Accede desde tu celular o computador al cuadre consolidado de ventas y caja de cada local a cualquier hora del día.</p>
       </div>
 
-      <!-- CAJA 3 · Sincronización en Tiempo Real -->
+      <!-- CAJA 3 · Sincronización Automática con Siigo -->
       <div class="bento-card p-6 md:p-7">
         <div class="flex items-center gap-2">
           <div class="size-11 shrink-0 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><svg aria-hidden="true" focusable="false" class="w-5 h-5 text-violet-300" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" /> <path d="M21 3v5h-5" /> <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" /> <path d="M8 16H3v5" /> </svg></div>
-          <h4 class="font-semibold text-white">Sincronización en Tiempo Real</h4>
+          <h4 class="font-semibold text-white">Sincronización Automática con Siigo</h4>
         </div>
-        <p class="mt-3 text-sm text-slate-400 leading-relaxed">Conectamos tu facturación (Siigo), tus chats de venta y tu inventario vía API / n8n para que un dato ingresado en el local <span class="text-white font-semibold">se refleje al instante en la contabilidad</span>.</p>
+        <p class="mt-3 text-sm text-slate-400 leading-relaxed">Elimina el re-tecleo manual. Cada transacción aprobada genera su documento y ajuste contable <span class="text-white font-semibold">en tiempo real</span>.</p>
         <div class="mt-4 flex flex-wrap gap-1.5">
           <span class="text-[10px] px-2 py-0.5 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-[#00D1FF] mono">Siigo API</span>
-          <span class="text-[10px] px-2 py-0.5 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-violet-300 mono">n8n</span>
-          <span class="text-[10px] px-2 py-0.5 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-emerald-400 mono">WhatsApp</span>
+          <span class="text-[10px] px-2 py-0.5 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-violet-300 mono">Contabilidad</span>
+          <span class="text-[10px] px-2 py-0.5 rounded-full bg-[#0B1220] border border-[#1E2A4A] text-emerald-400 mono">Documentos</span>
         </div>
       </div>
 
-      <!-- CAJA 4 · Software a la Medida -->
-      <div class="md:col-span-2 bento-card p-6 md:p-7">
+      <!-- CAJA 4 · Software a la Medida de tu Comercio -->
+      <div class="bento-card p-6 md:p-7">
         <div class="flex items-center gap-2">
           <div class="size-11 shrink-0 rounded-xl bg-[#0B1220] border border-[#1E2A4A] grid place-items-center"><svg aria-hidden="true" focusable="false" class="w-5 h-5 text-[#00D1FF]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" /> </svg></div>
-          <h4 class="font-semibold text-white">Software a la Medida</h4>
+          <h4 class="font-semibold text-white">Software a la Medida de tu Comercio</h4>
         </div>
-        <p class="mt-3 text-sm text-slate-400 leading-relaxed max-w-2xl">No te adaptas a un programa rígido. Diseñamos <span class="text-white font-semibold">la integración exacta que tu comercio local o pyme necesita</span> según tus flujos actuales.</p>
+        <p class="mt-3 text-sm text-slate-400 leading-relaxed">Desarrollamos el panel adaptado exactamente a las reglas y categorías de tu negocio, <span class="text-white font-semibold">no al revés</span>.</p>
       </div>
 
     </div>

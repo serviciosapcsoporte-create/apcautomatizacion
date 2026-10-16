@@ -145,3 +145,27 @@ if (mb) {
     kick();
   });
 })();
+
+/* Panel demo: tabs switch between the three dashboard views (Ventas · Inventario · Gerencia). */
+(function () {
+  const tabs = Array.prototype.slice.call(document.querySelectorAll('.panel-tab'));
+  const panels = Array.prototype.slice.call(document.querySelectorAll('[data-panel]'));
+  if (!tabs.length || !panels.length) return;
+
+  const activate = function (name) {
+    tabs.forEach(function (tab) {
+      const on = tab.getAttribute('data-tab') === name;
+      tab.setAttribute('aria-selected', on ? 'true' : 'false');
+      tab.classList.toggle('text-white', on);
+      tab.classList.toggle('bg-[#111A2E]', on);
+      tab.classList.toggle('text-slate-400', !on);
+    });
+    panels.forEach(function (panel) {
+      panel.hidden = panel.getAttribute('data-panel') !== name;
+    });
+  };
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () { activate(tab.getAttribute('data-tab')); });
+  });
+})();
