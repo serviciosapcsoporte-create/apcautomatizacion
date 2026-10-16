@@ -118,14 +118,6 @@
 </head>
 <body class="antialiased overflow-x-hidden selection:bg-cyan-400/30">
 
-<!-- VIDEO BACKGROUND -->
-<div id="videoBg" class="fixed inset-0 w-full h-full overflow-hidden pointer-events-none" style="z-index: -1">
-  <video autoplay muted loop playsinline class="w-full h-full object-cover">
-    <source src="imagenes/Servicios APC.mp4" type="video/mp4">
-  </video>
-  <div id="scrollOverlay" class="absolute inset-0 bg-[#080C18]" style="opacity: 0.4"></div>
-</div>
-
 <!-- WHATSAPP FLOATING -->
 <a href="https://wa.me/573337450634" target="_blank" class="whatsapp-float" aria-label="WhatsApp APC Automatización">
   <svg aria-hidden="true" focusable="false" class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /> </svg>
@@ -164,31 +156,30 @@
 </header>
 
 <!-- HERO -->
-<section id="hero" class="relative min-h-[88vh] flex items-center overflow-hidden">
-  <div class="absolute inset-0 bg-[#080C18]/30"></div>
-  <div class="absolute inset-0 grid-bg opacity-[0.6]"></div>
-  <div class="absolute -top-32 -right-32 w-[700px] h-[700px] bg-[#00D1FF]/15 rounded-full blur-[140px]"></div>
-  <div class="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-violet-600/15 rounded-full blur-[130px]"></div>
+<section id="hero" class="relative min-h-[88vh] flex items-center overflow-hidden bg-[#080C18]">
+  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover" aria-hidden="true">
+    <source src="imagenes/Servicios APC.mp4" type="video/mp4">
+  </video>
+  <div class="absolute inset-0 bg-[#080C18]/75"></div>
   <div class="relative mx-auto max-w-7xl px-6 py-20 w-full">
     <div class="max-w-4xl mx-auto text-center">
       <div class="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-[#111A2E] border border-[#1E2A4A] text-[11px] tracking-widest text-[#00D1FF]">
-        <span class="size-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-        SOFTWARE A LA MEDIDA · AUTOMATIZACIÓN PARA EMPRESAS · PROCESOS AUTÓNOMOS
+        SOFTWARE A LA MEDIDA · PROCESOS AUTÓNOMOS · SOPORTE LOCAL EN BOGOTÁ
       </div>
       <h1 class="mt-6 text-[30px] sm:text-5xl lg:text-6xl font-black leading-[1.05] tracking-tight text-white">
         Software personalizado y<br>
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00D1FF] to-violet-400">automatización para empresas</span><br>
+        automatización para empresas<br>
         medianas y comercio local
       </h1>
       <p class="mt-6 text-[17px] sm:text-[18px] leading-relaxed text-slate-400 max-w-3xl mx-auto">
-        Aumenta el ticket promedio y libera la operación de tus locales con procesos 100% autónomos. Conectamos tus ventas, inventario y facturación en un panel de control operativo en tiempo real, sin depender de reportes manuales ni llamadas a tus empleados.
+        Aumenta el ticket promedio y toma el control total de tus puntos de venta con procesos autónomos. Centralizamos tu facturación, POS, WhatsApp y Siigo en un solo panel de control operativo, sin depender de llamadas a empleados ni reportes manuales en Excel.
       </p>
       <div class="mt-8 flex flex-wrap justify-center gap-3">
         <a href="#panel-demo" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#00D1FF] text-[#080C18] font-semibold hover:bg-[#22E6FF] shadow-lg shadow-[#00D1FF]/20">
           <svg aria-hidden="true" focusable="false" class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="20" height="14" x="2" y="3" rx="2" /> <line x1="8" x2="16" y1="21" y2="21" /> <line x1="12" x2="12" y1="17" y2="21" /> </svg> Probar Panel de Control Operativo
         </a>
-        <a href="https://wa.me/573337450634?text=Hola%2C%20quiero%20agendar%20un%20diagn%C3%B3stico%20gratuito" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/5 backdrop-blur border border-[#1E2A4A] hover:bg-[#111A2E] hover:border-[#00D1FF]/40 text-white font-medium">
-          <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-emerald-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /> </svg> Agendar Diagnóstico Gratuito por WhatsApp
+        <a href="https://wa.me/573337450634?text=Hola%20Alejandro%2C%20quiero%20agendar%20un%20diagn%C3%B3stico" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/5 backdrop-blur border border-[#1E2A4A] hover:bg-[#111A2E] hover:border-[#00D1FF]/40 text-white font-medium">
+          <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-emerald-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /> </svg> Agendar Diagnóstico con Alejandro Piraquive
         </a>
       </div>
       <p class="mt-4 text-[13px] text-slate-500">Diagnóstico gratuito: revisamos tus sistemas, te mostramos el cuello de botella que más te cuesta y el plan exacto. Sin compromiso.</p>

@@ -4,16 +4,6 @@ if (mb) {
   mb.onclick = () => mm.classList.toggle('hidden');
 }
 
-const overlay = document.getElementById('scrollOverlay');
-if (overlay) {
-  const update = () => {
-    const p = Math.min(window.scrollY / window.innerHeight, 1);
-    overlay.style.opacity = 0.4 + (0.52 * p);
-  };
-  window.addEventListener('scroll', update, { passive: true });
-  update();
-}
-
 /* Material: header lifts into its frosted state once the page scrolls. */
 (function () {
   const header = document.getElementById('siteHeader');
