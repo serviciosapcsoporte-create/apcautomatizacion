@@ -23,7 +23,8 @@ if (overlay) {
   update();
 })();
 
-/* Orchestration: hero dashboard tiles stagger in on first paint.
+/* Orchestration: dashboard showcase tiles stagger in when the panel scrolls
+   into view (it now lives in its own section below the hero).
    Progressive enhancement — without JS they are simply visible. */
 (function () {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -35,9 +36,21 @@ if (overlay) {
     el.classList.add('cascade-item');
     el.style.setProperty('--cascade-delay', 140 + i * 55 + 'ms');
   });
-  requestAnimationFrame(function () {
-    requestAnimationFrame(function () { panel.classList.add('cascade-in'); });
-  });
+  const start = function () {
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { panel.classList.add('cascade-in'); });
+    });
+  };
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { start(); io.disconnect(); }
+      });
+    }, { threshold: 0.15 });
+    io.observe(panel);
+  } else {
+    start();
+  }
 })();
 
 /* Reveal + Stagger: each section reveals its own items as a cascade.
@@ -93,7 +106,7 @@ if (overlay) {
     function step(now) {
       if (start === undefined) start = now;
       const p = Math.min((now - start) / dur, 1);
-      el.textContent = String(Math.round(target * ease(p)));
+      el.textContent = Math.round(target * ease(p)).toLocaleString('es-CO');
       if (p < 1) requestAnimationFrame(step);
     }
     setTimeout(function () { requestAnimationFrame(step); }, 420);

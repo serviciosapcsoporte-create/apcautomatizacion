@@ -179,6 +179,30 @@ header.header-scrolled {
   }
 }
 
+/* Dashboard showcase: glassmorphism bento cards (#111A2E) with cyan/violet
+   accent glow on hover — used by the #panel-demo modules. */
+.bento-card {
+  background: rgba(17, 26, 46, 0.72);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid #1e2a4a;
+  border-radius: 16px;
+  transition:
+    transform 220ms var(--apc-ease),
+    border-color 220ms var(--apc-ease),
+    box-shadow 220ms var(--apc-ease);
+}
+@media (hover: hover) and (pointer: fine) {
+  .bento-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 209, 255, 0.45);
+    box-shadow:
+      0 18px 46px -14px rgba(0, 209, 255, 0.4),
+      0 0 0 1px rgba(124, 58, 237, 0.2),
+      0 0 44px -18px rgba(124, 58, 237, 0.55);
+  }
+}
+
 /* Material tuning for floating chrome (header) */
 .material {
   -webkit-backdrop-filter: blur(20px) saturate(180%);
