@@ -27,12 +27,6 @@ body {
   font-family: "JetBrains Mono", monospace;
 }
 
-/* Number ticker: fixed-width digits so the value doesn't shift while counting */
-.apc-tick {
-  font-variant-numeric: tabular-nums;
-  font-feature-settings: "tnum" 1;
-}
-
 .grid-bg {
   background-image:
     linear-gradient(to right, rgba(34, 211, 238, 0.07) 1px, transparent 1px),
@@ -203,6 +197,26 @@ header.header-scrolled {
   }
 }
 
+/* Lift: cards that rise on hover. Named properties only (never `all`),
+   and the movement is gated to fine pointers so it can't stick on touch. */
+.lift {
+  transition:
+    transform 200ms var(--apc-ease),
+    border-color 200ms var(--apc-ease),
+    box-shadow 200ms var(--apc-ease);
+}
+@media (hover: hover) and (pointer: fine) {
+  .lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 50px -14px rgba(0, 209, 255, 0.28);
+  }
+}
+
+/* Panel tabs: color only, no movement (switching views is a frequent action) */
+.panel-tab {
+  transition: color 160ms var(--apc-ease), background-color 160ms var(--apc-ease);
+}
+
 /* Material tuning for floating chrome (header) */
 .material {
   -webkit-backdrop-filter: blur(20px) saturate(180%);
@@ -223,6 +237,13 @@ header.header-scrolled {
   .reveal.is-visible,
   [data-hero-panel].cascade-in .cascade-item {
     animation: none !important;
+  }
+  /* Less motion, not just faster motion: hover states stop moving */
+  .card-glow:hover,
+  .bento-card:hover,
+  .lift:hover,
+  .whatsapp-float:hover {
+    transform: none !important;
   }
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
