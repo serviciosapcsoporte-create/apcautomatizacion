@@ -160,10 +160,14 @@
 
 <!-- HERO -->
 <section id="hero" class="relative min-h-[88vh] flex items-center overflow-hidden bg-[#080C18]">
-  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover" aria-hidden="true">
-    <source src="imagenes/Servicios APC.mp4" type="video/mp4">
-  </video>
-  <div class="absolute inset-0 bg-[#080C18]/75"></div>
+  <!-- Fondo gráfico 3D (sustituye el video): malla sutil + glow ambiental + composición vectorial -->
+  <div class="absolute inset-0" aria-hidden="true">
+    <div class="hero-grid"></div>
+    <span class="hero-aurora hero-aurora-l"></span>
+    <span class="hero-aurora hero-aurora-r"></span>
+    <img src="imagenes/hero-3d.svg" width="1400" height="1000" alt="" class="hero-3d" decoding="async" fetchpriority="high">
+    <div class="hero-veil"></div>
+  </div>
   <div class="relative mx-auto max-w-7xl px-6 py-20 w-full">
     <div class="max-w-4xl mx-auto text-center">
       <div class="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-[#111A2E] border border-[#1E2A4A] text-[11px] tracking-widest text-[#00D1FF]">
@@ -174,9 +178,9 @@
         automatización para empresas<br>
         medianas y comercio local
       </h1>
-      <p class="mt-6 text-[17px] sm:text-[18px] leading-relaxed text-slate-400 max-w-3xl mx-auto">
+      <h2 class="mt-6 text-[17px] sm:text-[18px] leading-relaxed text-slate-400 max-w-3xl mx-auto font-normal tracking-normal">
         Aumenta el ticket promedio y toma el control total de tus puntos de venta con procesos autónomos. Centralizamos tu facturación, POS, WhatsApp y Siigo en un solo panel de control operativo, sin depender de llamadas a empleados ni reportes manuales en Excel.
-      </p>
+      </h2>
       <div class="mt-8 flex flex-wrap justify-center gap-3">
         <a href="#panel-demo" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#00D1FF] text-[#080C18] font-semibold hover:bg-[#22E6FF] shadow-lg shadow-[#00D1FF]/20">
           <svg aria-hidden="true" focusable="false" class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="20" height="14" x="2" y="3" rx="2" /> <line x1="8" x2="16" y1="21" y2="21" /> <line x1="12" x2="12" y1="17" y2="21" /> </svg> Probar Panel de Control Operativo
