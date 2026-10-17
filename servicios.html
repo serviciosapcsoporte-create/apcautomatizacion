@@ -45,11 +45,13 @@
 </head>
 <body class="antialiased overflow-x-hidden selection:bg-cyan-400/30">
 
-<div id="videoBg" class="fixed inset-0 w-full h-full overflow-hidden pointer-events-none" style="z-index: -1">
-  <video autoplay muted loop playsinline class="w-full h-full object-cover">
-    <source src="imagenes/Servicios%20APC.mp4" type="video/mp4">
-  </video>
-  <div id="scrollOverlay" class="absolute inset-0 bg-[#080C18]" style="opacity: 0.4"></div>
+<!-- FONDO GRAFICO 3D (sustituye el video de fondo) -->
+<div class="page-bg" aria-hidden="true">
+  <div class="hero-grid"></div>
+  <span class="hero-aurora hero-aurora-l"></span>
+  <span class="hero-aurora hero-aurora-r"></span>
+  <img src="imagenes/hero-3d.svg" width="1400" height="1000" alt="" class="page-bg-3d" decoding="async">
+  <div class="hero-veil"></div>
 </div>
 
 <a href="https://wa.me/573337450634?text=Hola%20Alejandro,%20te%20escribo%20desde%20la%20web:%20[Servicios%20-%20bot%C3%B3n%20flotante].%20Quiero%20hacer%20una%20consulta." target="_blank" class="whatsapp-float" aria-label="WhatsApp APC Automatización">
