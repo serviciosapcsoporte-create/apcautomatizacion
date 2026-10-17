@@ -253,13 +253,10 @@ header.header-scrolled {
 }
 
 .hero-3d {
-  position: absolute;
-  top: 50%;
-  right: -6%;
-  width: min(64vw, 940px);
+  width: 100%;
+  max-width: 660px;
   height: auto;
-  transform: translateY(-50%);
-  opacity: 0.72;
+  opacity: 0.95;
   pointer-events: none;
 }
 
@@ -273,9 +270,8 @@ header.header-scrolled {
 
 @media (max-width: 767px) {
   .hero-3d {
-    width: 150vw;
-    right: -46%;
-    opacity: 0.42;
+    max-width: 460px;
+    margin: 0 auto;
   }
   .page-bg-3d {
     width: 165vw;
@@ -285,9 +281,6 @@ header.header-scrolled {
 }
 
 @media (prefers-reduced-transparency: reduce) {
-  .hero-3d {
-    opacity: 0.55;
-  }
   .page-bg-3d {
     opacity: 0.3;
   }
