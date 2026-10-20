@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calculadora de Ahorro - APC Automatización Bogotá</title>
-<meta name="description" content="Calcula cuánto puedes ahorrar automatizando tu empresa en Bogotá. Dashboard, integración SIIGO, IA, RPA. Resultados en tiempo real.">
+<title>Simulador de ROI y Ahorro | APC Automatización Bogotá</title>
+<meta name="description" content="Simula en 30 segundos cuánto tiempo y dinero recuperas automatizando inventario, facturación, reportes y WhatsApp. Calculadora gratis para comercios con varias sedes.">
 <meta name="keywords" content="ahorro automatización Bogotá, calculadora ROI, automatización procesos, dashboard ejecutivo">
 <link rel="canonical" href="https://apcautomatizacion.site/calculadora-ahorro.html">
   <link rel="icon" href="favicon.ico" sizes="any">
@@ -19,21 +19,37 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Inter', sans-serif; background: #080C18; color: #E2E8F0; }
 .page { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-h1 { font-size: 36px; font-weight: 900; color: #fff; line-height: 1; }
+h1 { font-size: clamp(26px, 4vw, 36px); font-weight: 900; color: #fff; line-height: 1.15; letter-spacing: -0.02em; }
 h1 span { background: linear-gradient(135deg, #00D1FF, #7C3AED); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .subtitle { font-size: 14px; color: #64748B; margin-top: 8px; }
 .card { background: #111A2E; border: 1px solid #1E2A4A; border-radius: 16px; padding: 20px; }
-.result-card { background: linear-gradient(135deg, rgba(0,209,255,0.05), rgba(16,185,129,0.05)); border: 1px solid #00D1FF; border-radius: 16px; padding: 20px; text-align: center; }
-.result-card .amount { font-size: 36px; font-weight: 900; }
-.slider-row { display: flex; align-items: center; gap: 16px; padding: 12px 0; border-bottom: 1px solid #1E2A4A/50; }
+/* --- Simulador de ROI (B2B) --- */
+.sim-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 20px; align-items: start; }
+.result-col { position: sticky; top: 92px; }
+.glass-card { background: #111A2E; border: 1px solid #1E2A4A; border-radius: 18px; padding: 22px; box-shadow: 0 24px 60px rgba(8, 12, 24, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.03); }
+.metric-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #64748B; font-weight: 600; }
+.metric-value { font-family: 'JetBrains Mono', monospace; font-weight: 700; letter-spacing: -0.01em; }
+.metric-cyan { color: #00D1FF; font-size: 38px; line-height: 1.05; }
+.metric-emerald { color: #34D399; font-size: 26px; line-height: 1.2; }
+.metric-slate { color: #CBD5E1; font-size: 26px; line-height: 1.2; }
+.metric-sub { font-size: 11px; color: #64748B; margin-top: 6px; line-height: 1.45; }
+.divider { height: 1px; background: #1E2A4A; margin: 18px 0; }
+.plan-opt { display: block; width: 100%; text-align: left; border-radius: 12px; border: 2px solid #1E2A4A; background: #0B1220; padding: 10px 12px; cursor: pointer; color: inherit; font: inherit; transition: border-color 0.2s, background-color 0.2s; }
+.plan-opt:hover { border-color: #2A3A60; }
+.plan-opt.is-active { border-color: #00D1FF; background: #111A2E; }
+.slider-row { display: flex; align-items: center; gap: 16px; padding: 13px 0; border-bottom: 1px solid rgba(30, 42, 74, 0.7); }
 .slider-row:last-child { border-bottom: none; }
-.slider-label { flex: 1; font-size: 13px; color: #fff; font-weight: 500; }
-.slider-input { flex: 0 0 200px; }
-.slider-input input[type="range"] { width: 100%; height: 4px; -webkit-appearance: none; background: #0B1220; border-radius: 4px; outline: none; }
-.slider-input input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: #00D1FF; cursor: pointer; }
-.slider-value { flex: 0 0 80px; text-align: right; font-size: 14px; font-weight: 700; color: #00D1FF; }
-select { background: #0B1220; border: 1px solid #1E2A4A; border-radius: 8px; color: #fff; padding: 8px 12px; font-size: 13px; width: 100%; }
+.slider-label { font-size: 13px; color: #fff; font-weight: 500; }
+.slider-input { flex: 0 0 190px; }
+.slider-input input[type="range"] { width: 100%; height: 4px; -webkit-appearance: none; appearance: none; background: #0B1220; border-radius: 4px; outline: none; accent-color: #00D1FF; }
+.slider-input input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: #00D1FF; cursor: pointer; box-shadow: 0 0 0 3px rgba(0, 209, 255, 0.15); }
+.slider-input input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; border: none; border-radius: 50%; background: #00D1FF; cursor: pointer; }
+.slider-value { flex: 0 0 76px; text-align: right; font-size: 14px; font-weight: 700; color: #00D1FF; font-family: 'JetBrains Mono', monospace; }
+select { background: #0B1220; border: 1px solid #1E2A4A; border-radius: 10px; color: #fff; padding: 10px 12px; font-size: 13px; width: 100%; }
+select:focus-visible, .plan-opt:focus-visible, input[type="range"]:focus-visible { outline: 2px solid #00D1FF; outline-offset: 2px; }
 .neutral { color: #64748B; font-size: 12px; }
+@media (max-width: 900px) { .sim-grid { grid-template-columns: 1fr; } .result-col { position: static; } }
+@media (max-width: 560px) { .slider-row { flex-wrap: wrap; } .slider-value { order: 2; } .slider-input { flex: 1 1 100%; order: 3; } }
 @media print { body { padding: 0; } }
 </style>
 <!-- Google tag (gtag.js) -->
@@ -43,6 +59,73 @@ select { background: #0B1220; border: 1px solid #1E2A4A; border-radius: 8px; col
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-EWFDLTCM8R');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://apcautomatizacion.site/calculadora-ahorro.html#app",
+      "name": "Simulador de ROI – APC Automatización",
+      "description": "Simula en 30 segundos cuánto tiempo y dinero recuperas automatizando inventario, facturación, reportes y WhatsApp. Calculadora gratis para comercios con varias sedes.",
+      "url": "https://apcautomatizacion.site/calculadora-ahorro.html",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "inLanguage": "es-CO",
+      "isAccessibleForFree": true,
+      "provider": {
+        "@type": "Organization",
+        "name": "APC Automatización",
+        "url": "https://apcautomatizacion.site/",
+        "telephone": "+57-333-745-0634",
+        "areaServed": "Bogotá, Colombia"
+      },
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "APC Automatización",
+        "url": "https://apcautomatizacion.site/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cómo se calcula el ahorro estimado?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Se toman las horas manuales al mes de cada tarea, se multiplican por su porcentaje automatizable (de 60% a 90% según la tarea) y por el valor hora real del equipo. Al resultado bruto se le resta la cuota mensual del plan APC."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué incluye el valor hora usado en el cálculo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El costo mensual del equipo se multiplica por 1.52 para incluir prestaciones sociales, y se divide entre las horas laborales del mes para obtener el valor hora real."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se cuentan las sedes o puntos de venta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Los sliders registran horas al mes por sede. Para los rangos (2-3, 4-10 o más de 10 locales) se usa el punto medio, una estimación conservadora."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué es el payback o retorno de inversión?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Es el número de meses que tarda el ahorro neto mensual en cubrir el setup del plan. Si el ahorro neto es cero o negativo, el plan no se paga con esas horas."
+          }
+        }
+      ]
+    }
+  ]
+}
 </script>
 </head>
 <body>
@@ -88,125 +171,159 @@ select { background: #0B1220; border: 1px solid #1E2A4A; border-radius: 8px; col
 
 <div class="page">
 
-  <div style="text-align:center;margin-bottom:32px;">
-    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#111A2E] border border-[#1E2A4A] text-[11px] tracking-widest text-[#00D1FF]">
-      <svg aria-hidden="true" focusable="false" class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="16" height="20" x="4" y="2" rx="2" /> <line x1="8" x2="16" y1="6" y2="6" /> <line x1="16" x2="16" y1="14" y2="18" /> <path d="M16 10h.01" /> <path d="M12 10h.01" /> <path d="M8 10h.01" /> <path d="M12 14h.01" /> <path d="M8 14h.01" /> <path d="M12 18h.01" /> <path d="M8 18h.01" /> </svg> CALCULADORA DE AHORRO
-    </div>
-    <h1 style="margin-top:16px;">¿Cuánto vale tu <span>tiempo perdido</span>?</h1>
-    <p class="subtitle">Ajusta las horas que hoy se van en tareas manuales y mira el ahorro en plata. Es una estimación conservadora: el número real de tu empresa lo calculamos en el diagnóstico gratuito.</p>
+  <div style="text-align:center;margin-bottom:28px;">
+    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#111A2E] border border-[#1E2A4A] text-[11px] tracking-widest text-[#00D1FF]">ROI EN 30 SEGUNDOS</div>
+    <h1 style="margin-top:16px;">Simulador de <span>ROI</span>: Recupera la Rentabilidad de tus Locales</h1>
+    <p class="subtitle" style="max-width:740px;margin:10px auto 0;">Calcula el costo real de las tareas manuales en tu empresa y descubre cuánto puedes ahorrar mes a mes centralizando tu operación en un solo panel.</p>
   </div>
 
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
-    <div class="card">
-      <div style="font-size:10px;color:#64748B;letter-spacing:0.1em;font-weight:600;">VALOR DEL TIEMPO</div>
-      <label style="font-size:12px;color:#94A3B8;margin-top:4px;display:block;">Costo mensual del tiempo que tu equipo invierte en estas tareas:</label>
-      <select id="salarySelect" onchange="recalc()">
-        <option value="1300000">$1.300.000 /mes</option>
-        <option value="1500000" selected>$1.500.000 /mes</option>
-        <option value="1800000">$1.800.000 /mes</option>
-        <option value="2200000">$2.200.000 /mes</option>
-        <option value="2800000">$2.800.000 /mes</option>
-      </select>
-      <div class="neutral" style="margin-top:4px;">Valor hora real (con prestaciones): <strong id="hourlyRate" style="color:#fff;">$14.250</strong></div>
-      <div class="neutral" style="margin-top:2px;font-size:11px;">Costo total del tiempo: <strong id="realCost" style="color:#fff;">$2.280.000</strong> /mes</div>
-    </div>
-    <div class="card" style="display:flex;flex-direction:column;justify-content:center;">
-      <div style="font-size:10px;color:#64748B;letter-spacing:0.1em;font-weight:600;">HORAS LABORALES / MES</div>
-      <select id="hoursSelect" onchange="recalc()">
-        <option value="160">160h (tiempo completo)</option>
-        <option value="120">120h (medio tiempo)</option>
-        <option value="200">200h (tiempo completo + extras)</option>
-      </select>
-    </div>
-  </div>
+  <div class="sim-grid">
+    <!-- CONTROLES -->
+    <div>
+      <div class="card" style="margin-bottom:16px;">
+        <label for="sedesSelect" style="display:block;font-size:13px;color:#fff;font-weight:600;">¿Cuántas sedes/puntos de venta maneja tu negocio?</label>
+        <select id="sedesSelect" onchange="recalc()" style="margin-top:10px;">
+          <option value="1">1 local</option>
+          <option value="2.5" selected>2-3 locales</option>
+          <option value="6">4-10 locales</option>
+          <option value="12">+10 locales</option>
+        </select>
+        <div class="neutral" style="margin-top:6px;">Los sliders son horas/mes por sede. En los rangos usamos el punto medio (estimación conservadora).</div>
+      </div>
 
-  <div class="card" style="margin-bottom:16px;">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-      <div>
-        <div style="font-size:10px;color:#64748B;letter-spacing:0.1em;font-weight:600;">TAREAS MANUALES</div>
-        <div style="font-size:12px;color:#94A3B8;">Desliza para ajustar las horas/mes que tu empresa gasta en cada tarea. Cada tarea tiene un % automatizable realista.</div>
+      <div class="card" style="margin-bottom:16px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-bottom:4px;">
+          <div>
+            <div class="metric-label">TAREAS MANUALES · HORAS/MES POR SEDE</div>
+            <div class="neutral" style="margin-top:4px;">Cada tarea tiene un % automatizable realista.</div>
+          </div>
+          <div style="text-align:right;">
+            <div class="neutral">Total manual (toda la operación)</div>
+            <div id="totalManual" style="font-size:20px;font-weight:800;color:#F87171;">0 h</div>
+          </div>
+        </div>
+
+        <div class="slider-row">
+          <div style="flex:1;min-width:0;">
+            <label class="slider-label" for="s1">Conteo e Inventario de Repuestos/Productos</label>
+            <div class="neutral">70% automatizable</div>
+          </div>
+          <div class="slider-input"><input type="range" min="0" max="60" step="1" value="20" id="s1" oninput="recalc()"></div>
+          <div class="slider-value" id="v1">20 h</div>
+        </div>
+        <div class="slider-row">
+          <div style="flex:1;min-width:0;">
+            <label class="slider-label" for="s2">Cuadre de Facturación vs. SIIGO / POS</label>
+            <div class="neutral">80% automatizable</div>
+          </div>
+          <div class="slider-input"><input type="range" min="0" max="60" step="1" value="15" id="s2" oninput="recalc()"></div>
+          <div class="slider-value" id="v2">15 h</div>
+        </div>
+        <div class="slider-row">
+          <div style="flex:1;min-width:0;">
+            <label class="slider-label" for="s3">Consolidado de Reportes y KPIs de Ventas</label>
+            <div class="neutral">90% automatizable</div>
+          </div>
+          <div class="slider-input"><input type="range" min="0" max="40" step="1" value="8" id="s3" oninput="recalc()"></div>
+          <div class="slider-value" id="v3">8 h</div>
+        </div>
+        <div class="slider-row">
+          <div style="flex:1;min-width:0;">
+            <label class="slider-label" for="s4">Atención y Seguimiento por WhatsApp</label>
+            <div class="neutral">60% automatizable</div>
+          </div>
+          <div class="slider-input"><input type="range" min="0" max="50" step="1" value="10" id="s4" oninput="recalc()"></div>
+          <div class="slider-value" id="v4">10 h</div>
+        </div>
       </div>
-      <div style="text-align:right;">
-        <div class="neutral">Total horas manuales</div>
-        <div id="totalManual" style="font-size:20px;font-weight:900;color:#EF4444;">78h</div>
+
+      <div class="card">
+        <div class="metric-label" style="margin-bottom:10px;">VALOR DEL TIEMPO</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div>
+            <label class="neutral" for="salarySelect" style="display:block;margin-bottom:6px;">Costo mensual del equipo en estas tareas</label>
+            <select id="salarySelect" onchange="recalc()">
+              <option value="1300000">$1.300.000 /mes</option>
+              <option value="1500000" selected>$1.500.000 /mes</option>
+              <option value="1800000">$1.800.000 /mes</option>
+              <option value="2200000">$2.200.000 /mes</option>
+              <option value="2800000">$2.800.000 /mes</option>
+            </select>
+          </div>
+          <div>
+            <label class="neutral" for="hoursSelect" style="display:block;margin-bottom:6px;">Horas laborales / mes</label>
+            <select id="hoursSelect" onchange="recalc()">
+              <option value="160" selected>160 h (tiempo completo)</option>
+              <option value="120">120 h (medio tiempo)</option>
+              <option value="200">200 h (tiempo completo + extras)</option>
+            </select>
+          </div>
+        </div>
+        <div class="neutral" style="margin-top:10px;">Valor hora real (con prestaciones): <strong id="hourlyRate" style="color:#fff;">$0</strong> · costo del tiempo <strong id="realCost" style="color:#fff;">$0</strong> /mes</div>
       </div>
     </div>
 
-    <div class="slider-row">
-      <div class="slider-label">📦 Conteo y control de inventario <span class="neutral">(70% automatizable)</span></div>
-      <div class="slider-input"><input type="range" min="0" max="60" value="20" id="s1" oninput="recalc()"></div>
-      <div class="slider-value" id="v1">20h</div>
-    </div>
-    <div class="slider-row">
-      <div class="slider-label">🧾 Cuadre facturación vs SIIGO <span class="neutral">(80% automatizable)</span></div>
-      <div class="slider-input"><input type="range" min="0" max="60" value="15" id="s2" oninput="recalc()"></div>
-      <div class="slider-value" id="v2">15h</div>
-    </div>
-    <div class="slider-row">
-      <div class="slider-label">📊 Reportes mensuales de ventas y KPI <span class="neutral">(90% automatizable)</span></div>
-      <div class="slider-input"><input type="range" min="0" max="40" value="8" id="s3" oninput="recalc()"></div>
-      <div class="slider-value" id="v3">8h</div>
-    </div>
-    <div class="slider-row">
-      <div class="slider-label">📞 Seguimiento post-venta a clientes <span class="neutral">(60% automatizable)</span></div>
-      <div class="slider-input"><input type="range" min="0" max="50" value="10" id="s4" oninput="recalc()"></div>
-      <div class="slider-value" id="v4">10h</div>
-    </div>
-    <div class="slider-row">
-      <div class="slider-label">💬 Atención al cliente (WhatsApp/llamadas) <span class="neutral">(60% automatizable)</span></div>
-      <div class="slider-input"><input type="range" min="0" max="80" value="25" id="s5" oninput="recalc()"></div>
-      <div class="slider-value" id="v5">25h</div>
-    </div>
-  </div>
+    <!-- RESULTADOS -->
+    <div class="result-col">
+      <div class="glass-card">
+        <div class="metric-label">RESULTADOS ESTIMADOS</div>
 
-  <div class="card" style="margin-bottom:16px;">
-    <div style="font-size:10px;color:#64748B;letter-spacing:0.1em;font-weight:600;margin-bottom:8px;">TU AHORRO ESTIMADO CON APC</div>
-    <div style="background:#0B1220;border-radius:10px;padding:18px;text-align:center;">
-      <div class="neutral">Ahorro por tiempo automatizado</div>
-      <div style="font-size:30px;font-weight:900;color:#00D1FF;" id="timeSavings">$0</div>
-      <div class="neutral">/mes</div>
-    </div>
-    <div style="margin-top:16px;padding-top:12px;border-top:1px solid #1E2A4A;">
-      <div style="display:flex;justify-content:space-between;align-items:center;">
-        <div class="neutral">Con APC pagas /mes</div>
-        <div style="font-size:22px;font-weight:900;color:#00D1FF;" id="costAPC">$0</div>
-      </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px;">
-        <div class="neutral" style="color:#10B981;font-weight:700;">AHORRO NETO ESTIMADO /mes</div>
-        <div style="font-size:28px;font-weight:900;color:#10B981;" id="netGain">$0</div>
-      </div>
-    </div>
-    <div class="neutral" style="margin-top:10px;">Solo contamos el tiempo que recuperas. Los errores evitados y las oportunidades reales de tu empresa los calculamos en el diagnóstico gratuito.</div>
-  </div>
+        <div style="margin-top:14px;">
+          <div class="metric-label">Ahorro neto estimado / mes</div>
+          <div class="metric-value metric-cyan" id="netGain">$0</div>
+          <div class="metric-sub" id="savingsSub">Bruto $0 · plan CORE $490.000/mes</div>
+        </div>
 
-    <div style="margin-bottom:16px;">
-    <div style="font-size:10px;color:#64748B;letter-spacing:0.1em;font-weight:600;margin-bottom:8px;">SELECCIONA TU PLAN <span style="color:#A78BFA;font-weight:400;">· + Copiloto IA disponible en todo plan</span></div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">
-      <div onclick="selectPlan('core')" id="planCore" style="border-radius:12px;border:2px solid #00D1FF;background:#111A2E;padding:16px;cursor:pointer;text-align:center;transition:all 0.2s;">
-        <div style="font-size:10px;color:#00D1FF;font-weight:700;letter-spacing:0.08em;">CORE</div>
-        <div style="font-size:16px;font-weight:800;color:#fff;margin-top:4px;">$490.000</div>
-        <div class="neutral">/mes</div>
-      </div>
-      <div onclick="selectPlan('pro')" id="planPro" style="border-radius:12px;border:2px solid #1E2A4A;background:#111A2E;padding:16px;cursor:pointer;text-align:center;transition:all 0.2s;">
-        <div style="font-size:10px;color:#00D1FF;font-weight:700;letter-spacing:0.08em;">PRO</div>
-        <div style="font-size:16px;font-weight:800;color:#fff;margin-top:4px;">$890.000</div>
-        <div class="neutral">/mes</div>
-      </div>
-      <div onclick="selectPlan('vip')" id="planVIP" style="border-radius:12px;border:2px solid #1E2A4A;background:linear-gradient(180deg,rgba(124,58,237,0.05),#111A2E);padding:16px;cursor:pointer;text-align:center;transition:all 0.2s;">
-        <div style="font-size:10px;background:linear-gradient(135deg,#7C3AED,#00D1FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;letter-spacing:0.08em;">VIP COPILOTO IA</div>
-        <div style="font-size:16px;font-weight:800;color:#A78BFA;margin-top:4px;">$1.290.000</div>
-        <div class="neutral">/mes</div>
+        <div class="divider"></div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+          <div>
+            <div class="metric-label">Horas hombre libres / mes</div>
+            <div class="metric-value metric-emerald" id="hoursFreed">0 h</div>
+          </div>
+          <div>
+            <div class="metric-label">Retorno de inversión / payback</div>
+            <div class="metric-value metric-slate" id="payback">—</div>
+            <div class="metric-sub" id="paybackSub"></div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="metric-label" style="margin-bottom:8px;">PLAN APC</div>
+        <div style="display:grid;gap:8px;">
+          <button type="button" class="plan-opt is-active" data-plan="core" aria-pressed="true" onclick="selectPlan('core')">
+            <span style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
+              <span style="font-size:11px;letter-spacing:0.08em;color:#00D1FF;font-weight:700;">CORE</span>
+              <span style="font-size:13px;font-weight:700;color:#fff;">$490.000<span class="neutral"> /mes</span></span>
+            </span>
+            <span class="neutral" style="display:block;margin-top:2px;">Setup $3.500.000</span>
+          </button>
+          <button type="button" class="plan-opt" data-plan="pro" aria-pressed="false" onclick="selectPlan('pro')">
+            <span style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
+              <span style="font-size:11px;letter-spacing:0.08em;color:#00D1FF;font-weight:700;">PRO</span>
+              <span style="font-size:13px;font-weight:700;color:#fff;">$890.000<span class="neutral"> /mes</span></span>
+            </span>
+            <span class="neutral" style="display:block;margin-top:2px;">Setup $6.900.000</span>
+          </button>
+          <button type="button" class="plan-opt" data-plan="vip" aria-pressed="false" onclick="selectPlan('vip')">
+            <span style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
+              <span style="font-size:11px;letter-spacing:0.08em;color:#A78BFA;font-weight:700;">VIP COPILOTO IA</span>
+              <span style="font-size:13px;font-weight:700;color:#A78BFA;">$1.290.000<span class="neutral"> /mes</span></span>
+            </span>
+            <span class="neutral" style="display:block;margin-top:2px;">Setup a medida</span>
+          </button>
+        </div>
+
+        <a id="waCta" href="https://wa.me/573337450634?text=Hola%20Alejandro,%20te%20escribo%20desde%20la%20web:%20[Calculadora%20de%20Ahorro%20-%20resultado].%20Quiero%20cotizar%20el%20ahorro%20que%20calcul%C3%A9." target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;padding:13px 16px;border-radius:12px;background:#00D1FF;color:#080C18;font-weight:700;text-decoration:none;font-size:13px;">
+          <svg aria-hidden="true" focusable="false" style="width:16px;height:16px;" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Cotizar este ROI por WhatsApp
+        </a>
+        <a href="index.html" style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:8px;padding:12px 16px;border-radius:12px;background:#0B1220;border:1px solid #1E2A4A;color:#fff;font-weight:500;text-decoration:none;font-size:13px;">← Volver al inicio</a>
+
+        <p class="neutral" style="margin-top:12px;font-size:11px;line-height:1.5;">Estimación conservadora: solo cuenta el tiempo recuperado. Los errores evitados y las oportunidades reales se calculan en el diagnóstico gratuito.</p>
       </div>
     </div>
-  </div>
-
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;">
-    <a href="https://wa.me/573337450634?text=Hola%20Alejandro,%20te%20escribo%20desde%20la%20web:%20[Calculadora%20de%20Ahorro%20-%20resultado].%20Quiero%20cotizar%20el%20ahorro%20que%20calcul%C3%A9." target="_blank" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;border-radius:12px;background:#00D1FF;color:#000;font-weight:700;text-decoration:none;font-size:14px;">
-      💬 Cotizar por WhatsApp
-    </a>
-    <a href="index.html" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;border-radius:12px;background:#111A2E;border:1px solid #1E2A4A;color:#fff;font-weight:500;text-decoration:none;font-size:14px;">
-      ← Volver al inicio
-    </a>
   </div>
 
   <div class="card" style="margin-top:24px;">
@@ -221,17 +338,17 @@ select { background: #0B1220; border: 1px solid #1E2A4A; border-radius: 8px; col
           </tr>
         </thead>
         <tbody>
-          <tr style="border-bottom:1px solid #1E2A4A/50;">
+          <tr style="border-bottom:1px solid rgba(30,42,74,0.7);">
             <td style="padding:14px 12px 14px 0;font-weight:600;color:#fff;">Inventario</td>
             <td style="padding:14px 12px;color:#94A3B8;">Conteo manual, hojas de Excel, reportes lentos.</td>
             <td style="padding:14px 0 14px 12px;color:#94A3B8;">Automatizado 24/7: Alertas automáticas y auditoría de stock sin errores.</td>
           </tr>
-          <tr style="border-bottom:1px solid #1E2A4A/50;">
+          <tr style="border-bottom:1px solid rgba(30,42,74,0.7);">
             <td style="padding:14px 12px 14px 0;font-weight:600;color:#fff;">Cuadre contable / SIIGO</td>
             <td style="padding:14px 12px;color:#94A3B8;">Cuadre de facturas, digitación manual de ventas.</td>
             <td style="padding:14px 0 14px 12px;color:#94A3B8;">Sincronización Inmediata: Cruce de facturas y reportes al instante vía API.</td>
           </tr>
-          <tr style="border-bottom:1px solid #1E2A4A/50;">
+          <tr style="border-bottom:1px solid rgba(30,42,74,0.7);">
             <td style="padding:14px 12px 14px 0;font-weight:600;color:#fff;">Atención y seguimiento a clientes</td>
             <td style="padding:14px 12px;color:#94A3B8;">Responde cuando puede, olvida hacer seguimiento.</td>
             <td style="padding:14px 0 14px 12px;color:#94A3B8;">Copiloto IA: Respuestas inmediatas, seguimiento a clientes y flujo post-venta automático.</td>
@@ -244,7 +361,7 @@ select { background: #0B1220; border: 1px solid #1E2A4A; border-radius: 8px; col
         </tbody>
       </table>
     </div>
-    <div style="margin-top:16px;padding:12px;background:#0B1220;border-radius:8px;border:1px solid #1E2A4A/50;">
+    <div style="margin-top:16px;padding:12px;background:#0B1220;border-radius:8px;border:1px solid rgba(30,42,74,0.7);">
       <div style="font-size:11px;color:#00D1FF;font-weight:700;margin-bottom:4px;">💡 Cómo te acompañamos:</div>
       <div style="font-size:12px;color:#94A3B8;">"Sr. Cliente, no se trata de reemplazar a tu equipo: te acompañamos a montar una IA que les ayuda a ahorrar tiempo, o un sistema que hace el trabajo repetitivo por si no quieres contratar a alguien para eso. Tu personal se enfoca en lo que realmente agrega valor."</div>
     </div>
@@ -254,58 +371,83 @@ select { background: #0B1220; border: 1px solid #1E2A4A; border-radius: 8px; col
 
 <script>
 let currentPlan = 'core';
-const planPrices = { core: 490000, pro: 890000, vip: 1290000 };
-const automationRates = { s1: 0.70, s2: 0.80, s3: 0.90, s4: 0.60, s5: 0.60 };
+const planFees = { core: 490000, pro: 890000, vip: 1290000 };
+const planSetup = { core: 3500000, pro: 6900000, vip: null };
+const planLabels = { core: 'CORE', pro: 'PRO', vip: 'VIP COPILOTO IA' };
+const automationRates = { s1: 0.70, s2: 0.80, s3: 0.90, s4: 0.60 };
+const sliderIds = ['s1', 's2', 's3', 's4'];
+
+function fmtCOP(n) {
+  return '$' + Math.round(n).toLocaleString('es-CO');
+}
 
 function selectPlan(plan) {
   currentPlan = plan;
-  document.querySelectorAll('[id^="plan"]').forEach(el => {
-    el.style.borderColor = '#1E2A4A';
+  document.querySelectorAll('.plan-opt').forEach(function (btn) {
+    const on = btn.dataset.plan === plan;
+    btn.classList.toggle('is-active', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
   });
-  const colors = { core: '#00D1FF', pro: '#00D1FF', vip: '#7C3AED' };
-  const planElementIds = { core: 'planCore', pro: 'planPro', vip: 'planVIP' };
-  const el = document.getElementById(planElementIds[plan]);
-  if (el) {
-    el.style.borderColor = colors[plan];
-  }
   recalc();
 }
 
 function recalc() {
-  const s1 = parseInt(document.getElementById('s1').value) || 0;
-  const s2 = parseInt(document.getElementById('s2').value) || 0;
-  const s3 = parseInt(document.getElementById('s3').value) || 0;
-  const s4 = parseInt(document.getElementById('s4').value) || 0;
-  const s5 = parseInt(document.getElementById('s5').value) || 0;
+  const vals = sliderIds.map(function (id) {
+    return parseInt(document.getElementById(id).value, 10) || 0;
+  });
+  vals.forEach(function (v, i) {
+    document.getElementById('v' + (i + 1)).textContent = v + ' h';
+  });
 
-  document.getElementById('v1').textContent = s1 + 'h';
-  document.getElementById('v2').textContent = s2 + 'h';
-  document.getElementById('v3').textContent = s3 + 'h';
-  document.getElementById('v4').textContent = s4 + 'h';
-  document.getElementById('v5').textContent = s5 + 'h';
+  const sedes = parseFloat(document.getElementById('sedesSelect').value) || 1;
+  const manualPerSede = vals.reduce(function (a, b) { return a + b; }, 0);
+  document.getElementById('totalManual').textContent = Math.round(manualPerSede * sedes) + ' h';
 
-  const totalHours = s1 + s2 + s3 + s4 + s5;
-  document.getElementById('totalManual').textContent = totalHours + 'h';
-
-  const salary = parseInt(document.getElementById('salarySelect').value) || 1500000;
-  const workHours = parseInt(document.getElementById('hoursSelect').value) || 160;
+  const salary = parseInt(document.getElementById('salarySelect').value, 10) || 1500000;
+  const workHours = parseInt(document.getElementById('hoursSelect').value, 10) || 160;
   const realCost = Math.round(salary * 1.52);
   const hourly = realCost / workHours;
-  document.getElementById('hourlyRate').textContent = '$' + Math.round(hourly).toLocaleString('es-CO');
-  document.getElementById('realCost').textContent = '$' + realCost.toLocaleString('es-CO');
+  document.getElementById('hourlyRate').textContent = fmtCOP(hourly);
+  document.getElementById('realCost').textContent = fmtCOP(realCost);
 
-  const automatableHours = (s1 * automationRates.s1) + (s2 * automationRates.s2) + (s3 * automationRates.s3) + (s4 * automationRates.s4) + (s5 * automationRates.s5);
-  
-  const timeSavings = Math.round(automatableHours * hourly);
-  const totalValue = timeSavings;
-  
-  const planCost = planPrices[currentPlan];
-  const netGain = totalValue - planCost;
+  const automatablePerSede = vals.reduce(function (acc, v, i) {
+    return acc + v * automationRates[sliderIds[i]];
+  }, 0);
+  const automatable = automatablePerSede * sedes;
+  const gross = automatable * hourly;
+  const fee = planFees[currentPlan];
+  const net = gross - fee;
 
-  document.getElementById('timeSavings').textContent = '$' + timeSavings.toLocaleString('es-CO');
-  document.getElementById('costAPC').textContent = '$' + planCost.toLocaleString('es-CO');
-  document.getElementById('netGain').textContent = (netGain > 0 ? '+' : '') + '$' + netGain.toLocaleString('es-CO');
+  const hoursFreed = Math.round(automatable);
+  document.getElementById('hoursFreed').textContent = hoursFreed + ' h';
+
+  const netEl = document.getElementById('netGain');
+  netEl.textContent = (net < 0 ? '-' : '') + fmtCOP(Math.abs(net));
+  netEl.style.color = net < 0 ? '#FBBF24' : '#00D1FF';
+  document.getElementById('savingsSub').textContent =
+    'Bruto ' + fmtCOP(gross) + ' − plan ' + planLabels[currentPlan] + ' ' + fmtCOP(fee) + '/mes';
+
+  const setup = planSetup[currentPlan];
+  const pb = document.getElementById('payback');
+  const pbSub = document.getElementById('paybackSub');
+  if (setup === null) {
+    pb.textContent = 'A medida';
+    pbSub.textContent = 'El setup VIP se define en el diagnóstico.';
+  } else if (net <= 0) {
+    pb.textContent = '—';
+    pbSub.textContent = 'Con estas horas el plan no se paga.';
+  } else {
+    const months = setup / net;
+    pb.textContent = months < 1 ? '< 1 mes' : (months > 24 ? '> 24 meses' : months.toFixed(1).replace('.', ',') + ' meses');
+    pbSub.textContent = 'Setup ' + fmtCOP(setup) + ' sobre el ahorro neto mensual';
+  }
+
+  const msg = 'Hola Alejandro, te escribo desde la web: [Calculadora de Ahorro - resultado]. Quiero cotizar el ahorro que calculé: '
+    + fmtCOP(Math.max(net, 0)) + '/mes netos, ' + hoursFreed + ' h/mes liberadas, '
+    + Math.round(manualPerSede * sedes) + ' h manuales hoy, plan ' + planLabels[currentPlan] + '.';
+  document.getElementById('waCta').href = 'https://wa.me/573337450634?text=' + encodeURIComponent(msg);
 }
+
 recalc();
 </script>
 <script src="js/main.js"></script>
