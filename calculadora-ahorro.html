@@ -50,7 +50,40 @@ select:focus-visible, .plan-opt:focus-visible, input[type="range"]:focus-visible
 .neutral { color: #64748B; font-size: 12px; }
 @media (max-width: 900px) { .sim-grid { grid-template-columns: 1fr; } .result-col { position: static; } }
 @media (max-width: 560px) { .slider-row { flex-wrap: wrap; } .slider-value { order: 2; } .slider-input { flex: 1 1 100%; order: 3; } }
-@media print { body { padding: 0; } }
+/* --- CTA de cierre --- */
+.cta-close { margin-top:20px; background:#111A2E; border:1px solid #1E2A4A; border-radius:18px; padding:24px; box-shadow:0 24px 60px rgba(8,12,24,0.45); }
+.cta-grid { display:grid; grid-template-columns:1.05fr 0.95fr; gap:26px; align-items:center; }
+.cta-kicker { font-size:11px; letter-spacing:0.1em; color:#00D1FF; font-weight:700; }
+.cta-title { font-size:22px; line-height:1.25; font-weight:800; color:#fff; margin-top:8px; letter-spacing:-0.01em; }
+.cta-sub { font-size:13px; color:#94A3B8; margin-top:8px; line-height:1.6; max-width:54ch; }
+.cta-snapshot { display:inline-flex; flex-wrap:wrap; gap:6px 14px; margin-top:14px; font-size:11px; color:#64748B; }
+.cta-snapshot b { color:#E2E8F0; font-family:'JetBrains Mono', monospace; font-weight:700; }
+.btn-wa { display:flex; align-items:center; justify-content:center; gap:9px; width:100%; padding:14px 18px; border-radius:12px; background:#25D366; color:#07230F; font-weight:800; font-size:14px; text-decoration:none; transition:background-color 0.2s, box-shadow 0.2s; box-shadow:0 8px 24px rgba(37,211,102,0.18); }
+.btn-wa:hover { background:#1FBE5B; box-shadow:0 10px 28px rgba(37,211,102,0.3); }
+.btn-wa:focus-visible { outline:2px solid #25D366; outline-offset:3px; }
+.cta-secondary { display:flex; gap:8px; margin-top:10px; }
+.btn-ghost { flex:1; padding:11px 12px; border-radius:10px; background:#0B1220; border:1px solid #1E2A4A; color:#CBD5E1; font-size:12px; font-weight:600; cursor:pointer; font-family:inherit; transition:border-color 0.2s, color 0.2s; }
+.btn-ghost:hover { border-color:#2A3A60; color:#fff; }
+.btn-ghost:focus-visible { outline:2px solid #00D1FF; outline-offset:2px; }
+.cta-hint { font-size:11px; color:#34D399; margin-top:8px; min-height:14px; }
+#printSummary { display:none; }
+@media (max-width:900px) { .cta-grid { grid-template-columns:1fr; gap:18px; } }
+@media (max-width:560px) { .cta-secondary { flex-direction:column; } .cta-close { padding:20px; } }
+@media print {
+  body { background:#fff; color:#0F172A; }
+  body * { visibility:hidden; }
+  #printSummary, #printSummary * { visibility:visible; }
+  #printSummary { display:block; position:absolute; left:0; top:0; width:100%; padding:20px 6px; }
+  .ps-head { border-bottom:2px solid #0F172A; padding-bottom:10px; margin-bottom:18px; }
+  .ps-brand { font-size:11px; letter-spacing:0.18em; font-weight:800; }
+  .ps-title { font-size:22px; font-weight:800; margin-top:6px; }
+  .ps-date { font-size:11px; color:#475569; margin-top:4px; }
+  .ps-table { width:100%; border-collapse:collapse; font-size:12px; }
+  .ps-table td { padding:9px 0; border-bottom:1px solid #E2E8F0; color:#0F172A; }
+  .ps-table td:last-child { text-align:right; font-weight:700; font-family:'JetBrains Mono', monospace; }
+  .ps-net td { font-size:15px; border-bottom:2px solid #0F172A; }
+  .ps-foot { margin-top:20px; font-size:10px; color:#475569; line-height:1.55; }
+}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EWFDLTCM8R"></script>
@@ -315,16 +348,39 @@ select:focus-visible, .plan-opt:focus-visible, input[type="range"]:focus-visible
           </button>
         </div>
 
-        <a id="waCta" href="https://wa.me/573337450634?text=Hola%20Alejandro,%20te%20escribo%20desde%20la%20web:%20[Calculadora%20de%20Ahorro%20-%20resultado].%20Quiero%20cotizar%20el%20ahorro%20que%20calcul%C3%A9." target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;padding:13px 16px;border-radius:12px;background:#00D1FF;color:#080C18;font-weight:700;text-decoration:none;font-size:13px;">
-          <svg aria-hidden="true" focusable="false" style="width:16px;height:16px;" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Cotizar este ROI por WhatsApp
-        </a>
         <a href="index.html" style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:8px;padding:12px 16px;border-radius:12px;background:#0B1220;border:1px solid #1E2A4A;color:#fff;font-weight:500;text-decoration:none;font-size:13px;">← Volver al inicio</a>
 
         <p class="neutral" style="margin-top:12px;font-size:11px;line-height:1.5;">Estimación conservadora: solo cuenta el tiempo recuperado. Los errores evitados y las oportunidades reales se calculan en el diagnóstico gratuito.</p>
       </div>
     </div>
   </div>
+
+  <!-- CTA DE CIERRE -->
+  <section class="cta-close" aria-labelledby="ctaTitle">
+    <div class="cta-grid">
+      <div>
+        <div class="cta-kicker">SIGUIENTE PASO · DIAGNÓSTICO GRATUITO</div>
+        <h2 class="cta-title" id="ctaTitle">Recibe el Desglose Técnico y el Plan Exacto para tu Empresa</h2>
+        <p class="cta-sub">Envía tu cálculo actual a nuestro equipo técnico para diseñar el plan de integración a la medida de tus sistemas (Siigo, POS, WhatsApp).</p>
+        <div class="cta-snapshot">
+          <span>Sedes <b id="snapSedes">—</b></span>
+          <span>Horas manuales <b id="snapHours">—</b></span>
+          <span>Ahorro neto <b id="snapNet">—</b></span>
+        </div>
+      </div>
+      <div>
+        <a id="waCta" class="btn-wa" href="https://wa.me/573337450634" target="_blank" rel="noopener">
+          <svg aria-hidden="true" focusable="false" style="width:17px;height:17px;" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Solicitar Diagnóstico con mi Cálculo Actual →
+        </a>
+        <div class="cta-secondary">
+          <button type="button" id="btnPdf" class="btn-ghost">Descargar Resumen Ejecutivo en PDF</button>
+          <button type="button" id="btnCopy" class="btn-ghost">Copiar Resultados</button>
+        </div>
+        <div class="cta-hint" id="ctaHint" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
 
   <div class="card" style="margin-top:24px;">
     <div style="font-size:10px;color:#64748B;letter-spacing:0.1em;font-weight:600;margin-bottom:16px;">TAREAS MANUALES VS. AUTOMATIZADAS CON APC</div>
@@ -376,9 +432,15 @@ const planSetup = { core: 3500000, pro: 6900000, vip: null };
 const planLabels = { core: 'CORE', pro: 'PRO', vip: 'VIP COPILOTO IA' };
 const automationRates = { s1: 0.70, s2: 0.80, s3: 0.90, s4: 0.60 };
 const sliderIds = ['s1', 's2', 's3', 's4'];
+const sedesLabels = { '1': '1 sede', '2.5': '2-3 sedes', '6': '4-10 sedes', '12': '+10 sedes' };
+let lastState = null;
 
 function fmtCOP(n) {
   return '$' + Math.round(n).toLocaleString('es-CO');
+}
+
+function signedCOP(n) {
+  return (n < 0 ? '-' : '') + fmtCOP(Math.abs(n));
 }
 
 function selectPlan(plan) {
@@ -401,7 +463,8 @@ function recalc() {
 
   const sedes = parseFloat(document.getElementById('sedesSelect').value) || 1;
   const manualPerSede = vals.reduce(function (a, b) { return a + b; }, 0);
-  document.getElementById('totalManual').textContent = Math.round(manualPerSede * sedes) + ' h';
+  const manualHours = Math.round(manualPerSede * sedes);
+  document.getElementById('totalManual').textContent = manualHours + ' h';
 
   const salary = parseInt(document.getElementById('salarySelect').value, 10) || 1500000;
   const workHours = parseInt(document.getElementById('hoursSelect').value, 10) || 160;
@@ -425,7 +488,7 @@ function recalc() {
   netEl.textContent = (net < 0 ? '-' : '') + fmtCOP(Math.abs(net));
   netEl.style.color = net < 0 ? '#FBBF24' : '#00D1FF';
   document.getElementById('savingsSub').textContent =
-    'Bruto ' + fmtCOP(gross) + ' − plan ' + planLabels[currentPlan] + ' ' + fmtCOP(fee) + '/mes';
+    'Bruto ' + fmtCOP(gross) + ' \u2212 plan ' + planLabels[currentPlan] + ' ' + fmtCOP(fee) + '/mes';
 
   const setup = planSetup[currentPlan];
   const pb = document.getElementById('payback');
@@ -434,7 +497,7 @@ function recalc() {
     pb.textContent = 'A medida';
     pbSub.textContent = 'El setup VIP se define en el diagnóstico.';
   } else if (net <= 0) {
-    pb.textContent = '—';
+    pb.textContent = '\u2014';
     pbSub.textContent = 'Con estas horas el plan no se paga.';
   } else {
     const months = setup / net;
@@ -442,14 +505,127 @@ function recalc() {
     pbSub.textContent = 'Setup ' + fmtCOP(setup) + ' sobre el ahorro neto mensual';
   }
 
-  const msg = 'Hola Alejandro, te escribo desde la web: [Calculadora de Ahorro - resultado]. Quiero cotizar el ahorro que calculé: '
-    + fmtCOP(Math.max(net, 0)) + '/mes netos, ' + hoursFreed + ' h/mes liberadas, '
-    + Math.round(manualPerSede * sedes) + ' h manuales hoy, plan ' + planLabels[currentPlan] + '.';
+  const sedesLabel = sedesLabels[String(sedes)] || (Math.round(sedes) + ' sedes');
+  lastState = {
+    sedes: sedesLabel,
+    manualHours: manualHours,
+    hoursFreed: hoursFreed,
+    realCost: realCost,
+    hourly: hourly,
+    gross: gross,
+    fee: fee,
+    net: net,
+    plan: planLabels[currentPlan],
+    payback: pb.textContent
+  };
+
+  document.getElementById('snapSedes').textContent = sedesLabel;
+  document.getElementById('snapHours').textContent = manualHours + ' h';
+  document.getElementById('snapNet').textContent = signedCOP(net) + '/mes';
+
+  const msg = 'Hola Alejandro, ejecut\u00e9 la calculadora en la web. Mi empresa maneja '
+    + sedesLabel + ', gastamos ' + manualHours + ' horas/mes en tareas manuales y nuestro ahorro estimado es de '
+    + fmtCOP(Math.max(net, 0)) + '/mes. Quiero agendar el diagn\u00f3stico gratuito para revisar la integraci\u00f3n.';
   document.getElementById('waCta').href = 'https://wa.me/573337450634?text=' + encodeURIComponent(msg);
 }
 
+function summaryText() {
+  const st = lastState;
+  if (!st) return '';
+  return [
+    'RESUMEN EJECUTIVO \u2014 APC AUTOMATIZACI\u00d3N',
+    'https://apcautomatizacion.site/calculadora-ahorro.html',
+    '',
+    'Sedes / puntos de venta: ' + st.sedes,
+    'Horas manuales hoy: ' + st.manualHours + ' h/mes',
+    'Horas liberadas: ' + st.hoursFreed + ' h/mes',
+    'Costo real del tiempo: ' + fmtCOP(st.realCost) + '/mes (valor hora ' + fmtCOP(st.hourly) + ')',
+    'Ahorro bruto: ' + fmtCOP(st.gross) + '/mes',
+    'Plan ' + st.plan + ': ' + fmtCOP(st.fee) + '/mes',
+    'Ahorro neto: ' + signedCOP(st.net) + '/mes',
+    'Payback: ' + st.payback,
+    '',
+    'Quiero agendar el diagn\u00f3stico gratuito para revisar la integraci\u00f3n.'
+  ].join('\n');
+}
+
+function flash(msg, ok) {
+  const h = document.getElementById('ctaHint');
+  h.textContent = msg;
+  h.style.color = ok === false ? '#FBBF24' : '#34D399';
+  clearTimeout(flash._t);
+  flash._t = setTimeout(function () { h.textContent = ''; }, 3600);
+}
+
+function legacyCopy(txt) {
+  const ta = document.createElement('textarea');
+  ta.value = txt;
+  ta.setAttribute('readonly', '');
+  ta.style.position = 'fixed';
+  ta.style.top = '-1000px';
+  document.body.appendChild(ta);
+  ta.select();
+  let ok = false;
+  try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+  document.body.removeChild(ta);
+  if (ok) { flash('Resultados copiados. Pégalos en WhatsApp o correo.'); }
+  else { flash('No se pudo copiar automáticamente. Usa Ctrl+C sobre el resumen.', false); }
+}
+
+function copyResults() {
+  const txt = summaryText();
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(txt).then(
+      function () { flash('Resultados copiados. Pégalos en WhatsApp o correo.'); },
+      function () { legacyCopy(txt); }
+    );
+  } else {
+    legacyCopy(txt);
+  }
+}
+
+function printableSummary() {
+  const st = lastState;
+  if (!st) return;
+  const rows = [
+    ['Sedes / puntos de venta', st.sedes],
+    ['Horas manuales hoy', st.manualHours + ' h/mes'],
+    ['Horas liberadas con APC', st.hoursFreed + ' h/mes'],
+    ['Costo real del tiempo', fmtCOP(st.realCost) + '/mes'],
+    ['Valor hora real (con prestaciones)', fmtCOP(st.hourly)],
+    ['Ahorro bruto estimado', fmtCOP(st.gross) + '/mes'],
+    ['Plan ' + st.plan, fmtCOP(st.fee) + '/mes'],
+    ['Payback del setup', st.payback]
+  ];
+  document.getElementById('printBody').innerHTML =
+    '<table class="ps-table">' + rows.map(function (r) {
+      return '<tr><td>' + r[0] + '</td><td>' + r[1] + '</td></tr>';
+    }).join('') + '<tr class="ps-net"><td>Ahorro neto estimado</td><td>' + signedCOP(st.net) + '/mes</td></tr></table>';
+  document.getElementById('printDate').textContent =
+    new Date().toLocaleDateString('es-CO', { day: '2-digit', month: 'long', year: 'numeric' });
+}
+
+function downloadPdf() {
+  printableSummary();
+  window.print();
+}
+
+document.getElementById('btnCopy').addEventListener('click', copyResults);
+document.getElementById('btnPdf').addEventListener('click', downloadPdf);
+window.addEventListener('beforeprint', printableSummary);
+
 recalc();
 </script>
+<div id="printSummary" aria-hidden="true">
+  <div class="ps-head">
+    <div class="ps-brand">APC AUTOMATIZACIÓN · BOGOTÁ</div>
+    <div class="ps-title">Resumen Ejecutivo · Simulador de ROI</div>
+    <div class="ps-date" id="printDate"></div>
+  </div>
+  <div id="printBody"></div>
+  <div class="ps-foot">Estimación conservadora basada solo en tiempo recuperado. El desglose técnico y los precios finales se confirman en el diagnóstico gratuito.<br>apcautomatizacion.site · +57 333 745 0634</div>
+</div>
+
 <script src="js/main.js"></script>
 </body>
 </html>
